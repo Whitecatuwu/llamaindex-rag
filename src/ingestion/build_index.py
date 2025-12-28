@@ -1,13 +1,15 @@
 from llama_index.core import VectorStoreIndex
-from llama_index.core import StorageContext
-from ingestion.loader import load_documents
-from ingestion.splitter import build_nodes
-import config.settings  # noqa: F401
+from llama_index.core import SimpleDirectoryReader
+from llama_index.core.node_parser import JSONNodeParser
+
+import src.config.settings  # noqa: F401
 
 
 def main():
-    docs = load_documents()
-    nodes = build_nodes(docs)
+    docs = SimpleDirectoryReader("data/raw/wiki/cats").load_data()
+
+    parser = JSONNodeParser()
+    nodes = parser.get_nodes_from_documents(docs)
 
     index = VectorStoreIndex(nodes)
     index.storage_context.persist(persist_dir="indexes/vector_store")

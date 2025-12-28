@@ -1,6 +1,11 @@
 llama-index
 llama-index-embeddings-huggingface
 llama-index-llms-huggingface
+llama-index-readers-web
+llama-index-llms-openrouter
+python-dotenv
 transformers
 torch
 huggingface_hub[hf_xet]
+markdownify
+trafilatura

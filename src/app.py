@@ -1,4 +1,5 @@
-from query.engine import build_query_engine
+from src.query.engine import build_query_engine
+import src.config.settings  # noqa: F401
 
 
 def main():
@@ -8,6 +9,7 @@ def main():
         q = input("❓ 問題：")
         if q in ("exit", "quit"):
             break
+        print("模型正在思考...")
         res = qe.query(q)
         print("\n🧠 回答：\n", res, "\n")
 
