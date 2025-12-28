@@ -1,0 +1,6835 @@
+[
+  {
+    "id": 0,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doge",
+    "first_appearance": "EoC: Stage 1-1"
+  },
+  {
+    "id": 1,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Snache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Snache",
+    "first_appearance": "EoC: Stage 1-2"
+  },
+  {
+    "id": 2,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Those Guys",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Those_Guys",
+    "first_appearance": "EoC: Stage 1-4"
+  },
+  {
+    "id": 3,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hippoe",
+    "first_appearance": "EoC: Stage 1-7"
+  },
+  {
+    "id": 4,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Pigge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pigge",
+    "first_appearance": "EoC: Stage 1-10"
+  },
+  {
+    "id": 5,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Jackie Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Jackie_Peng",
+    "first_appearance": "EoC: Stage 1-13"
+  },
+  {
+    "id": 6,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gory",
+    "first_appearance": "EoC: Stage 1-17"
+  },
+  {
+    "id": 7,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Baa Baa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Baa_Baa",
+    "first_appearance": "EoC: Stage 1-19"
+  },
+  {
+    "id": 8,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Sir Seal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sir_Seal",
+    "first_appearance": "EoC: Stage 1-23"
+  },
+  {
+    "id": 9,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Le'boin",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27boin",
+    "first_appearance": "EoC: Stage 1-29"
+  },
+  {
+    "id": 10,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kang Roo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kang_Roo",
+    "first_appearance": "EoC: Stage 1-35"
+  },
+  {
+    "id": 11,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "One Horn",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/One_Horn",
+    "first_appearance": "EoC: Stage 1-41"
+  },
+  {
+    "id": 12,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Teacher Bear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Teacher_Bear",
+    "first_appearance": "EoC: Stage 1-44"
+  },
+  {
+    "id": 13,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Croco",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Croco",
+    "first_appearance": "EoC: Stage 1-26"
+  },
+  {
+    "id": 14,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "B.B.Bunny",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/B.B.Bunny",
+    "first_appearance": "EoC: Stage 1-32"
+  },
+  {
+    "id": 15,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Squire Rel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Squire_Rel",
+    "first_appearance": "EoC: Stage 1-38"
+  },
+  {
+    "id": 16,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Assassin Bear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Assassin_Bear",
+    "first_appearance": "Challenge Battle"
+  },
+  {
+    "id": 17,
+    "traits": [
+      "Red",
+      "Floating"
+    ],
+    "enemy_name": "Shy Boy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shy_Boy",
+    "first_appearance": "Challenge Battle"
+  },
+  {
+    "id": 18,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "The Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Face",
+    "first_appearance": "EoC: Stage 1-48"
+  },
+  {
+    "id": 19,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Zoge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zoge",
+    "first_appearance": ""
+  },
+  {
+    "id": 20,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doge",
+    "first_appearance": ""
+  },
+  {
+    "id": 21,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ms. Sign",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ms._Sign",
+    "first_appearance": "EoC: Stage 1-1"
+  },
+  {
+    "id": 22,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mooth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mooth",
+    "first_appearance": "EoC: Stage 1-38"
+  },
+  {
+    "id": 23,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Dark Emperor Nyandam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Emperor_Nyandam",
+    "first_appearance": "EoC: Stage 2-48"
+  },
+  {
+    "id": 24,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Teacher Bun Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Teacher_Bun_Bun",
+    "first_appearance": "EoC: Stage 3-48"
+  },
+  {
+    "id": 25,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Swordsman (form 1)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Swordsman_(form_1)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 26,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Gau (form 1)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Gau_(form_1)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 27,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kerihime (form 1)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kerihime_(form_1)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 28,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Swordsman (form 2)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Swordsman_(form_2)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 29,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Gau (form 2)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Gau_(form_2)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 30,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kerihime (form 2)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kerihime_(form_2)_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 31,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Master A.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Master_A.",
+    "first_appearance": "SoL: Stage 2-8"
+  },
+  {
+    "id": 32,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "R.Ost",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/R.Ost",
+    "first_appearance": "SoL: Stage 17-4"
+  },
+  {
+    "id": 33,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Otta-smack-u",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Otta-smack-u",
+    "first_appearance": "SoL: Stage 5-6"
+  },
+  {
+    "id": 34,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kory",
+    "first_appearance": "SoL: Stage 10-6"
+  },
+  {
+    "id": 35,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Camelle",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Camelle",
+    "first_appearance": "SoL: Stage 9-8"
+  },
+  {
+    "id": 36,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Duche",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Duche",
+    "first_appearance": "SoL: Stage 4-4"
+  },
+  {
+    "id": 37,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Owlbrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Owlbrow",
+    "first_appearance": "SoL: Stage 9-4"
+  },
+  {
+    "id": 38,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Bore",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bore",
+    "first_appearance": "SoL: Stage 7-4"
+  },
+  {
+    "id": 39,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "THE SLOTH",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/THE_SLOTH",
+    "first_appearance": "SoL: Stage 4-8"
+  },
+  {
+    "id": 40,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rain D.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rain_D.",
+    "first_appearance": "SoL: Stage 8-8"
+  },
+  {
+    "id": 41,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dagshund",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dagshund",
+    "first_appearance": "SoL: Stage 3-8"
+  },
+  {
+    "id": 42,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Celeboodle",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Celeboodle",
+    "first_appearance": "SoL: Stage 3-3"
+  },
+  {
+    "id": 43,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "H. Nah",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/H._Nah",
+    "first_appearance": "SoL: Stage 16-8"
+  },
+  {
+    "id": 44,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dober P.D",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dober_P.D",
+    "first_appearance": "SoL: Stage 17-8"
+  },
+  {
+    "id": 45,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ururun Wolf",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ururun_Wolf_(Enemy)",
+    "first_appearance": "SoL: Stage 18-6"
+  },
+  {
+    "id": 46,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Doge Dark",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doge_Dark",
+    "first_appearance": "SoL: Stage 1-8"
+  },
+  {
+    "id": 47,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Metal Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metal_Hippoe",
+    "first_appearance": "SoL: Stage 1-2"
+  },
+  {
+    "id": 48,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "St. Pigge the 2nd",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/St._Pigge_the_2nd",
+    "first_appearance": "SoL: Stage 1-4"
+  },
+  {
+    "id": 49,
+    "traits": [
+      "Red",
+      "Floating"
+    ],
+    "enemy_name": "J.K Bun Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/J.K_Bun_Bun",
+    "first_appearance": "SoL: Stage 6-8"
+  },
+  {
+    "id": 50,
+    "traits": [
+      "Black",
+      "Floating"
+    ],
+    "enemy_name": "Bun Bun Black",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bun_Bun_Black",
+    "first_appearance": "SoL: Stage 15-6"
+  },
+  {
+    "id": 51,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Gory Black",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gory_Black",
+    "first_appearance": "SoL: Stage 9-1"
+  },
+  {
+    "id": 52,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Shadow Boxer K",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shadow_Boxer_K",
+    "first_appearance": "SoL: Stage 8-4"
+  },
+  {
+    "id": 53,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Director Kurosawah",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Director_Kurosawah",
+    "first_appearance": "SoL: Stage 13-8"
+  },
+  {
+    "id": 54,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Super Metal Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Super_Metal_Hippoe",
+    "first_appearance": "Cat Ticket Stage: Siege of Hippoe! ; SoL: Stage 20-2"
+  },
+  {
+    "id": 55,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Type 10 (Unseen)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Type_10_(Event_Enemy)",
+    "first_appearance": "Special Events"
+  },
+  {
+    "id": 55,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Type 10 (Hometown Self-Defense Force)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Type_10_(Enemy)",
+    "first_appearance": "Collab: Hometown Self-Defense Force (JP)"
+  },
+  {
+    "id": 56,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Metal One Horn",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metal_One_Horn",
+    "first_appearance": "SoL: Stage 15-4"
+  },
+  {
+    "id": 57,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Teacher Cybear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Teacher_Cybear",
+    "first_appearance": "Cat Ticket Stage: Cybear's Vengeance"
+  },
+  {
+    "id": 58,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "CyberFace",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/CyberFace",
+    "first_appearance": "Cat Ticket Stage: Facing Danger"
+  },
+  {
+    "id": 59,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Sir Metal Seal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sir_Metal_Seal",
+    "first_appearance": "SoL: Stage 18-4"
+  },
+  {
+    "id": 60,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Yurinchi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yurinchi_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 61,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Princess Head",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Princess_Head_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 62,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Chief Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Chief_Peng",
+    "first_appearance": "Monthly: Loving Labor"
+  },
+  {
+    "id": 63,
+    "traits": [
+      "Red",
+      "Aku"
+    ],
+    "enemy_name": "Dark Emperor Santa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Emperor_Santa",
+    "first_appearance": "Monthly: Jingle Cat Bell"
+  },
+  {
+    "id": 64,
+    "traits": [
+      "Red",
+      "Floating"
+    ],
+    "enemy_name": "Red Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Red_Cyclone",
+    "first_appearance": "Cyclone Stage: Crimson Catastrophe"
+  },
+  {
+    "id": 65,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Lione Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lione_Hippoe",
+    "first_appearance": "Monthly: Happy New Year?"
+  },
+  {
+    "id": 66,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Lucky Sloth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lucky_Sloth",
+    "first_appearance": "Monthly: Ritual Happiness"
+  },
+  {
+    "id": 67,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bears Be Bare",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bears_Be_Bare",
+    "first_appearance": "Monthly: Bears be Bare"
+  },
+  {
+    "id": 68,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Monkey King",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Monkey_King_(Enemy)",
+    "first_appearance": "Collab: Dragon Poker (JP)"
+  },
+  {
+    "id": 69,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "White Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/White_Cyclone",
+    "first_appearance": "Cyclone Stage: Peerless"
+  },
+  {
+    "id": 70,
+    "traits": [
+      "Black",
+      "Floating"
+    ],
+    "enemy_name": "Black Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Cyclone",
+    "first_appearance": "Cyclone Stage: Heaven of Darkness"
+  },
+  {
+    "id": 71,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Metal Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metal_Cyclone",
+    "first_appearance": "Cyclone Stage: Sweet Irony"
+  },
+  {
+    "id": 72,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Nimue",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nimue_(Enemy)",
+    "first_appearance": "Collab: Million Arthur (JP)"
+  },
+  {
+    "id": 73,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Neutralization Type Nimue",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Neutralization_Type_Nimue_(Enemy)",
+    "first_appearance": "Collab: Million Arthur (JP)"
+  },
+  {
+    "id": 74,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "SSS Monkey King",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/SSS_Monkey_King_(Enemy)",
+    "first_appearance": "Collab: Dragon Poker (JP)"
+  },
+  {
+    "id": 75,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Cat"
+  },
+  {
+    "id": 76,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Tank Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Tank_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Tank"
+  },
+  {
+    "id": 77,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Axe Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Axe_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Axe"
+  },
+  {
+    "id": 78,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Gross Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Gross_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Gross"
+  },
+  {
+    "id": 79,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Cow Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Cow_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Cow"
+  },
+  {
+    "id": 80,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Crazed Bird Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Bird_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Bird"
+  },
+  {
+    "id": 81,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Fish Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Fish_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Fish"
+  },
+  {
+    "id": 82,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Lizard Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Lizard_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Lizard"
+  },
+  {
+    "id": 83,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Titan Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Titan_Cat_(Enemy)",
+    "first_appearance": "Crazed Stage: The Crazed Titan"
+  },
+  {
+    "id": 84,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Teacher A",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Teacher_A",
+    "first_appearance": "Monthly: Teacher! It's Spring!"
+  },
+  {
+    "id": 85,
+    "traits": [
+      "Red",
+      "Black"
+    ],
+    "enemy_name": "Samurai Doggy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Samurai_Doggy",
+    "first_appearance": "Monthly: Love is Sickness"
+  },
+  {
+    "id": 86,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Mega Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mega_Cat_(Enemy)",
+    "first_appearance": "Collab: Let's GOOO! <(@0@)>"
+  },
+  {
+    "id": 87,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Gory Groom",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gory_Groom",
+    "first_appearance": "Monthly: The Forbidden Bride"
+  },
+  {
+    "id": 88,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Celesse",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Celesse_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 89,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nono",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nono_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 90,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Olga",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Olga_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 91,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Norn",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Norn_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 92,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Yoichi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yoichi_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 93,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Serum",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Serum_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 94,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Fuu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Fuu_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 95,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Aura",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aura_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 96,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Rei",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rei_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 97,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Wyvern",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wyvern_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 98,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Healer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Healer_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 99,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sunny Celeboodle",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sunny_Celeboodle",
+    "first_appearance": "Monthly: Never Summer!"
+  },
+  {
+    "id": 100,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bearkini",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bearkini",
+    "first_appearance": "Monthly: Never Summer!"
+  },
+  {
+    "id": 101,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Lord Enma",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lord_Enma",
+    "first_appearance": "Monthly: Ghostly Houseguests"
+  },
+  {
+    "id": 102,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dashing Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dashing_Face",
+    "first_appearance": "Monthly: Ghostly Houseguests"
+  },
+  {
+    "id": 103,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Ghost Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ghost_Doge",
+    "first_appearance": "Monthly: Ghostly Houseguests"
+  },
+  {
+    "id": 104,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Ghost Snache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ghost_Snache",
+    "first_appearance": "Monthly: Ghostly Houseguests"
+  },
+  {
+    "id": 105,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Ghost Baa Baa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ghost_Baa_Baa",
+    "first_appearance": "Monthly: Ghostly Houseguests"
+  },
+  {
+    "id": 106,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Fireworks Guys (High-Yield)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Fireworks_Guys_(High-Yield)",
+    "first_appearance": "Event All-Stars"
+  },
+  {
+    "id": 107,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Fireworks Guys (Low-Yield)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Fireworks_Guys_(Low-Yield)",
+    "first_appearance": "Event All-Stars"
+  },
+  {
+    "id": 108,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mighty Gui Zuli",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mighty_Gui_Zuli",
+    "first_appearance": "Monthly: Old Guys About Town"
+  },
+  {
+    "id": 109,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hermit Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hermit_Peng",
+    "first_appearance": "Monthly: Old Guys About Town"
+  },
+  {
+    "id": 110,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Master Da Xun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Master_Da_Xun",
+    "first_appearance": "Monthly: Old Guys About Town"
+  },
+  {
+    "id": 111,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Pigge Back",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pigge_Back",
+    "first_appearance": "Monthly: Autumn = Sports Day!"
+  },
+  {
+    "id": 112,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Divine Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Divine_Cyclone",
+    "first_appearance": "Cyclone Stage: Wrath of Heaven"
+  },
+  {
+    "id": 113,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Heavenly Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Heavenly_Hippoe",
+    "first_appearance": "SoL: Stage 19-1"
+  },
+  {
+    "id": 114,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Gabriel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gabriel",
+    "first_appearance": "SoL: Stage 19-4"
+  },
+  {
+    "id": 115,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Angelic Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Angelic_Gory",
+    "first_appearance": "SoL: Stage 19-5"
+  },
+  {
+    "id": 116,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Angel Fanboy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Angel_Fanboy",
+    "first_appearance": "Cyclone Stage: Wrath of Heaven"
+  },
+  {
+    "id": 117,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Wall Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wall_Doge",
+    "first_appearance": "SoL: Stage 20-4"
+  },
+  {
+    "id": 118,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Ginger Snache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ginger_Snache",
+    "first_appearance": "SoL: Stage 20-1"
+  },
+  {
+    "id": 119,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Sunfish Jones",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sunfish_Jones",
+    "first_appearance": "SoL: Stage 20-8"
+  },
+  {
+    "id": 120,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: Birthday Present!"
+  },
+  {
+    "id": 121,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Dragon League Witch",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dragon_League_Witch_(Enemy)",
+    "first_appearance": "Collab: Dragon League (JP)"
+  },
+  {
+    "id": 122,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Dragon League Swordsman",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dragon_League_Swordsman_(Enemy)",
+    "first_appearance": "Collab: Dragon League (JP)"
+  },
+  {
+    "id": 123,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Pigeon de Sable",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pigeon_de_Sable",
+    "first_appearance": "SoL: Stage 21-1"
+  },
+  {
+    "id": 124,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Dark Otter",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Otter",
+    "first_appearance": "SoL: Stage 21-2"
+  },
+  {
+    "id": 125,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Angelic Sleipnir",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Angelic_Sleipnir",
+    "first_appearance": "SoL: Stage 21-5"
+  },
+  {
+    "id": 126,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Sunrise Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sunrise_Doge",
+    "first_appearance": "Celebration: You Nears!"
+  },
+  {
+    "id": 127,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Beefcake Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Beefcake_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Actress Awakens!"
+  },
+  {
+    "id": 128,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dancer Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dancer_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Kung-Fu Awakens!"
+  },
+  {
+    "id": 129,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hyper Mr.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hyper_Mr._(Enemy)",
+    "first_appearance": "Awakened Stage: Mr. Awakens!"
+  },
+  {
+    "id": 130,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ultimate Bondage Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ultimate_Bondage_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Bondage Awakens!"
+  },
+  {
+    "id": 131,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Dark Lazer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Lazer_(Enemy)",
+    "first_appearance": "Awakened Stage: The Dom Awakens!"
+  },
+  {
+    "id": 132,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Heavy Assault C.A.T.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Heavy_Assault_C.A.T._(Enemy)",
+    "first_appearance": "Awakened Stage: Box Cats Awakens!"
+  },
+  {
+    "id": 133,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Lollycat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lollycat_(Enemy)",
+    "first_appearance": "Awakened Stage: Panties Awakens!"
+  },
+  {
+    "id": 134,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Unicycle Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Unicycle_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Tricycle Awakens!"
+  },
+  {
+    "id": 135,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Flying Ninja Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Flying_Ninja_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Ninja Awakens!"
+  },
+  {
+    "id": 136,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Skelecat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Skelecat_(Enemy)",
+    "first_appearance": "Awakened Stage: Samurai Awakens!"
+  },
+  {
+    "id": 137,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Pastry Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pastry_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Samurai Awakens!"
+  },
+  {
+    "id": 138,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Riceball Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Riceball_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Sumo Awakens!"
+  },
+  {
+    "id": 139,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gato Amigo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gato_Amigo_(Enemy)",
+    "first_appearance": "Awakened Stage: Boogie Awakens!"
+  },
+  {
+    "id": 140,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Loincloth Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Loincloth_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Skirt Awakens!"
+  },
+  {
+    "id": 141,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Sho Ayanokoji",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sho_Ayanokoji_(Enemy)",
+    "first_appearance": "Collab: Kishidan (JP)"
+  },
+  {
+    "id": 142,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hikaru Saotome",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hikaru_Saotome_(Enemy)",
+    "first_appearance": "Collab: Kishidan (JP)"
+  },
+  {
+    "id": 143,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hitomi Saionji",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hitomi_Saionji_(Enemy)",
+    "first_appearance": "Collab: Kishidan (JP)"
+  },
+  {
+    "id": 144,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hoshi Grandmarnier",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hoshi_Grandmarnier_(Enemy)",
+    "first_appearance": "Collab: Kishidan (JP)"
+  },
+  {
+    "id": 145,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shouchikubai Shiratori",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shouchikubai_Shiratori_(Enemy)",
+    "first_appearance": "Collab: Kishidan (JP)"
+  },
+  {
+    "id": 146,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Trolly Blogger",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Trolly_Blogger",
+    "first_appearance": "SoL: Stage 22-1"
+  },
+  {
+    "id": 147,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Metal Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metal_Doge",
+    "first_appearance": "SoL: Stage 22-3"
+  },
+  {
+    "id": 148,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Li'l Nyandam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Nyandam_(Enemy)",
+    "first_appearance": "SoL: Stage 23-6"
+  },
+  {
+    "id": 149,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Le'noir",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27noir",
+    "first_appearance": "SoL: Stage 23-3"
+  },
+  {
+    "id": 150,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Young Man Mola",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Young_Man_Mola_(Enemy)",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 151,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mola King",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mola_King_(Enemy)",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 152,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Ayumi Manbosaki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ayumi_Manbosaki",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 153,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Crab",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crab",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 154,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Sardine",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sardine",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 155,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Squid",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Squid",
+    "first_appearance": "Collab: Survive! Mola Mola!"
+  },
+  {
+    "id": 156,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Marching Kory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Marching_Kory",
+    "first_appearance": "Annually: Sweetest Sorrow"
+  },
+  {
+    "id": 157,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sakura Android",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sakura_Android_(Enemy)",
+    "first_appearance": "Collab: Google Android (JP)"
+  },
+  {
+    "id": 158,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Takuya",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Takuya_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 159,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Yuki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yuki_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 160,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Chickful A",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Chickful_A",
+    "first_appearance": "SoL: Stage 24-1"
+  },
+  {
+    "id": 161,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mob Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mob_Cat_(Enemy)",
+    "first_appearance": "Collab: Yakuza Apocalypse (JP)"
+  },
+  {
+    "id": 162,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Yakuza Vampire",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yakuza_Vampire_(Enemy)",
+    "first_appearance": "Collab: Yakuza Apocalypse (JP)"
+  },
+  {
+    "id": 163,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hearscht",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hearscht_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 164,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Cornelia",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cornelia_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 165,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Alois",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Alois_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 166,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Healer Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Healer_Cat",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 167,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Shibalien",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shibalien",
+    "first_appearance": "ItF: Stage 1-1"
+  },
+  {
+    "id": 168,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Kroxo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kroxo",
+    "first_appearance": "ItF: Stage 1-34"
+  },
+  {
+    "id": 169,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Hyppoh",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hyppoh",
+    "first_appearance": "ItF: Stage 1-6"
+  },
+  {
+    "id": 170,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Imperator Sael",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Imperator_Sael",
+    "first_appearance": "ItF: Stage 1-16"
+  },
+  {
+    "id": 171,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Maawth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Maawth",
+    "first_appearance": "ItF: Stage 1-20"
+  },
+  {
+    "id": 172,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "LeMurr",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/LeMurr",
+    "first_appearance": "ItF: Stage 1-38"
+  },
+  {
+    "id": 173,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Helmut Krabbe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Helmut_Krabbe",
+    "first_appearance": "ItF: Stage 1-12"
+  },
+  {
+    "id": 174,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "I.M. Phace",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/I.M._Phace",
+    "first_appearance": "ItF: Stage 1-24"
+  },
+  {
+    "id": 175,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Ursamajor",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ursamajor",
+    "first_appearance": "ItF: Stage 1-29"
+  },
+  {
+    "id": 176,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Cli-One",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cli-One",
+    "first_appearance": "ItF: Stage 1-48"
+  },
+  {
+    "id": 177,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Nimoy Bore",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nimoy_Bore",
+    "first_appearance": "ItF: Stage 1-47"
+  },
+  {
+    "id": 178,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Elizabeth the LVIth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Elizabeth_the_LVIth",
+    "first_appearance": "ItF: Stage 1-43"
+  },
+  {
+    "id": 179,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Cosmic Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cosmic_Cyclone",
+    "first_appearance": "Cyclone Stage: Dimension of Despair"
+  },
+  {
+    "id": 180,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Galactic Overseer Nyandam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Galactic_Overseer_Nyandam",
+    "first_appearance": "ItF: Stage 2-24"
+  },
+  {
+    "id": 181,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Corrupted Valkyrie",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Corrupted_Valkyrie",
+    "first_appearance": "ItF: Stage 2-48"
+  },
+  {
+    "id": 182,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Scissoroo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Scissoroo",
+    "first_appearance": "ItF: Stage 2-11"
+  },
+  {
+    "id": 183,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Cyberhorn",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cyberhorn",
+    "first_appearance": "ItF: Stage 2-16"
+  },
+  {
+    "id": 184,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Mistress Celeboodle",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mistress_Celeboodle",
+    "first_appearance": "ItF: Stage 2-19"
+  },
+  {
+    "id": 185,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Professor A.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Professor_A.",
+    "first_appearance": "SoL: Stage 33-1"
+  },
+  {
+    "id": 186,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "20/30/40/50/60/70/80 Million DL Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/DL_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 20 Mil Downloads Special Gift!"
+  },
+  {
+    "id": 187,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Rathalos",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rathalos_(Enemy)",
+    "first_appearance": "Collab: Monster Hunter (JP)"
+  },
+  {
+    "id": 188,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Rathian",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rathian_(Enemy)",
+    "first_appearance": "Collab: Monster Hunter (JP)"
+  },
+  {
+    "id": 189,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "MARS PEOPLE",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/MARS_PEOPLE_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 190,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "DONALD MORDEN",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/DONALD_MORDEN_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 191,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "ALLEN O'NEIL",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/ALLEN_O%27NEIL_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 192,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "MARCO",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/MARCO_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 193,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "SV-001",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/SV-001_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 194,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "HUGE HERMIT",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/HUGE_HERMIT_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 195,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "JUPITER KING",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/JUPITER_KING_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 196,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "HI-DO",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/HI-DO_(Enemy)",
+    "first_appearance": "Collab: Metal Slug Defense"
+  },
+  {
+    "id": 197,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Pumpkin Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pumpkin_Doge",
+    "first_appearance": "Annually: All Hallows Road"
+  },
+  {
+    "id": 198,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Count Owlbrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Count_Owlbrow",
+    "first_appearance": "Annually: All Hallows Road"
+  },
+  {
+    "id": 199,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Vlad de Sable",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Vlad_de_Sable",
+    "first_appearance": "Annually: All Hallows Road"
+  },
+  {
+    "id": 200,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Valkyrie",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Junior_God_of_Light_-_Valkyrie_(Enemy)",
+    "first_appearance": "Collab: Yurudrasil (JP)"
+  },
+  {
+    "id": 201,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Brynhildr",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Junior_God_Brynhildr_(Enemy)",
+    "first_appearance": "Collab: Yurudrasil (JP)"
+  },
+  {
+    "id": 202,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Suruzu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Junior_God_Suruzu_(Enemy)",
+    "first_appearance": "Collab: Yurudrasil (JP)"
+  },
+  {
+    "id": 203,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Freya",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Goddess_of_Abundance_-_Freya_(Enemy)",
+    "first_appearance": "Collab: Yurudrasil (JP)"
+  },
+  {
+    "id": 204,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Odin",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/God_of_War_-_Odin_(Enemy)",
+    "first_appearance": "Collab: Yurudrasil (JP)"
+  },
+  {
+    "id": 205,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Capy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Capy",
+    "first_appearance": "SoL: Stage 26-1"
+  },
+  {
+    "id": 206,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Berserkory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Berserkory",
+    "first_appearance": "SoL: Stage 26-8"
+  },
+  {
+    "id": 207,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Brollow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Brollow",
+    "first_appearance": "SoL: Stage 26-4"
+  },
+  {
+    "id": 208,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Calamary",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Calamary",
+    "first_appearance": "ItF: Stage 3-12"
+  },
+  {
+    "id": 209,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Alpacky",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Alpacky",
+    "first_appearance": "ItF: Stage 3-16"
+  },
+  {
+    "id": 210,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Elder Sloth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Elder_Sloth",
+    "first_appearance": "ItF: Stage 3-34"
+  },
+  {
+    "id": 211,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Bun Bun Symbiote",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bun_Bun_Symbiote",
+    "first_appearance": "ItF: Stage 3-24"
+  },
+  {
+    "id": 212,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Raging Bahamut Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Raging_Bahamut_Cat",
+    "first_appearance": "ItF: Stage 3-48"
+  },
+  {
+    "id": 213,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Christmas D.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Christmas_D.",
+    "first_appearance": "Annually: Jolly St. Nick"
+  },
+  {
+    "id": 214,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Castle Guard",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Castle_Guard",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 215,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Castle Horseman",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Castle_Horseman",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 216,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ashura",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ashura_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 217,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Battle Balloon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Battle_Balloon_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 218,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Dragon Rider",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dragon_Rider_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 219,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Pretty Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pretty_Cat_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 220,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cyclops",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cyclops_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 221,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Golem",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Golem_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 222,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Wise Swordsman",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wise_Swordsman",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 223,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Black Thunder Rider",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Thunder_Rider",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 224,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kabuki Ashura",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kabuki_Ashura",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 225,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Battle UFO",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Battle_UFO",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 226,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Flame Dragon Rider",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Flame_Dragon_Rider_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 227,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cyber Pretty Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cyber_Pretty_Cat_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 228,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "4D Cyclops",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/4D_Cyclops",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 229,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Volcano Golem",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Volcano_Golem_(Enemy)",
+    "first_appearance": "Collab: Castle & Dragon (JP)"
+  },
+  {
+    "id": 230,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Prisoner Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Prisoner_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Adult Cat Awakes!"
+  },
+  {
+    "id": 231,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gentleman Bros.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gentleman_Bros._(Enemy)",
+    "first_appearance": "Awakened Stage: Evil Cat Awakes!"
+  },
+  {
+    "id": 232,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Cruel Angel Clionel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cruel_Angel_Clionel",
+    "first_appearance": "Advent Stage: Clionel Ascendant"
+  },
+  {
+    "id": 233,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Nyalladin",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nyalladin_(Enemy)",
+    "first_appearance": "Awakened Stage: Doll Cats Awake!"
+  },
+  {
+    "id": 234,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Wrestling Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wrestling_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Maiden Awakes!"
+  },
+  {
+    "id": 235,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mr. Mole",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mr._Mole",
+    "first_appearance": "SoL: Stage 27-8"
+  },
+  {
+    "id": 236,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "The Perfect Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Perfect_Cyclone",
+    "first_appearance": "Cyclone Stage: Red Sky at Morning"
+  },
+  {
+    "id": 237,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nyamusu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nyamusu_(Enemy)",
+    "first_appearance": "Collab: Nyan Puzzle & Nebaaru-kun (JP)"
+  },
+  {
+    "id": 238,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Pochi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pochi_(Enemy)",
+    "first_appearance": "Collab: Nyan Puzzle & Nebaaru-kun (JP)"
+  },
+  {
+    "id": 239,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kuromi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kuromi_(Enemy)",
+    "first_appearance": "Collab: Nyan Puzzle & Nebaaru-kun (JP)"
+  },
+  {
+    "id": 240,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Setsuko",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Setsuko_(Enemy)",
+    "first_appearance": "Collab: Nyan Puzzle & Nebaaru-kun (JP)"
+  },
+  {
+    "id": 241,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nebaaru-kun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nebaaru-kun_(Enemy)",
+    "first_appearance": "Collab: Nyan Puzzle & Nebaaru-kun (JP)"
+  },
+  {
+    "id": 242,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Mohawk Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Mohawk_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Cat Maniac"
+  },
+  {
+    "id": 243,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Eraser Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Eraser_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Tank Maniac"
+  },
+  {
+    "id": 244,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Dark Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Dark_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Axe Maniac"
+  },
+  {
+    "id": 245,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Macho Legs",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Macho_Legs_(Enemy)",
+    "first_appearance": "Maniac Stage: Gross Maniac"
+  },
+  {
+    "id": 246,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Lion Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Lion_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Cow Maniac"
+  },
+  {
+    "id": 247,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Manic Flying Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Flying_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Bird Maniac"
+  },
+  {
+    "id": 248,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Island Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Island_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Fish Maniac"
+  },
+  {
+    "id": 249,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic King Dragon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_King_Dragon_(Enemy)",
+    "first_appearance": "Maniac Stage: Lizard Maniac"
+  },
+  {
+    "id": 250,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Manic Jamiera Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Manic_Jamiera_Cat_(Enemy)",
+    "first_appearance": "Maniac Stage: Titan Maniac"
+  },
+  {
+    "id": 251,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Kiss and Koi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kiss_and_Koi_(Enemy)",
+    "first_appearance": "Awakened Stage: Koi Awakens!"
+  },
+  {
+    "id": 252,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Madam the Savannah",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Madam_the_Savannah_(Enemy)",
+    "first_appearance": "Awakened Stage: Bride Awakens!"
+  },
+  {
+    "id": 253,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Call Center Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Call_Center_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Vacation Awakes!"
+  },
+  {
+    "id": 254,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Mr. Angel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mr._Angel",
+    "first_appearance": "SoL: Stage 29-1"
+  },
+  {
+    "id": 255,
+    "traits": [
+      "Red",
+      "Black"
+    ],
+    "enemy_name": "Two Can",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Two_Can",
+    "first_appearance": "SoL: Stage 29-5"
+  },
+  {
+    "id": 256,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Tackey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Tackey",
+    "first_appearance": "SoL: Stage 29-4"
+  },
+  {
+    "id": 257,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "King Wahwah",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/King_Wahwah",
+    "first_appearance": "Advent Stage: King Wahwah's Revenge"
+  },
+  {
+    "id": 258,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Codename \"Red Riding\"",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Codename_%22Red_Riding%22",
+    "first_appearance": "SoL: Stage 28-6"
+  },
+  {
+    "id": 259,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Takuya and Lovely Yuki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Takuya_and_Lovely_Yuki_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 260,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kite Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kite_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Vengeance Awakes!"
+  },
+  {
+    "id": 261,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Boraphim",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Boraphim",
+    "first_appearance": "SoL: Stage 30-6"
+  },
+  {
+    "id": 262,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ritual Drum Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ritual_Drum_Doge",
+    "first_appearance": "Annually: Summer Break Cats"
+  },
+  {
+    "id": 263,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Festive Otter",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Festive_Otter",
+    "first_appearance": "Annually: Summer Break Cats"
+  },
+  {
+    "id": 264,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Funghi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Funghi_(Enemy)",
+    "first_appearance": "Collab: NEO Mushroom Garden"
+  },
+  {
+    "id": 265,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Iron Claw X",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Iron_Claw_X_(Enemy)",
+    "first_appearance": "Awakened Stage: Kung-Fu X Awakens!"
+  },
+  {
+    "id": 266,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Henry",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Henry",
+    "first_appearance": "SoL: Stage 31-6"
+  },
+  {
+    "id": 267,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Hannya",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hannya",
+    "first_appearance": "Advent Stage: River Styx"
+  },
+  {
+    "id": 268,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Package Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Package_Doge_(Event_Enemy)",
+    "first_appearance": "Event Stage: Mystery Package"
+  },
+  {
+    "id": 269,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Futenyan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Futenyan_(Enemy)",
+    "first_appearance": "Collab: Y! Mobile (JP)"
+  },
+  {
+    "id": 270,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rampage Cats",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rampage_Cats_(Enemy)",
+    "first_appearance": "Awakened Stage: Sports Day Awakens!"
+  },
+  {
+    "id": 271,
+    "traits": [
+      "Alien",
+      "Floating"
+    ],
+    "enemy_name": "Queen B",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Queen_B",
+    "first_appearance": "Advent Stage: Queen's Coronation"
+  },
+  {
+    "id": 272,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Li'l Bun Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Bun_Bun",
+    "first_appearance": "SoL: Stage 32-6"
+  },
+  {
+    "id": 273,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Gertrud",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gertrud_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 274,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Charlotte (Snake Form)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Charlotte_(Snake)_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 275,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Charlotte (Doll Form)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Charlotte_(Doll)_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 276,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Kirsten",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kirsten_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 277,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Walpurgisnacht",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Walpurgisnacht_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 278,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kyubey (form 1)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kyubey_(form_1)_(Enemy)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 279,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ritual Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ritual_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Salaryman Awakes!"
+  },
+  {
+    "id": 280,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Razorback",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Razorback",
+    "first_appearance": "SoL: Stage 33-6"
+  },
+  {
+    "id": 281,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Festival Sign Girl",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Festival_Sign_Girl",
+    "first_appearance": "Annually: A Cultured Festival"
+  },
+  {
+    "id": 282,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Vendor El",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Vendor_El",
+    "first_appearance": "Annually: A Cultured Festival"
+  },
+  {
+    "id": 283,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Scarecrow_(Enemy_Base)",
+    "first_appearance": "Catclaw Dojo"
+  },
+  {
+    "id": 284,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zoge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zoge",
+    "first_appearance": "Zombie Outbreaks ; SoL: Stage 34-1"
+  },
+  {
+    "id": 285,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Znache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Znache",
+    "first_appearance": "Zombie Outbreaks ; SoL: Stage 34-2"
+  },
+  {
+    "id": 286,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zomboe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zomboe",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-4"
+  },
+  {
+    "id": 287,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zigge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zigge",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-4"
+  },
+  {
+    "id": 288,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zackie Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zackie_Peng",
+    "first_appearance": "Zombie Outbreaks ; SoL: Stage 34-2"
+  },
+  {
+    "id": 289,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zory",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-6"
+  },
+  {
+    "id": 290,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zir Zeal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zir_Zeal",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-4"
+  },
+  {
+    "id": 291,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zang Roo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zang_Roo",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-6"
+  },
+  {
+    "id": 292,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zroco",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zroco",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-4"
+  },
+  {
+    "id": 293,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Lord Gravey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lord_Gravey",
+    "first_appearance": "Zombie Outbreaks ; Stage 34-6"
+  },
+  {
+    "id": 294,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zyclone",
+    "first_appearance": "Cyclone Stage: The Rolling Dead"
+  },
+  {
+    "id": 295,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Xmas Pudding Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Xmas_Pudding_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Reindeer Fish Awakens!"
+  },
+  {
+    "id": 296,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Mega Cat EX",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mega_Cat_EX_(Enemy)",
+    "first_appearance": "Collab: Cabaret Cat Awakens!"
+  },
+  {
+    "id": 297,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "4th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/4th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 4th Anniversary (JP)"
+  },
+  {
+    "id": 298,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Niconico TV",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Niconico_TV_(Enemy_Base)",
+    "first_appearance": "Dojo Mode: Collab: Final Boss Advent!? (JP)"
+  },
+  {
+    "id": 299,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "W (form 1)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/W_(form_1)_(Enemy)",
+    "first_appearance": "Dojo Mode: Collab: Final Boss Advent!? (JP)"
+  },
+  {
+    "id": 300,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "W (form 2)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/W_(form_2)_(Enemy)",
+    "first_appearance": "Dojo Mode: Collab: Final Boss Advent!? (JP)"
+  },
+  {
+    "id": 301,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "W (form 3)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/W_(form_3)_(Enemy)",
+    "first_appearance": "Dojo Mode: Collab: Final Boss Advent!? (JP)"
+  },
+  {
+    "id": 302,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Neko Hakase",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Neko_Hakase_(Enemy)",
+    "first_appearance": "Collab: Cat Busters (JP)"
+  },
+  {
+    "id": 303,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Miss Haka",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Miss_Haka",
+    "first_appearance": "Zombie Outbreaks ; SoL: Stage 36-6"
+  },
+  {
+    "id": 304,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Big Sal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Big_Sal",
+    "first_appearance": "SoL: Stage 35-6"
+  },
+  {
+    "id": 305,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Pikotaro",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pikotaro_(Enemy)",
+    "first_appearance": "Collab: Pikotaro"
+  },
+  {
+    "id": 306,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Le'mammoth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27mammoth",
+    "first_appearance": "Annually: Cats in the Snow"
+  },
+  {
+    "id": 307,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ice Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ice_Doge",
+    "first_appearance": "Annually: Cats in the Snow"
+  },
+  {
+    "id": 308,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Snowball",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Snowball",
+    "first_appearance": "Annually: Cats in the Snow"
+  },
+  {
+    "id": 309,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Coffin Zoge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Coffin_Zoge",
+    "first_appearance": "SoL: Stage 36-1"
+  },
+  {
+    "id": 310,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zamelle",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zamelle",
+    "first_appearance": "SoL: Stage 36-4"
+  },
+  {
+    "id": 311,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Killer Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Killer_Cat_(Enemy)",
+    "first_appearance": "Annually: Day of the Cat"
+  },
+  {
+    "id": 312,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Corrupted Cat Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Corrupted_Cat_Base_(Enemy_Base)",
+    "first_appearance": "Annually: Day of the Cat"
+  },
+  {
+    "id": 313,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Hiroshi Mihara",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hiroshi_Mihara_(Enemy)",
+    "first_appearance": "Collab: 西門町詩涼子攝影棚 (TW)"
+  },
+  {
+    "id": 314,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Nazousagi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nazousagi_(Enemy)",
+    "first_appearance": "Collab: Nazousagi (JP)"
+  },
+  {
+    "id": 315,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Doge Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doge_Base_(Enemy_Base)",
+    "first_appearance": "SoL: Stage 37-6"
+  },
+  {
+    "id": 316,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Inumusha",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Inumusha",
+    "first_appearance": "SoL: Stage 37-6"
+  },
+  {
+    "id": 317,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Daboo of the Dead",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Daboo_of_the_Dead",
+    "first_appearance": "Advent Stage: Dead on Debut"
+  },
+  {
+    "id": 318,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dolphina",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dolphina",
+    "first_appearance": "SoL: Stage 38-6"
+  },
+  {
+    "id": 319,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mobius",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mobius_(Enemy)",
+    "first_appearance": "Collab: Crash Fever"
+  },
+  {
+    "id": 320,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Belial",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Belial_(Enemy)",
+    "first_appearance": "Collab: Crash Fever"
+  },
+  {
+    "id": 321,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Happy 100",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Happy_100_(Enemy)",
+    "first_appearance": "Collab: Crash Fever"
+  },
+  {
+    "id": 322,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Mohawk Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Mohawk_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Cat Awakens!"
+  },
+  {
+    "id": 323,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Eraser Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Eraser_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Tank Awakens!"
+  },
+  {
+    "id": 324,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Dark Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Dark_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Axe Awakens!"
+  },
+  {
+    "id": 325,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Macho Legs Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Macho_Legs_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Gross Awakens!"
+  },
+  {
+    "id": 326,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Lion Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Lion_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Cow Awakens!"
+  },
+  {
+    "id": 327,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Li'l Flying Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Flying_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Bird Awakens!"
+  },
+  {
+    "id": 328,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Island Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Island_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Fish Awakens!"
+  },
+  {
+    "id": 329,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l King Dragon Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_King_Dragon_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Lizard Awakens!"
+  },
+  {
+    "id": 330,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Jamiera Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Jamiera_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Li'l Titan Awakens!"
+  },
+  {
+    "id": 331,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Easter Duche",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Easter_Duche",
+    "first_appearance": "Annually: Spring Sprang Sprung"
+  },
+  {
+    "id": 332,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Easter B.B.Bunny",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Easter_B.B.Bunny",
+    "first_appearance": "Annually: Spring Sprang Sprung"
+  },
+  {
+    "id": 333,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Moai Statue",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Moai_Statue_(Enemy_Base)",
+    "first_appearance": "Annually: Spring Sprang Sprung"
+  },
+  {
+    "id": 334,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bridal Princess Punt",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bridal_Princess_Punt_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 335,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Oversleeping Beauty Punt",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Oversleeping_Beauty_Punt_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 336,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Golden Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Golden_Doge",
+    "first_appearance": "Annually: The Midas Touch"
+  },
+  {
+    "id": 337,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gold Hippoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gold_Hippoe",
+    "first_appearance": "Annually: The Midas Touch"
+  },
+  {
+    "id": 338,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Pure Gold R.Ost",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pure_Gold_R.Ost",
+    "first_appearance": "Annually: The Midas Touch"
+  },
+  {
+    "id": 339,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Lost World Yuki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lost_World_Yuki_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 340,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Cala Maria",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cala_Maria",
+    "first_appearance": "SoL: Stage 39-1"
+  },
+  {
+    "id": 341,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Red Slug",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Red_Slug",
+    "first_appearance": "Annually: Sliming to Victory"
+  },
+  {
+    "id": 342,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Black Slug",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Slug",
+    "first_appearance": "Annually: Sliming to Victory"
+  },
+  {
+    "id": 343,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Angelic Slug",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Angelic_Slug",
+    "first_appearance": "Annually: Sliming to Victory"
+  },
+  {
+    "id": 344,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cat Kart P",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cat_Kart_P_(Enemy)",
+    "first_appearance": "Awakened Stage: Cat Kart Awakens!"
+  },
+  {
+    "id": 345,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nekondo SP",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nekondo_SP_(Enemy)",
+    "first_appearance": "Awakened Stage: Nekondo Awakens! (KR)"
+  },
+  {
+    "id": 346,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Merc & Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Merc_%26_Cat",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 347,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Titi Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Titi_Cat",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 348,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Orthos",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Orthos_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 349,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Michelia",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Michelia_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 350,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Todomeki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Todomeki_(Enemy)",
+    "first_appearance": "Collab: Merc Storia"
+  },
+  {
+    "id": 351,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gudetama Plate",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gudetama_Plate_(Enemy)",
+    "first_appearance": "Collab: Gudetama (JP)"
+  },
+  {
+    "id": 352,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gudegude à la mode",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gudegude_%C3%A0_la_mode_(Enemy)",
+    "first_appearance": "Collab: Gudetama (JP)"
+  },
+  {
+    "id": 353,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nisetama Army",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nisetama_Army_(Enemy)",
+    "first_appearance": "Collab: Gudetama (JP)"
+  },
+  {
+    "id": 354,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hermit Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hermit_Cat_(Enemy)",
+    "first_appearance": "Heavenly Tower: Floor 30"
+  },
+  {
+    "id": 355,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Croakley",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Croakley",
+    "first_appearance": "SoL: Stage 41-6"
+  },
+  {
+    "id": 356,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gary Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gary_Gory",
+    "first_appearance": "Annually: Summer Lesson"
+  },
+  {
+    "id": 357,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Value Meal Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Value_Meal_Cat_(Enemy)",
+    "first_appearance": "Awakened Stage: Catburger Awakens!"
+  },
+  {
+    "id": 358,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Metal Snache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metal_Snache",
+    "first_appearance": "Annually: Silver Week"
+  },
+  {
+    "id": 359,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "THE METAL SLOTH",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/THE_METAL_SLOTH",
+    "first_appearance": "Annually: Silver Week"
+  },
+  {
+    "id": 360,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Shibalien Elite",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shibalien_Elite",
+    "first_appearance": "CotC: Stage 1-1"
+  },
+  {
+    "id": 361,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Star Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Star_Peng",
+    "first_appearance": "CotC: Stage 1-5"
+  },
+  {
+    "id": 362,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "General GreGory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/General_GreGory",
+    "first_appearance": "CotC: Stage 1-9"
+  },
+  {
+    "id": 363,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Le'Solar",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27Solar",
+    "first_appearance": "CotC: Stage 1-13"
+  },
+  {
+    "id": 364,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Project A",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Project_A",
+    "first_appearance": "CotC: Stage 1-18"
+  },
+  {
+    "id": 365,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Corporal Weyland",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Corporal_Weyland",
+    "first_appearance": "CotC: Stage 1-23"
+  },
+  {
+    "id": 366,
+    "traits": [
+      "Alien (Star)",
+      "Floating"
+    ],
+    "enemy_name": "Spacefish Jones",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Spacefish_Jones",
+    "first_appearance": "CotC: Stage 1-30"
+  },
+  {
+    "id": 367,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "The Cat God",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Cat_God",
+    "first_appearance": "CotC: Stage 1-48"
+  },
+  {
+    "id": 368,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Saber",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Saber_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 369,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Lancer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lancer_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 370,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Archer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Archer_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 371,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rider",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rider_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 372,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gilgamesh",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gilgamesh_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 373,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rin Tohsaka",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rin_Tohsaka_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 374,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Illyasviel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Illyasviel_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 375,
+    "traits": [
+      "Angel",
+      "Alien (Star)"
+    ],
+    "enemy_name": "Youcan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Youcan",
+    "first_appearance": "SoL: Stage 43-6"
+  },
+  {
+    "id": 376,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "5th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/5th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": ""
+  },
+  {
+    "id": 377,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Super Cosmic Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Super_Cosmic_Cyclone",
+    "first_appearance": "Cyclone Stage: The 2nd Dimension"
+  },
+  {
+    "id": 378,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "5th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/5th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "5th Anniversary Dojo Stage"
+  },
+  {
+    "id": 379,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Winged Pigge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Winged_Pigge",
+    "first_appearance": "SoL: Stage 44-6"
+  },
+  {
+    "id": 380,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mystic Mask Yulala",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mystic_Mask_Yulala",
+    "first_appearance": "Heavenly Tower: Floor 40"
+  },
+  {
+    "id": 381,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Karin Nekozuka",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Karin_Nekozuka_(Enemy)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 382,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Misaki Konno",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Misaki_Konno_(Enemy)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 383,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sairi Nijitani",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sairi_Nijitani_(Enemy)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 384,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ren Katagiri",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ren_Katagiri_(Enemy)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 385,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hater",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hater_(Enemy)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 386,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Prof. Wild Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Prof._Wild_Base_(Enemy_Base)",
+    "first_appearance": "Collab: Power Pro Baseball"
+  },
+  {
+    "id": 387,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Hackey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hackey",
+    "first_appearance": "SoL: Stage 45-6"
+  },
+  {
+    "id": 388,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "UltraBaaBaa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/UltraBaaBaa",
+    "first_appearance": "SoL: Stage 46-3 ; CotC: Stage 2-1"
+  },
+  {
+    "id": 389,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Pigge Victorious",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pigge_Victorious",
+    "first_appearance": "Annually: Go Go Graduates!"
+  },
+  {
+    "id": 390,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bang-Bang",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bang-Bang",
+    "first_appearance": "Annually: Go Go Graduates!"
+  },
+  {
+    "id": 391,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mentori",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mentori_(Enemy)",
+    "first_appearance": "Collab: Mentori"
+  },
+  {
+    "id": 392,
+    "traits": [
+      "Eva Angel"
+    ],
+    "enemy_name": "Sachiel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sachiel_(Eva_Angel)",
+    "first_appearance": "Collab: Evangelion"
+  },
+  {
+    "id": 393,
+    "traits": [
+      "Eva Angel"
+    ],
+    "enemy_name": "Ramiel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ramiel_(Eva_Angel)",
+    "first_appearance": "Collab: Evangelion"
+  },
+  {
+    "id": 394,
+    "traits": [
+      "Eva Angel"
+    ],
+    "enemy_name": "Bardiel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bardiel_(Eva_Angel)",
+    "first_appearance": "Collab: Evangelion"
+  },
+  {
+    "id": 395,
+    "traits": [
+      "Eva Angel"
+    ],
+    "enemy_name": "Zeruel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zeruel_(Eva_Angel)",
+    "first_appearance": "Collab: Evangelion"
+  },
+  {
+    "id": 396,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Crazed Moneko",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Moneko_(Enemy)",
+    "first_appearance": "Crazed Stage: Crazed Moneko"
+  },
+  {
+    "id": 397,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Corrupted Moneko",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Corrupted_Moneko_(Enemy)",
+    "first_appearance": "Crazed Stage: Crazed Moneko"
+  },
+  {
+    "id": 398,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Glowstick Guys",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Glowstick_Guys",
+    "first_appearance": "Crazed Stage: Crazed Moneko"
+  },
+  {
+    "id": 399,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Pokota",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pokota_(Enemy)",
+    "first_appearance": "Collab: LINE Pokopang!"
+  },
+  {
+    "id": 400,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ovis",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ovis_(Enemy)",
+    "first_appearance": "Collab: LINE Pokopang!"
+  },
+  {
+    "id": 401,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Coco",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Coco_(Enemy)",
+    "first_appearance": "Collab: Poko LINE Pokopang!"
+  },
+  {
+    "id": 402,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Moe Uzumasa & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Moe_Uzumasa_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: Get On! Kyoto City Subway (JP)"
+  },
+  {
+    "id": 403,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Saki Matsuga & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Saki_Matsuga_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: Get On! Kyoto City Subway (JP)"
+  },
+  {
+    "id": 404,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Misa Ono & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Misa_Ono_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: Get On! Kyoto City Subway (JP)"
+  },
+  {
+    "id": 405,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mecha-Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mecha-Bun_(Enemy)",
+    "first_appearance": "SoL: Stage 49-1"
+  },
+  {
+    "id": 406,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Relic Bun-Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Relic_Bun-Bun",
+    "first_appearance": "UL: Stage 1-1"
+  },
+  {
+    "id": 407,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Relic Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Relic_Doge",
+    "first_appearance": "UL: Stage 1-1"
+  },
+  {
+    "id": 408,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Crazed Yuki",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crazed_Yuki_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 409,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gude-Doge Machine",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gude-Doge_Machine_(Enemy)",
+    "first_appearance": "Collab: Gudetama (JP)"
+  },
+  {
+    "id": 410,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gudebene Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gudebene_Cat_(Enemy)",
+    "first_appearance": "Collab: Gudetama (JP)"
+  },
+  {
+    "id": 411,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Gorilliam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gorilliam",
+    "first_appearance": "Monthly: Forbidden Bride Pt II"
+  },
+  {
+    "id": 412,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Sir Rel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sir_Rel",
+    "first_appearance": "UL: Stage 3-6"
+  },
+  {
+    "id": 413,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Oldhorn",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Oldhorn",
+    "first_appearance": "UL: Stage 2-3"
+  },
+  {
+    "id": 414,
+    "traits": [
+      "Relic",
+      "Floating"
+    ],
+    "enemy_name": "Othom",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Othom",
+    "first_appearance": "UL: Stage 4-6"
+  },
+  {
+    "id": 415,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Betakkuma",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Betakkuma_(Enemy)",
+    "first_appearance": "Collab: Betakkuma"
+  },
+  {
+    "id": 416,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Selena",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Selena",
+    "first_appearance": "Monthly: Never Not Summer!"
+  },
+  {
+    "id": 417,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Kid Tappa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kid_Tappa",
+    "first_appearance": "CotC: Stage 2-10"
+  },
+  {
+    "id": 418,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Ribbo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ribbo",
+    "first_appearance": "CotC: Stage 2-8"
+  },
+  {
+    "id": 419,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cat God",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cat_God",
+    "first_appearance": "CotC: Stage 2-48"
+  },
+  {
+    "id": 420,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Loris",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Loris",
+    "first_appearance": "UL: Stage 5-6"
+  },
+  {
+    "id": 421,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Heavenly Le'saint",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Heavenly_Le%27saint",
+    "first_appearance": "Monthly: Ghostly Strangers"
+  },
+  {
+    "id": 422,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "The Red Malice",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Red_Malice",
+    "first_appearance": "Monthly: Old Guys in the City"
+  },
+  {
+    "id": 423,
+    "traits": [
+      "Relic",
+      "Floating"
+    ],
+    "enemy_name": "Lowkey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lowkey",
+    "first_appearance": "UL: Stage 6-6"
+  },
+  {
+    "id": 424,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "M. Ost",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/M._Ost",
+    "first_appearance": "UL: Stage 7-6"
+  },
+  {
+    "id": 425,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Dead Donny Dash",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dead_Donny_Dash",
+    "first_appearance": "Monthly: Sports Night"
+  },
+  {
+    "id": 426,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "CTO Seal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/CTO_Seal",
+    "first_appearance": "Monthly: Worker's Revolution"
+  },
+  {
+    "id": 427,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Cadaver Bear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cadaver_Bear",
+    "first_appearance": "Zombie Outbreaks ; UL: Stage 8-1"
+  },
+  {
+    "id": 428,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Dread Bore",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dread_Bore",
+    "first_appearance": "Zombie Outbreaks ; UL: Stage 8-5"
+  },
+  {
+    "id": 429,
+    "traits": [
+      "Witch"
+    ],
+    "enemy_name": "Homulilly",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Homulilly_(Witch)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 430,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Satan Claus",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Satan_Claus",
+    "first_appearance": "Monthly: Christmas in Space"
+  },
+  {
+    "id": 431,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Bakoo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bakoo",
+    "first_appearance": "Advent Stage: Deeply Dreaming"
+  },
+  {
+    "id": 432,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hikakin",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hikakin_(Enemy)",
+    "first_appearance": "Collab: Hikakin (JP)"
+  },
+  {
+    "id": 433,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mukyakin",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mukyakin_(Enemy)",
+    "first_appearance": "Collab: Hikakin (JP)"
+  },
+  {
+    "id": 434,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Sister Lione",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sister_Lione",
+    "first_appearance": "Monthly: Another New Year"
+  },
+  {
+    "id": 435,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "6th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/6th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 6th Anniversary"
+  },
+  {
+    "id": 436,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "6th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/6th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "6th Anniversary Dojo Stage"
+  },
+  {
+    "id": 437,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Lucky Dags",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lucky_Dags",
+    "first_appearance": "Ritual Confusion"
+  },
+  {
+    "id": 438,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Primeval Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Primeval_Cyclone",
+    "first_appearance": "Cyclone Stage: Typhoon Nemo"
+  },
+  {
+    "id": 439,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Li'l Bore",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Bore",
+    "first_appearance": "Celebration: You Nears!"
+  },
+  {
+    "id": 440,
+    "traits": [
+      "Red",
+      "Black",
+      "Angel",
+      "Alien",
+      "Zombie",
+      "Floating"
+    ],
+    "enemy_name": "Bears Be Back",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bears_Be_Back",
+    "first_appearance": "Monthly: Bears Be Back"
+  },
+  {
+    "id": 441,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Saber Alter",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Saber_Alter_(Enemy)",
+    "first_appearance": "Collab: Fate/stay night"
+  },
+  {
+    "id": 442,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ms. Madonna",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ms._Madonna",
+    "first_appearance": "Monthly: Spring for Sensei"
+  },
+  {
+    "id": 443,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Mesocosmocyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mesocosmocyclone",
+    "first_appearance": "CotC: Stage 3-1"
+  },
+  {
+    "id": 444,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Gardeneel Bros.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gardeneel_Bros.",
+    "first_appearance": "CotC: Stage 3-13"
+  },
+  {
+    "id": 445,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Axoloty",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Axoloty",
+    "first_appearance": "CotC: Stage 3-23"
+  },
+  {
+    "id": 446,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Final Boss Giga-God",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Final_Boss_Giga-God",
+    "first_appearance": "CotC: Stage 3-48"
+  },
+  {
+    "id": 447,
+    "traits": [
+      "Alien (Star)",
+      "Floating"
+    ],
+    "enemy_name": "Filibuster Obstructa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Filibuster_Obstructa",
+    "first_appearance": "CotC: Filibuster Invasion"
+  },
+  {
+    "id": 448,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Idol Mihara & Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Idol_Mihara_%26_Cat_(Enemy)",
+    "first_appearance": "Collab: 開眼三原慧悟來襲！ (TW)"
+  },
+  {
+    "id": 449,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Haterbaa 2.0",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Haterbaa_2.0",
+    "first_appearance": "Monthly: Lovesick Again"
+  },
+  {
+    "id": 450,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Dogumaru",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dogumaru_(Enemy)",
+    "first_appearance": "UL: Stage 12-6"
+  },
+  {
+    "id": 451,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Maji Cat & Cat Tour Group",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Maji_Cat_%26_Cat_Tour_Group_(Enemy)",
+    "first_appearance": "Collab: 和麻吉貓一起實島訊肌走 (TW)"
+  },
+  {
+    "id": 452,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Super Devil",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Super_Devil_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 453,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Satanmaria",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Satanmaria_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 454,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Wondermaria",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wondermaria_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 455,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Beastly Nero",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Beastly_Nero_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 456,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Head Rococo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Head_Rococo_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 457,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Gummy Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gummy_Cat_(Enemy)",
+    "first_appearance": "The Gummy Battle Cats"
+  },
+  {
+    "id": 458,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kitarou",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kitarou_(Enemy)",
+    "first_appearance": "Collab: Yuru-i GeGeGe no Kitarou: Youkai Dotabata Daisensou (JP)"
+  },
+  {
+    "id": 459,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Medama-Oyaji",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Medama-Oyaji_(Enemy)",
+    "first_appearance": "Collab: Yuru-i GeGeGe no Kitarou: Youkai Dotabata Daisensou (JP)"
+  },
+  {
+    "id": 460,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Neko-Musume",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Neko-Musume_(Enemy)",
+    "first_appearance": "Collab: Yuru-i GeGeGe no Kitarou: Youkai Dotabata Daisensou (JP)"
+  },
+  {
+    "id": 461,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kano & Souma",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kano_%26_Souma_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 462,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Gekirinchi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gekirinchi_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 463,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Judgement",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Judgement_(Enemy)",
+    "first_appearance": "Collab: Princess Punt (JP)"
+  },
+  {
+    "id": 464,
+    "traits": [
+      "Eva Angel"
+    ],
+    "enemy_name": "Awakened Eva Unit-13",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Awakened_Eva_Unit-13_(Eva_Angel)",
+    "first_appearance": "Collab: Neon Genesis Evangelion"
+  },
+  {
+    "id": 465,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "HAPPI",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/HAPPI_(Enemy)",
+    "first_appearance": "Collab: Kaohsiung Rapid Transit (TW)"
+  },
+  {
+    "id": 466,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "HAPPI & Maji Cat & Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/HAPPI_%26_Maji_Cat_%26_Cat_(Enemy)",
+    "first_appearance": "Collab: Kaohsiung Rapid Transit (TW)"
+  },
+  {
+    "id": 467,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Chocolate Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Chocolate_Cat_(Enemy)",
+    "first_appearance": "Collab: Chocolate (TW)"
+  },
+  {
+    "id": 468,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zuche",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zuche",
+    "first_appearance": "Zombie Outbreaks ; UL: Stage 17-1"
+  },
+  {
+    "id": 469,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "The Thrillerz",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Thrillerz",
+    "first_appearance": "Zombie Outbreaks ; UL: Stage 17-3"
+  },
+  {
+    "id": 470,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shakurel Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Doge_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 471,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shakurel Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Gory_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 472,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Shakurel Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Face_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 473,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shakurel Lion",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Lion_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 474,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shakurel Tiger",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Tiger_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 475,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shakurel Panda",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shakurel_Panda_(Enemy)",
+    "first_appearance": "Collab: Shakurel Planet"
+  },
+  {
+    "id": 476,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Dot Hero",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dot_Hero_(Enemy)",
+    "first_appearance": "Collab: Dot Heroes (JP)"
+  },
+  {
+    "id": 477,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Mr. Puffington",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mr._Puffington",
+    "first_appearance": "UL: Stage 17-6"
+  },
+  {
+    "id": 478,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Li'l Cake Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Cake_Doge",
+    "first_appearance": "Celebration: Meow Meow Day"
+  },
+  {
+    "id": 479,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Puffsley's Comet",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Puffsley%27s_Comet",
+    "first_appearance": "Advent Stage: Blue Impact"
+  },
+  {
+    "id": 480,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ryu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ryu_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 481,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Chun-Li",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Chun-Li_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 482,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Guile",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Guile_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 483,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Zangief",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zangief_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 484,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Blanka",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Blanka_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 485,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dhalsim",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dhalsim_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 486,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Ken",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ken_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 487,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Car",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Car_(Enemy_Base)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 488,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Akuma",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Akuma_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 489,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "7th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/7th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 7th Anniversary"
+  },
+  {
+    "id": 490,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "7th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/7th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "7th Anniversary Dojo Stage"
+  },
+  {
+    "id": 491,
+    "traits": [
+      "Red",
+      "Black"
+    ],
+    "enemy_name": "Black Okame",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Okame",
+    "first_appearance": "Advent Stage: Courts of Torment"
+  },
+  {
+    "id": 492,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Heavenly Herald Papuu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Heavenly_Herald_Papuu",
+    "first_appearance": "Advent Stage: Papuu's Paradise"
+  },
+  {
+    "id": 493,
+    "traits": [
+      "Relic",
+      "Floating"
+    ],
+    "enemy_name": "Queen Mother V",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Queen_Mother_V",
+    "first_appearance": "Advent Stage: The Old Queen"
+  },
+  {
+    "id": 494,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rat Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rat_Doge_(Event_Enemy)",
+    "first_appearance": "Celebration: You Nears!"
+  },
+  {
+    "id": 495,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kappy Jr.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kappy_Jr.",
+    "first_appearance": "Advent Stage: Bottom of the Swamp"
+  },
+  {
+    "id": 496,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Urs & Fenrir",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Urs_%26_Fenrir_(Enemy)",
+    "first_appearance": "UL: Stage 21-6"
+  },
+  {
+    "id": 497,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Croconator",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Croconator",
+    "first_appearance": "UL: Stage 21-6"
+  },
+  {
+    "id": 498,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Gobble",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gobble",
+    "first_appearance": "UL: Stage 22-6"
+  },
+  {
+    "id": 499,
+    "traits": [
+      "Red",
+      "Colossus"
+    ],
+    "enemy_name": "Baron Seal",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Baron_Seal",
+    "first_appearance": "Gauntlet: Baron Seal Strikes (Old)"
+  },
+  {
+    "id": 500,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Hatsune Miku",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hatsune_Miku_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 501,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Sakura Miku",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sakura_Miku_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 502,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Kagamine Rin & Len",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kagamine_Rin_%26_Len_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 503,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "MikuDoge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/MikuDoge_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 504,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "MikuGory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/MikuGory_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 505,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "MikuBear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/MikuBear_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 506,
+    "traits": [
+      "Alien (Star)"
+    ],
+    "enemy_name": "Everlord Wanwan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Everlord_Wanwan",
+    "first_appearance": "Advent Stage: Wanwan's Glory"
+  },
+  {
+    "id": 507,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Messier",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Messier_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 508,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Yakisoba U.F.O. Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yakisoba_U.F.O._Cat_(Enemy)",
+    "first_appearance": "Collab: Nissin U.F.O. (JP)"
+  },
+  {
+    "id": 509,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Yakisoba Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yakisoba_Face_(Enemy)",
+    "first_appearance": "Collab: Nissin U.F.O. (JP)"
+  },
+  {
+    "id": 510,
+    "traits": [
+      "Black",
+      "Colossus"
+    ],
+    "enemy_name": "Le'Grim",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27Grim",
+    "first_appearance": "Gauntlet: Le'Grim Strikes (Old)"
+  },
+  {
+    "id": 511,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Death Angel Z-Onel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Death_Angel_Z-Onel",
+    "first_appearance": "Advent Stage: Z-Onel Rises!"
+  },
+  {
+    "id": 512,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Li'l Zyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Zyclone",
+    "first_appearance": "Zombie Outbreaks ; UL: Stage 25-4"
+  },
+  {
+    "id": 513,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "St. Dober",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/St._Dober",
+    "first_appearance": "UL: Stage 24-6"
+  },
+  {
+    "id": 514,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Doremi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doremi",
+    "first_appearance": "Advent Stage: First Errand"
+  },
+  {
+    "id": 515,
+    "traits": [
+      "Floating",
+      "Colossus"
+    ],
+    "enemy_name": "Mega-Mooth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mega-Mooth",
+    "first_appearance": "Gauntlet: Mega Menace (Old)"
+  },
+  {
+    "id": 516,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Master Uril",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Master_Uril_(Enemy)",
+    "first_appearance": "Heavenly Tower: Floor 50"
+  },
+  {
+    "id": 517,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Koronium",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Koronium",
+    "first_appearance": "UL: Stage 25-6"
+  },
+  {
+    "id": 518,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Super Zeus",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Super_Zeus_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 519,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Shaman Khan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shaman_Khan_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 520,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Heracrist",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Heracrist_(Enemy)",
+    "first_appearance": "Collab: Bikkuriman (JP)"
+  },
+  {
+    "id": 521,
+    "traits": [
+      "Red",
+      "Alien",
+      "Zombie"
+    ],
+    "enemy_name": "Johnnyleon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Johnnyleon",
+    "first_appearance": "UL: Stage 26-3"
+  },
+  {
+    "id": 522,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Relic Doge Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Relic_Doge_Base_(Enemy_Base)",
+    "first_appearance": "UL: Stage 26-6"
+  },
+  {
+    "id": 523,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Happy Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Happy_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 524,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Surge Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Surge_Base_(Enemy_Base)",
+    "first_appearance": "UL: Stage 27-6"
+  },
+  {
+    "id": 525,
+    "traits": [
+      "Alien",
+      "Colossus"
+    ],
+    "enemy_name": "Super Hyppoh",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Super_Hyppoh",
+    "first_appearance": "Gauntlet: Horrorpotamus"
+  },
+  {
+    "id": 526,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Idi:Re",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Idi:Re",
+    "first_appearance": "SoL: Stage 49-1-IN"
+  },
+  {
+    "id": 527,
+    "traits": [
+      "Zombie",
+      "Floating"
+    ],
+    "enemy_name": "Zollow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zollow",
+    "first_appearance": "UL: Stage 29-6"
+  },
+  {
+    "id": 528,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "E. Honda",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/E._Honda_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 529,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Balrog",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Balrog_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 530,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Vega",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Vega_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 531,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sagat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sagat_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 532,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "M. Bison",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/M._Bison_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 533,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "8th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/8th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 8th Anniversary"
+  },
+  {
+    "id": 534,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "8th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/8th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "8th Anniversary Dojo Stage"
+  },
+  {
+    "id": 535,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Evil Emperor Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Evil_Emperor_Cat",
+    "first_appearance": "Advent Stage: Prelude to Ruin"
+  },
+  {
+    "id": 536,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Megurine Luka",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Megurine_Luka_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 537,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cow Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cow_Doge_(Event_Enemy)",
+    "first_appearance": "Gauntlet: A Colossal New Year!"
+  },
+  {
+    "id": 538,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bore Jr.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bore_Jr.",
+    "first_appearance": "UL: Stage 32-6"
+  },
+  {
+    "id": 539,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Chocolate Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Chocolate_Doge",
+    "first_appearance": "Gauntlet: A Colossal Valentine's"
+  },
+  {
+    "id": 540,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Snow Miku 2021",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Snow_Miku_2021_(Enemy)",
+    "first_appearance": "Collab: Hatsune Miku"
+  },
+  {
+    "id": 541,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Raynard",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Raynard",
+    "first_appearance": "UL: Stage 33-6"
+  },
+  {
+    "id": 542,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Ranma Saotome (M)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ranma_Saotome_(M)_(Enemy)",
+    "first_appearance": "Collab: Ranma 1/2"
+  },
+  {
+    "id": 543,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Akane Tendo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Akane_Tendo_(Enemy)",
+    "first_appearance": "Collab: Ranma 1/2"
+  },
+  {
+    "id": 544,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hibiki Ryoga",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hibiki_Ryoga_(Enemy)",
+    "first_appearance": "Collab: Ranma 1/2"
+  },
+  {
+    "id": 545,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shampoo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shampoo_(Enemy)",
+    "first_appearance": "Collab: Ranma 1/2"
+  },
+  {
+    "id": 546,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mousse",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mousse_(Enemy)",
+    "first_appearance": "Collab: Ranma 1/2"
+  },
+  {
+    "id": 547,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Mr. Mer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mr._Mer",
+    "first_appearance": "UL: Stage 34-6"
+  },
+  {
+    "id": 548,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Wafer Cat XL",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wafer_Cat_XL_(Enemy)",
+    "first_appearance": "Wafer Cat Advent"
+  },
+  {
+    "id": 549,
+    "traits": [
+      "Black",
+      "Behemoth"
+    ],
+    "enemy_name": "Ragin' Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ragin%27_Gory",
+    "first_appearance": "UL: Gene Salesmen"
+  },
+  {
+    "id": 550,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Shin Godzilla",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shin_Godzilla_(Enemy)",
+    "first_appearance": "Collab: Godzilla"
+  },
+  {
+    "id": 551,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Elder Flame Doron",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Elder_Flame_Doron",
+    "first_appearance": "UL: Stage 37-6"
+  },
+  {
+    "id": 552,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Aku Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aku_Doge",
+    "first_appearance": "UL: Stage 38-1"
+  },
+  {
+    "id": 553,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Sinner Snache",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sinner_Snache",
+    "first_appearance": "Aku Realms: Stage: 1-2"
+  },
+  {
+    "id": 554,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Cerberus Kids",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cerberus_Kids",
+    "first_appearance": "Arcane Confluence"
+  },
+  {
+    "id": 555,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Condemned Peng",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Condemned_Peng",
+    "first_appearance": "Aku Realms: Stage: 1-7"
+  },
+  {
+    "id": 556,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Aku Gory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aku_Gory",
+    "first_appearance": "Arcane Confluence"
+  },
+  {
+    "id": 557,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Le'Behemoth",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Le%27Behemoth",
+    "first_appearance": "Aku Realms: Stage 1-28"
+  },
+  {
+    "id": 558,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Fallen Bear",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Fallen_Bear",
+    "first_appearance": "Aku Realms: Stage 1-19"
+  },
+  {
+    "id": 559,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Wicked Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wicked_Face",
+    "first_appearance": "Aku Realms: Stage 1-24"
+  },
+  {
+    "id": 560,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Aku Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aku_Cyclone",
+    "first_appearance": "Cyclone Stage: The Great Diablo"
+  },
+  {
+    "id": 561,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Wicked Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wicked_Cat_(Enemy)",
+    "first_appearance": "Wicked Cat"
+  },
+  {
+    "id": 562,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Wicked Tank Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wicked_Tank_Cat_(Enemy)",
+    "first_appearance": "Wicked Tank"
+  },
+  {
+    "id": 563,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Wicked Axe Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wicked_Axe_Cat_(Enemy)",
+    "first_appearance": "Wicked Axe"
+  },
+  {
+    "id": 564,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "564",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/564_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 565,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "565",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/565_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 566,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "566",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/566_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 567,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "567",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/567_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 568,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "568",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/568_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 569,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "569",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/569_(Aku)",
+    "first_appearance": ""
+  },
+  {
+    "id": 570,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Dark Priest Mamon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Priest_Mamon",
+    "first_appearance": "The Aku Realms"
+  },
+  {
+    "id": 571,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "High Priest Mamon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/High_Priest_Mamon",
+    "first_appearance": "The Aku Realms"
+  },
+  {
+    "id": 572,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Lord of Ruin Jagando",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lord_of_Ruin_Jagando",
+    "first_appearance": "The Aku Realms : Mount Aku Invasion"
+  },
+  {
+    "id": 573,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Possessed Empress",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Possessed_Empress",
+    "first_appearance": "Advent Stage: Temptation's Symphony"
+  },
+  {
+    "id": 574,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Aku Altar",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aku_Altar_(Enemy_Base)",
+    "first_appearance": "The Aku Realms ; UL: Imminent Disaster"
+  },
+  {
+    "id": 575,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Inactive Aku Altar",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Inactive_Aku_Altar_(Enemy_Base)",
+    "first_appearance": ""
+  },
+  {
+    "id": 576,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Large White Ball",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Large_White_Ball",
+    "first_appearance": "River City Ball-Rolling"
+  },
+  {
+    "id": 577,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Large Red Ball",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Large_Red_Ball",
+    "first_appearance": "River City Ball-Rolling"
+  },
+  {
+    "id": 578,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Large Iron Ball",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Large_Iron_Ball",
+    "first_appearance": "River City Ball-Rolling"
+  },
+  {
+    "id": 579,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kyubey (form 2)",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kyubey_(form_2)_(Enemy)",
+    "first_appearance": "Collab: Madoka Magica"
+  },
+  {
+    "id": 580,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "White Wind",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/White_Wind",
+    "first_appearance": "Collab: JRA"
+  },
+  {
+    "id": 581,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Red Wind",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Red_Wind",
+    "first_appearance": "Collab: JRA"
+  },
+  {
+    "id": 582,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Black Wind",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Wind",
+    "first_appearance": "Collab: JRA"
+  },
+  {
+    "id": 583,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Medu-san",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Medu-san",
+    "first_appearance": "Empress' Report 4 - Aku Studies 401: Inquiry"
+  },
+  {
+    "id": 584,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Miz Devil",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Miz_Devil",
+    "first_appearance": "UL: Stage 39-1"
+  },
+  {
+    "id": 585,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Sathankhamun VIII",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sathankhamun_VIII",
+    "first_appearance": "Advent Stage: Rashomon"
+  },
+  {
+    "id": 586,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Midnite D.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Midnite_D.",
+    "first_appearance": "Infernal Tower: Floor 29"
+  },
+  {
+    "id": 587,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Ackey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ackey",
+    "first_appearance": "UL: Stage 40-6"
+  },
+  {
+    "id": 588,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Deathkory",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Deathkory",
+    "first_appearance": "Empress' Report 5 - Aku Studies 501: Inquiry"
+  },
+  {
+    "id": 589,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Masked Grandmaster Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Masked_Grandmaster_Cat_(Enemy)",
+    "first_appearance": "Infernal Tower : Floor 30"
+  },
+  {
+    "id": 590,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "9th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/9th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Birthday Present!"
+  },
+  {
+    "id": 591,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "9th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/9th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "Arena of Honor : Feeling Fine at 9"
+  },
+  {
+    "id": 592,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Red EnerG",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Red_EnerG",
+    "first_appearance": "UL: Stage 41-6"
+  },
+  {
+    "id": 593,
+    "traits": [
+      "Angel",
+      "Colossus"
+    ],
+    "enemy_name": "Archangel Exiel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Archangel_Exiel",
+    "first_appearance": "Gauntlet: Divine Archangel Strikes"
+  },
+  {
+    "id": 594,
+    "traits": [
+      "Zombie",
+      "Colossus"
+    ],
+    "enemy_name": "Big Peng Z",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Big_Peng_Z",
+    "first_appearance": "Gauntlet: Big Peng Z Strikes"
+  },
+  {
+    "id": 595,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Tiger Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Tiger_Doge_(Event_Enemy)",
+    "first_appearance": "Gauntlet: A Colossal New Year!"
+  },
+  {
+    "id": 596,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Nana & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Nana_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: Kaohsiung Rapid Transit (JP)"
+  },
+  {
+    "id": 597,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Emilia & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Emilia_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: Kaohsiung Rapid Transit (JP)"
+  },
+  {
+    "id": 598,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Firecracker",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Firecracker",
+    "first_appearance": "Gauntlet: Festival Cats: Lunar New Year's"
+  },
+  {
+    "id": 599,
+    "traits": [
+      "Relic",
+      "Behemoth"
+    ],
+    "enemy_name": "Ultima Beast Naala",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ultima_Beast_Naala",
+    "first_appearance": "UL: Stage 43-6"
+  },
+  {
+    "id": 600,
+    "traits": [
+      "Zombie"
+    ],
+    "enemy_name": "Zapy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zapy",
+    "first_appearance": "Zombie Outbreaks"
+  },
+  {
+    "id": 601,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Secret Crush Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Secret_Crush_Base_(Enemy_Base)",
+    "first_appearance": "Season 3: Field Trip"
+  },
+  {
+    "id": 602,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Confessional Tree",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Confessional_Tree_(Enemy_Base)",
+    "first_appearance": "Weekend: Confession"
+  },
+  {
+    "id": 603,
+    "traits": [
+      "Traitless",
+      "Behemoth"
+    ],
+    "enemy_name": "Wild Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wild_Doge",
+    "first_appearance": "Empress' Excavation 1 - Archaeology 101: Planning"
+  },
+  {
+    "id": 604,
+    "traits": [
+      "Red",
+      "Behemoth"
+    ],
+    "enemy_name": "Casaurian Ahirujo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Casaurian_Ahirujo",
+    "first_appearance": "Hidden Forest of Gapra - Woodlands Area 4"
+  },
+  {
+    "id": 605,
+    "traits": [
+      "Floating",
+      "Behemoth"
+    ],
+    "enemy_name": "Pterowl Hazuku",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Pterowl_Hazuku",
+    "first_appearance": "Jinfore Volcano - Magma Tunnel Area 4"
+  },
+  {
+    "id": 606,
+    "traits": [
+      "Alien",
+      "Behemoth"
+    ],
+    "enemy_name": "Crustaceous Scissorex",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crustaceous_Scissorex",
+    "first_appearance": "Ashvini Desert - Badlands Area 4"
+  },
+  {
+    "id": 607,
+    "traits": [
+      "Red",
+      "Colossus"
+    ],
+    "enemy_name": "J.J. Jackrabbit",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/J.J._Jackrabbit",
+    "first_appearance": "UL: Stage 44-6"
+  },
+  {
+    "id": 608,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Li'l Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Li%27l_Doge",
+    "first_appearance": "UL: Stage 44-4"
+  },
+  {
+    "id": 609,
+    "traits": [
+      "Relic",
+      "Floating"
+    ],
+    "enemy_name": "Golem Sunfish",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Golem_Sunfish",
+    "first_appearance": "UL: Stage 44-6"
+  },
+  {
+    "id": 610,
+    "traits": [
+      "Aku",
+      "Behemoth"
+    ],
+    "enemy_name": "THE FOLIVOREAN",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/THE_FOLIVOREAN",
+    "first_appearance": "Behemoth Culling"
+  },
+  {
+    "id": 611,
+    "traits": [
+      "Black",
+      "Behemoth"
+    ],
+    "enemy_name": "Casaurian Darkjo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Casaurian_Darkjo",
+    "first_appearance": "Behemoth Culling"
+  },
+  {
+    "id": 612,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Haniwanwan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Haniwanwan",
+    "first_appearance": "UL: Stage 45-6"
+  },
+  {
+    "id": 613,
+    "traits": [
+      "Angel",
+      "Behemoth"
+    ],
+    "enemy_name": "Angelic Beast Rajakong",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Angelic_Beast_Rajakong",
+    "first_appearance": "Empress' Excavation 2"
+  },
+  {
+    "id": 614,
+    "traits": [
+      "Zombie",
+      "Behemoth"
+    ],
+    "enemy_name": "Formicidaean Ariant",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Formicidaean_Ariant",
+    "first_appearance": "Jinfore Volcano"
+  },
+  {
+    "id": 615,
+    "traits": [
+      "Angel",
+      "Colossus"
+    ],
+    "enemy_name": "Great Angel Chibinel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Great_Angel_Chibinel",
+    "first_appearance": "UL: Stage 46-6"
+  },
+  {
+    "id": 616,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Spiritual Yulala",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Spiritual_Yulala_(Enemy)",
+    "first_appearance": "Infernal Tower : Floor 40"
+  },
+  {
+    "id": 617,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Osamu Mikumo & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Osamu_Mikumo_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: World Trigger"
+  },
+  {
+    "id": 618,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Yuma Kuga & Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Yuma_Kuga_%26_Doge_(Enemy)",
+    "first_appearance": "Collab: World Trigger"
+  },
+  {
+    "id": 619,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Marmod",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Marmod_(Enemy)",
+    "first_appearance": "Collab: World Trigger"
+  },
+  {
+    "id": 620,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Red Marmod",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Red_Marmod_(Enemy)",
+    "first_appearance": "Collab: World Trigger"
+  },
+  {
+    "id": 621,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Black Marmod",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Black_Marmod_(Enemy)",
+    "first_appearance": "Collab: World Trigger"
+  },
+  {
+    "id": 622,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sakura",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sakura_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 623,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Luke",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Luke_(Enemy)",
+    "first_appearance": "Collab: Street Fighter V"
+  },
+  {
+    "id": 624,
+    "traits": [
+      "Traitless",
+      "Behemoth"
+    ],
+    "enemy_name": "Cumulus Gallus",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cumulus_Gallus",
+    "first_appearance": "Empress' Excavation 3"
+  },
+  {
+    "id": 625,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "10th Anniv. Cake Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/10th_Anniv._Cake_Doge_(Event_Enemy)",
+    "first_appearance": "10 Years of Fun!"
+  },
+  {
+    "id": 626,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "10th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/10th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "Arena of Honor : 10-Year Plan"
+  },
+  {
+    "id": 627,
+    "traits": [
+      "Relic",
+      "Behemoth"
+    ],
+    "enemy_name": "Ancient Magamojoe",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ancient_Magamojoe",
+    "first_appearance": "ZL: Stage 1-1"
+  },
+  {
+    "id": 628,
+    "traits": [
+      "Relic",
+      "Behemoth"
+    ],
+    "enemy_name": "Great Ape Luza",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Great_Ape_Luza",
+    "first_appearance": "UL: Reign of the Ape Lord"
+  },
+  {
+    "id": 629,
+    "traits": [
+      "Relic",
+      "Colossus"
+    ],
+    "enemy_name": "Zero Luza",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Zero_Luza",
+    "first_appearance": "UL: Stage 49-1"
+  },
+  {
+    "id": 630,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Metafilibuster",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Metafilibuster_(Enemy)",
+    "first_appearance": "ZL: Stage 1-1"
+  },
+  {
+    "id": 631,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Rabbit Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Rabbit_Doge_(Event_Enemy)",
+    "first_appearance": "Gauntlet: A Colossal New Year!"
+  },
+  {
+    "id": 632,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Origin Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Origin_Base_(Enemy_Base)",
+    "first_appearance": "UL: Stage 49-1"
+  },
+  {
+    "id": 633,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Killer Tank Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Killer_Tank_Cat_(Enemy)",
+    "first_appearance": "Gauntlet: Horde of Tank Cats"
+  },
+  {
+    "id": 634,
+    "traits": [
+      "Aku",
+      "Behemoth"
+    ],
+    "enemy_name": "Vermilingua Rangmaster",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Vermilingua_Rangmaster",
+    "first_appearance": "Hidden Forest of Gapra - Downpour Jungle Area 12"
+  },
+  {
+    "id": 635,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Easter Egg Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Easter_Egg_Cat_(Enemy)",
+    "first_appearance": "Eggy Cat Awakens!"
+  },
+  {
+    "id": 636,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Devil Wife",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Devil_Wife",
+    "first_appearance": "Gauntlet: Attack of the Omens Continuation Stage"
+  },
+  {
+    "id": 637,
+    "traits": [
+      "Aku",
+      "Colossus"
+    ],
+    "enemy_name": "Omens",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Omens",
+    "first_appearance": "Gauntlet: Attack of the Omens"
+  },
+  {
+    "id": 638,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mini White Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mini_White_Cyclone",
+    "first_appearance": "ZL: Stage 2-6"
+  },
+  {
+    "id": 639,
+    "traits": [
+      "Red",
+      "Behemoth"
+    ],
+    "enemy_name": "Infernal Pegasus Deonil",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Infernal_Pegasus_Deonil",
+    "first_appearance": "Empress' Excavation 4"
+  },
+  {
+    "id": 640,
+    "traits": [
+      "Alien",
+      "Behemoth"
+    ],
+    "enemy_name": "Suidae Piggicus",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Suidae_Piggicus",
+    "first_appearance": "Hidden Forest of Gapra - Downpour Jungle Area 16"
+  },
+  {
+    "id": 641,
+    "traits": [
+      "Traitless",
+      "Behemoth"
+    ],
+    "enemy_name": "Elephantidae Papaou",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Elephantidae_Papaou",
+    "first_appearance": "ZL: Stage 3-6"
+  },
+  {
+    "id": 642,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Infernal Tyrant Nyandam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Infernal_Tyrant_Nyandam",
+    "first_appearance": "Advent Stage: Infernal Tyrant 1 (Deadly)"
+  },
+  {
+    "id": 643,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Grand Mage Mimon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Grand_Mage_Mimon",
+    "first_appearance": "Underground Labyrinth - Stage 113"
+  },
+  {
+    "id": 644,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "644",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/644_(Enemy_Base)",
+    "first_appearance": "N/A"
+  },
+  {
+    "id": 645,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "10th and 1/2 Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/10th_and_1/2_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "Celebration: 10 and 1/2 Years of Fun!!"
+  },
+  {
+    "id": 646,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Redhead Muscled Yuki Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Redhead_Muscled_Yuki_Cat_(Enemy)",
+    "first_appearance": "Collab: Shoumetsu Toshi"
+  },
+  {
+    "id": 647,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Eva Unit-13",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Eva_Unit-13_(Enemy)",
+    "first_appearance": "Collab: Neon Genesis Evangelion Collaboration Event"
+  },
+  {
+    "id": 648,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Clown Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Clown_Base_(Enemy_Base)",
+    "first_appearance": "June Bride of the Devil"
+  },
+  {
+    "id": 649,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Lutrinae Gokurakko",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lutrinae_Gokurakko",
+    "first_appearance": "ZL: Stage 4-1"
+  },
+  {
+    "id": 650,
+    "traits": [
+      "Relic",
+      "Behemoth"
+    ],
+    "enemy_name": "Iguanidae Ibilujon",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Iguanidae_Ibilujon",
+    "first_appearance": "Hunter's Map IV : Purple Crystal Forest"
+  },
+  {
+    "id": 651,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "Finale Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Finale_Base_(Enemy)",
+    "first_appearance": "Collab: Neon Genesis Evangelion Collaboration Event"
+  },
+  {
+    "id": 652,
+    "traits": [
+      "Zombie",
+      "Floating",
+      "Behemoth"
+    ],
+    "enemy_name": "Lophiiformes Angaburu",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Lophiiformes_Angaburu",
+    "first_appearance": "ZL: Stage 5-1"
+  },
+  {
+    "id": 653,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kappy Kawano",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kappy_Kawano",
+    "first_appearance": "Advent Stage: Invasion of the Swamplord"
+  },
+  {
+    "id": 654,
+    "traits": [
+      "Colossus"
+    ],
+    "enemy_name": "Mega Baa Baa",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mega_Baa_Baa",
+    "first_appearance": "ZL: Stage 6-2"
+  },
+  {
+    "id": 655,
+    "traits": [
+      "Black",
+      "Behemoth"
+    ],
+    "enemy_name": "Crocodylidae Kurocroc",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Crocodylidae_Kurocroc",
+    "first_appearance": "Empress' Excavation 5"
+  },
+  {
+    "id": 656,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Hatsune Miku XVI",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hatsune_Miku_XVI_(Enemy)",
+    "first_appearance": "Hatsune Miku Collaboration Event"
+  },
+  {
+    "id": 657,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Relay Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Relay_Base_(Enemy_Base)",
+    "first_appearance": "River City Stages"
+  },
+  {
+    "id": 658,
+    "traits": [
+      "Angel"
+    ],
+    "enemy_name": "Mini Angel Cyclone",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mini_Angel_Cyclone",
+    "first_appearance": "ZL: Stage 7-3"
+  },
+  {
+    "id": 659,
+    "traits": [
+      "Floating",
+      "Behemoth"
+    ],
+    "enemy_name": "Ensanglion the Calamity",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ensanglion_the_Calamity",
+    "first_appearance": "Hidden Forest of Gapra - Stormrent Forest Area: Final"
+  },
+  {
+    "id": 660,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Mohawk Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Mohawk_Cat",
+    "first_appearance": "Century's End"
+  },
+  {
+    "id": 661,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Eraser Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Eraser_Cat",
+    "first_appearance": "Demon Eraser"
+  },
+  {
+    "id": 662,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Dark Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Dark_Cat",
+    "first_appearance": "Hyperberserker"
+  },
+  {
+    "id": 663,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Macho Leg Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Macho_Leg_Cat",
+    "first_appearance": "Devilish Strides"
+  },
+  {
+    "id": 664,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Lion Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Lion_Cat",
+    "first_appearance": "Ruthless Tryant"
+  },
+  {
+    "id": 665,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Flying Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Flying_Cat",
+    "first_appearance": "Apocalypse"
+  },
+  {
+    "id": 666,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Island Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Island_Cat",
+    "first_appearance": "Adrift in Fear"
+  },
+  {
+    "id": 667,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent King Dragon Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_King_Dragon_Cat",
+    "first_appearance": "Spitting Death"
+  },
+  {
+    "id": 668,
+    "traits": [
+      "Aku"
+    ],
+    "enemy_name": "Malevolent Jamiera Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Malevolent_Jamiera_Cat",
+    "first_appearance": "Titanic Rampage"
+  },
+  {
+    "id": 669,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Tsubo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Tsubo_(Enemy_Base)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 670,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Secret Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Secret_Doge_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 671,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "The Doge God",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/The_Doge_God_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 672,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "11th Anniversary Birthday Cake",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/11th_Anniversary_Birthday_Cake_(Event_Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 673,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "11th Anniversary Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/11th_Anniversary_Scarecrow_(Enemy_Base)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 674,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Esoteric Uril",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Esoteric_Uril_(Enemy)",
+    "first_appearance": "Infernal Tower Floor 50"
+  },
+  {
+    "id": 675,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Sol Dae Rokker",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sol_Dae_Rokker_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 676,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Dragon Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dragon_Doge_(Event_Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 677,
+    "traits": [
+      "Floating",
+      "Sage"
+    ],
+    "enemy_name": "Sage of Mind Soractes",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sage_of_Mind_Soractes",
+    "first_appearance": "ZL: Stage 9-6"
+  },
+  {
+    "id": 678,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Killer Axe Cat Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Killer_Axe_Cat_Base_(Enemy_Base)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 679,
+    "traits": [
+      "Traitless",
+      "Sage"
+    ],
+    "enemy_name": "Dogenstein",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dogenstein",
+    "first_appearance": "ZL: Stage 10-1"
+  },
+  {
+    "id": 680,
+    "traits": [
+      "Angel",
+      "Sage"
+    ],
+    "enemy_name": "Tarsiriel",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Tarsiriel",
+    "first_appearance": "ZL: Stage 10-6"
+  },
+  {
+    "id": 681,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Artillery Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Artillery_Scarecrow_(Enemy_Base)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 682,
+    "traits": [
+      "Black",
+      "Sage"
+    ],
+    "enemy_name": "Dark Dober",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Dark_Dober",
+    "first_appearance": "ZL: Stage 11-2"
+  },
+  {
+    "id": 683,
+    "traits": [
+      "Relic",
+      "Colossus"
+    ],
+    "enemy_name": "Gigahaniwan",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Gigahaniwan",
+    "first_appearance": "Gigahaniwan Strikes!"
+  },
+  {
+    "id": 684,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Mysterious Calamity",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mysterious_Calamity",
+    "first_appearance": "?"
+  },
+  {
+    "id": 685,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Possessed Doge God",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Possessed_Doge_God",
+    "first_appearance": "?"
+  },
+  {
+    "id": 686,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Voluptuous Peony - Daji",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Voluptuous_Peony_-_Daji_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 687,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Madhead",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Madhead_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 688,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kenshin Himura",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kenshin_Himura_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 689,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sanosuke Sagara",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sanosuke_Sagara_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 690,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Aoshi Shinomori",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Aoshi_Shinomori_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 691,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Hajime Saito",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Hajime_Saito_(Enemy)",
+    "first_appearance": "?"
+  },
+  {
+    "id": 692,
+    "traits": [
+      "Red",
+      "Sage"
+    ],
+    "enemy_name": "Doctor K.O.",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Doctor_K.O.",
+    "first_appearance": "?"
+  },
+  {
+    "id": 693,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Wave Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Wave_Scarecrow_(Enemy_Base)",
+    "first_appearance": "added v13.5 ; Arena of Honor Extreme"
+  },
+  {
+    "id": 694,
+    "traits": [
+      "Alien (Star)",
+      "Sage"
+    ],
+    "enemy_name": "Techn-Old Hyena",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Techn-Old_Hyena",
+    "first_appearance": "added v13.5 ; ZL-13"
+  },
+  {
+    "id": 695,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Log",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Log_(Enemy)",
+    "first_appearance": "added v13.6 ; Jungle Survival"
+  },
+  {
+    "id": 696,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Boulder",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Boulder_(Enemy)",
+    "first_appearance": "added v13.6 ; Jungle Survival"
+  },
+  {
+    "id": 697,
+    "traits": [
+      "Aku",
+      "Sage"
+    ],
+    "enemy_name": "Diabrollow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Diabrollow",
+    "first_appearance": "added v13.6 ; ZL-14"
+  },
+  {
+    "id": 698,
+    "traits": [
+      "Zombie",
+      "Sage"
+    ],
+    "enemy_name": "Oldstrich",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Oldstrich",
+    "first_appearance": "added v13.7 ; ZL-15"
+  },
+  {
+    "id": 699,
+    "traits": [
+      "Relic",
+      "Sage"
+    ],
+    "enemy_name": "Sage of Life Dr. Nova",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sage_of_Life_Dr._Nova",
+    "first_appearance": "added v13.7 ; UL-49-1-Inv: Revival of Origin Invasion (post-4-crown UL)"
+  },
+  {
+    "id": 700,
+    "traits": [
+      "Relic"
+    ],
+    "enemy_name": "Idi:Ne",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Idi:Ne",
+    "first_appearance": "added v13.7 ; UL-36-6-Inv: The Face of God Invasion (post-1-crown UL)"
+  },
+  {
+    "id": 701,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Cafeteria Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cafeteria_Cat_(Enemy)",
+    "first_appearance": "added v13.7 ; Food Stall Cat Awakens!"
+  },
+  {
+    "id": 702,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Bannerman Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Bannerman_Doge",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 703,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Commander Face",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Commander_Face",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 704,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Commander Nyandam",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Commander_Nyandam",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 705,
+    "traits": [
+      "Red",
+      "Black"
+    ],
+    "enemy_name": "Commander Hannya",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Commander_Hannya",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 706,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Commander Bun Bun",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Commander_Bun_Bun",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 707,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Revolutionary Nobunaga",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Revolutionary_Nobunaga",
+    "first_appearance": "added v14.0 ; Road to Unification"
+  },
+  {
+    "id": 708,
+    "traits": [
+      "Metal"
+    ],
+    "enemy_name": "708",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/708_(Enemy)",
+    "first_appearance": "addd v14.0 ; 12th Anniversary Birthday Present"
+  },
+  {
+    "id": 709,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "709",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/709_(Enemy_Base)",
+    "first_appearance": "added v14.0 ; Arena of Honor"
+  },
+  {
+    "id": 710,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "710",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/710_(Enemy_Base)",
+    "first_appearance": "added v14.0 ; Catclaw Championships"
+  },
+  {
+    "id": 711,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Snache Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Snache_Doge",
+    "first_appearance": "added v14.1 ; A Colossal New Year!"
+  },
+  {
+    "id": 712,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Mystery Snowmound",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mysterious_Snowmound",
+    "first_appearance": "added v14.1 ; Snow Doges"
+  },
+  {
+    "id": 713,
+    "traits": [
+      "Red",
+      "Floating",
+      "Sage"
+    ],
+    "enemy_name": "Prof. Owlbrowley",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Prof._Owlbrowley",
+    "first_appearance": "added v14.1 ; ZL-17"
+  },
+  {
+    "id": 714,
+    "traits": [
+      "Alien",
+      "Behemoth"
+    ],
+    "enemy_name": "Xenobeast Bunaglios",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Xenobeast_Bunaglios",
+    "first_appearance": "added v14.1 ; Great Advent stage: Hunt for the Xenobeast"
+  },
+  {
+    "id": 715,
+    "traits": [
+      "Relic",
+      "Sage"
+    ],
+    "enemy_name": "Shachiko",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shachiko",
+    "first_appearance": "added v14.2 ; ZL-18"
+  },
+  {
+    "id": 716,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Holy Valkyrie Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Holy_Valkyrie_Cat_(Enemy)",
+    "first_appearance": "added v14.2 ; Valkyrie Cat's Trial"
+  },
+  {
+    "id": 717,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Awakened Bahamut Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Awakened_Bahamut_Cat_(Enemy)",
+    "first_appearance": "added v14.2 ; Bahamut Cat's Trial"
+  },
+  {
+    "id": 718,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Choco Capsule",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Choco_Capsule",
+    "first_appearance": "added v14.2 ; ChocoSurp Descents (JP)"
+  },
+  {
+    "id": 719,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Killer Gross Cat",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Killer_Gross_Cat_(Enemy)",
+    "first_appearance": "added v14.2 ; Horde of Cats"
+  },
+  {
+    "id": 720,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "720",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/720_(Enemy_Base)",
+    "first_appearance": "added v14.3 ; Arena of Honor/Extreme"
+  },
+  {
+    "id": 721,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Perry Duche",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Perry_Duche",
+    "first_appearance": "added v14.3 ; SP-1401"
+  },
+  {
+    "id": 722,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Puffzerker",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Puffzerker",
+    "first_appearance": "added v14.3 ; SP-1399; ZL-21;"
+  },
+  {
+    "id": 723,
+    "traits": [
+      "Alien"
+    ],
+    "enemy_name": "Commander Ostromeda",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Commander_Ostromeda",
+    "first_appearance": "added v14.3 ; SP-1400; SP-24071: Summer Break Cats Castaway; ZL-22"
+  },
+  {
+    "id": 724,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Baki Hanma",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Baki_Hanma_(Enemy)",
+    "first_appearance": "added v14.3 ; Baki Hanma collab"
+  },
+  {
+    "id": 725,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Retsu Kaioh",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Retsu_Kaioh_(Enemy)",
+    "first_appearance": "added v14.3 ; Baki Hanma collab"
+  },
+  {
+    "id": 726,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Kaoru Hanayama",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Kaoru_Hanayama_(Enemy)",
+    "first_appearance": "added v14.3 ; Baki Hanma collab"
+  },
+  {
+    "id": 727,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Katsumi Orochi",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Katsumi_Orochi_(Enemy)",
+    "first_appearance": "added v14.3 ; Baki Hanma collab"
+  },
+  {
+    "id": 728,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Jack Hammer",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Jack_Hammer_(Enemy)",
+    "first_appearance": "added v14.3 ; Baki Hanma collab"
+  },
+  {
+    "id": 729,
+    "traits": [
+      "Red",
+      "Sage"
+    ],
+    "enemy_name": "Sage of Logic Newton",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sage_of_Logic_Newton",
+    "first_appearance": "added v14.4 ; ZL-20"
+  },
+  {
+    "id": 730,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Sonic",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Sonic_(Enemy)",
+    "first_appearance": "added v14.4 ; Sonic the Hedgehog collab"
+  },
+  {
+    "id": 731,
+    "traits": [
+      "Floating"
+    ],
+    "enemy_name": "Tails",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Tails_(Enemy)",
+    "first_appearance": "added v14.4 ; Sonic the Hedgehog collab"
+  },
+  {
+    "id": 732,
+    "traits": [
+      "Red"
+    ],
+    "enemy_name": "Knuckles",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Knuckles_(Enemy)",
+    "first_appearance": "added v14.4 ; Sonic the Hedgehog collab"
+  },
+  {
+    "id": 733,
+    "traits": [
+      "Black"
+    ],
+    "enemy_name": "Shadow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Shadow_(Enemy)",
+    "first_appearance": "added v14.4 ; Sonic the Hedgehog collab"
+  },
+  {
+    "id": 734,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "734",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/734_(Enemy_Base)",
+    "first_appearance": "added v14.4 ; Sonic the Hedgehog collab"
+  },
+  {
+    "id": 735,
+    "traits": [
+      "Angel",
+      "Sage"
+    ],
+    "enemy_name": "Ange Lackey",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Ange_Lackey",
+    "first_appearance": "added v14.5 ; ZL-22"
+  },
+  {
+    "id": 736,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "South Seas Doge",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/South_Seas_Doge_(Enemy)",
+    "first_appearance": "added v14.5 ; Island Defenders!"
+  },
+  {
+    "id": 737,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "South Seas Otter",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/South_Seas_Otter_(Enemy)",
+    "first_appearance": "added v14.5 ; Island Defenders!"
+  },
+  {
+    "id": 738,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Parasol Base",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Parasol_Base_(Enemy_Base)",
+    "first_appearance": "added v14.5 ; Unprecedented Forecasts"
+  },
+  {
+    "id": 739,
+    "traits": [
+      "Typeless"
+    ],
+    "enemy_name": "Freeze Scarecrow",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Freeze_Scarecrow_(Enemy_Base)",
+    "first_appearance": "added v14.5 ; Arena of Honor Extreme"
+  },
+  {
+    "id": 740,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "Mass Production EVA",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Mass_Production_EVA_(Enemy)",
+    "first_appearance": "added v14.5 (14.7en); Evangelion collab"
+  },
+  {
+    "id": 741,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Whiskingmeister",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Whiskingmeister",
+    "first_appearance": "added v14.6 ; SP-1408"
+  },
+  {
+    "id": 742,
+    "traits": [
+      "Traitless"
+    ],
+    "enemy_name": "Fireworks Gang",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Fireworks_Gang",
+    "first_appearance": "added v14.6 ; SP-1410"
+  },
+  {
+    "id": 743,
+    "traits": [
+      "Angel",
+      "Colossus"
+    ],
+    "enemy_name": "Jumbo Jones",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Jumbo_Jones",
+    "first_appearance": "added v14.6 ; Great Advent stage: Jumbo Invasion"
+  },
+  {
+    "id": 744,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "Deathshund",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Deathshund",
+    "first_appearance": "added v14.7 ; CotC-3Z & ZL-24"
+  },
+  {
+    "id": 745,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "Darkmadillo",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Darkmadillo",
+    "first_appearance": "added v14.7 ; ZL-24"
+  },
+  {
+    "id": 746,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "746",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/746_(Enemy)",
+    "first_appearance": "added v14.7 ; PONOS Official Store celebration event"
+  },
+  {
+    "id": 748,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "Cammy",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Cammy_(Enemy)",
+    "first_appearance": "added v14.7 ; Street Fighters 6 Collab"
+  },
+  {
+    "id": 749,
+    "traits": [
+      "?"
+    ],
+    "enemy_name": "Juri",
+    "enemy_url": "https://battle-cats.fandom.com/wiki/Juri_(Enemy)",
+    "first_appearance": "added v14.7 ; Street Fighters 6 Collab"
+  }
+]
