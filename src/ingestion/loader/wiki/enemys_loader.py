@@ -7,6 +7,8 @@ from urllib.parse import urljoin
 from typing import List, Dict, Optional
 
 # 設定
+API_URL = "https://battle-cats.fandom.com/api.php"
+TARGET_PAGE = "Enemy_Release_Order"
 ENEMY_RELEASE_ORDER_URL = "https://battle-cats.fandom.com/wiki/Enemy_Release_Order"
 BASE_URL = "https://battle-cats.fandom.com"
 OUTPUT_DIR = "data/processed"
@@ -27,6 +29,37 @@ def fetch_html(url: str) -> str:
     except requests.RequestException as e:
         print(f"❌ Network error: {e}")
         raise
+
+
+def fetch_via_api(page_title):
+    """
+    透過 MediaWiki API 取得頁面的 HTML 內容
+    """
+    params = {
+        "action": "parse",  # 指令：解析頁面
+        "page": page_title,  # 頁面標題
+        "format": "json",  # 回傳格式
+        "prop": "text",  # 我們只要解析後的 HTML 文字
+        "disablepp": 1,  # 關閉一些不必要的預處理
+        "redirects": 1,  # 如果有重定向，自動跟隨
+    }
+
+    # 雖然是 API，還是建議帶上 User-Agent，這是良好的爬蟲禮儀
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Bot/1.0"}
+
+    print(f"📡 Calling API for page: {page_title}...")
+    resp = requests.get(API_URL, params=params, headers=headers, timeout=30)
+    resp.raise_for_status()
+
+    data = resp.json()
+
+    # 檢查是否有錯誤
+    if "error" in data:
+        raise RuntimeError(f"API Error: {data['error']}")
+
+    # 取出解析後的 HTML (在 ['parse']['text']['*'] 裡面)
+    raw_html = data["parse"]["text"]["*"]
+    return raw_html
 
 
 def parse_enemy_table(html: str) -> List[Dict]:
@@ -93,7 +126,8 @@ def save_json(data: List[Dict], filepath: str):
 
 def main():
     print(f"🚀 Starting scrape: {ENEMY_RELEASE_ORDER_URL}")
-    html = fetch_html(ENEMY_RELEASE_ORDER_URL)
+    # html = fetch_html(ENEMY_RELEASE_ORDER_URL)
+    html = fetch_via_api(TARGET_PAGE)
 
     try:
         enemy_data = parse_enemy_table(html)
