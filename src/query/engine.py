@@ -2,9 +2,10 @@ from llama_index.core import StorageContext, load_index_from_storage
 from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.response_synthesizers import get_response_synthesizer
 from llama_index.core.retrievers import VectorIndexRetriever
+from llama_index.core.postprocessor import LLMRerank
 
 import src.config.settings
-from src.config.prompts import QA_PROMPT
+from src.config.prompts import QA_PROMPT, CHOICE_SELECT_PROMPT
 
 
 def build_query_engine():
@@ -18,10 +19,17 @@ def build_query_engine():
 
     retriever = VectorIndexRetriever(
         index=index,
-        similarity_top_k=5,
+        similarity_top_k=10,
+    )
+
+    reranker = LLMRerank(
+        # choice_select_prompt=CHOICE_SELECT_PROMPT,
+        choice_batch_size=5,  # Rank 5 documents at a time (to fit context window)
+        top_n=3,
     )
 
     return RetrieverQueryEngine(
         retriever=retriever,
         response_synthesizer=synthesizer,
+        node_postprocessors=[reranker],
     )
