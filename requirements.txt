@@ -10,3 +10,4 @@ huggingface_hub[hf_xet]
 markdownify
 trafilatura
 loguru
+pathvalidate

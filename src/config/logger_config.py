@@ -4,6 +4,7 @@ from pathlib import Path
 log_dir = Path("logs")
 log_file = log_dir / "{time}.log"
 
+logger.remove()
 logger.add(
     log_file,
     rotation="256 MB",  # 每個檔案滿 256MB 就切分
