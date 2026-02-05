@@ -1,11 +1,13 @@
 import asyncio
 import aiohttp
 import sqlite3
+import json
 from loguru import logger
 from pathlib import Path
-from typing import List, Dict, Set, Tuple
+from typing import Dict, Optional
 from urllib.parse import quote
 from pathvalidate import sanitize_filename as lib_sanitize
+from datetime import datetime, timezone
 from aiohttp import ClientConnectorError, ServerDisconnectedError, ClientPayloadError
 
 # 設定日誌
@@ -24,7 +26,7 @@ logger.add(
 )
 
 # 配置
-BASE_URL = "https://battle-cats.fandom.com/api.php"
+BASE_URL = "https://battlecats.miraheze.org/w/api.php"
 DATA_DIR = Path("data/raw/wiki")
 HTML_DIR = DATA_DIR / "html"
 DB_PATH = DATA_DIR / "wiki_registry.db"
@@ -37,23 +39,22 @@ class WikiCrawler:
     def __init__(self):
         self.conn = sqlite3.connect(DB_PATH)
         self._init_db()
-        # 限制並發數，避免對 Fandom 造成 DoS
+        # 遵守 Miraheze API 友善規範
         self.semaphore = asyncio.Semaphore(5)
 
     def _init_db(self):
         """初始化 SQLite 用於追蹤頁面狀態"""
         cursor = self.conn.cursor()
-        cursor.execute(
-            """
+        cursor.execute("""
             CREATE TABLE IF NOT EXISTS pages (
                 page_id INTEGER PRIMARY KEY,
                 title TEXT UNIQUE,
                 last_revid INTEGER,
                 last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                file_path TEXT
+                file_path TEXT,
+                categories TEXT
             )
-        """
-        )
+        """)
         self.conn.commit()
 
     async def fetch_all_pages_metadata(self, session) -> Dict[str, int]:
@@ -64,7 +65,7 @@ class WikiCrawler:
         logger.info("📡 Fetching global page list and revision IDs...")
         pages_metadata = {}
 
-        params = {
+        """params = {
             "action": "query",
             "format": "json",
             "list": "allpages",
@@ -87,7 +88,7 @@ class WikiCrawler:
                 pass
                 # 備註：標準 allpages 不直接給 revid，為求精確與效率，
                 # 我們改用下面的邏輯 (Generator approach)
-                break
+                break"""
 
         # --- 優化版：使用 Generator 直接獲取 RevID ---
         gen_params = {
@@ -150,18 +151,19 @@ class WikiCrawler:
 
         return f"{safe_name}.html"
 
-    async def fetch_page_html(self, session, title: str, retries: int = 3) -> str:
+    async def fetch_page_data(self, session: aiohttp.ClientSession, title: str, retries: int = 3) -> Optional[Dict]:
         """
         下載單頁 HTML (含重試機制)
         :param retries: 最大重試次數
         """
         params = {
-            "action": "parse",
-            "page": title,
+            "action": "query",
+            "titles": title,
+            "prop": "revisions",
+            "rvprop": "content|ids|timestamp", # 拿內容與 revid
+            "rvslots": "*",
             "format": "json",
-            "prop": "text",
-            "disablepp": 1,
-            "redirects": 1,
+            "formatversion": "2" # 使用 version 2 讓回傳的 list 結構更乾淨
         }
 
         # 設定較寬鬆的超時 (連線 10秒，讀取 30秒)
@@ -172,8 +174,8 @@ class WikiCrawler:
                 async with session.get(
                     BASE_URL, params=params, timeout=timeout
                 ) as resp:
-                    # 如果遇到 5xx 伺服器錯誤，也應該重試
-                    if resp.status >= 500:
+                    # 如果遇到 5xx / 429 伺服器錯誤，也應該重試
+                    if resp.status >= 500 or resp.status == 429:
                         logger.warning(
                             f"⚠️ Server error {resp.status} for {title}. Attempt {attempt}/{retries}"
                         )
@@ -192,11 +194,54 @@ class WikiCrawler:
                         return None
 
                     data = await resp.json()
+
+                    # 檢查 API 錯誤
                     if "error" in data:
                         logger.error(f"❌ API Error for {title}: {data['error']}")
                         return None
+                    
+                    # formatversion=2 下，pages 是一個 list
+                    pages = data.get("query", {}).get("pages", [])
+                    if not pages or "missing" in pages[0]:
+                        logger.warning(f"⚠️ Page '{title}' not found.")
+                        return None
+                    
+                    page = pages[0]
+                    revisions = page.get("revisions", [])
+                    
+                    # 若無 revisions (可能是被刪除或權限問題)
+                    if not revisions:
+                        logger.warning(f"⚠️ No content found for '{title}'")
+                        return None
+                    
+                    revision = revisions[0]
+                    content = revision.get("slots", {}).get("main", {}).get("content", "")
 
-                    return data["parse"]["text"]["*"]
+                    # 手動生成 Canonical URL (更穩定的做法)
+                    # Wiki 規則：空白轉底線，並進行 URL Encode
+                    safe_url_title = quote(page.get("title", "").replace(" ", "_"))
+                    canonical_url = f"https://battlecats.miraheze.org/wiki/{safe_url_title}"
+
+                    # 構造目標 JSON
+                    result = {
+                        "source": "battlecats.miraheze.org",
+                        "pageid": page.get("pageid"),
+                        "title": page.get("title"),
+                        "canonical_url": canonical_url,  # 本地生成
+                        "revid": revision.get("revid"),
+                        "timestamp": revision.get("timestamp"),
+                        "content_model": "wikitext",
+                        "wikitext": content,
+                        "is_redirect": page.get("redirect", False),
+                        "redirect_target": None, 
+                        "fetched_at": datetime.now(timezone.utc).isoformat(),
+                        "http": {
+                            "status": resp.status,
+                            "etag": resp.headers.get("ETag", ""),
+                            "last_modified": resp.headers.get("Last-Modified", "")
+                        }
+                    }
+                    return result
 
             except (
                 ClientConnectorError,
@@ -227,32 +272,42 @@ class WikiCrawler:
         """Worker: 下載 -> 存檔 -> 更新 DB"""
         async with self.semaphore:  # 限制並發
             try:
-                html = await self.fetch_page_html(session, title)
-                if not html:
+                page_data = await self.fetch_page_data(session, title)
+                if not page_data:
                     return
 
-                # 存檔
-                filename = self.sanitize_filename(title)
+                # 存檔邏輯 (確保副檔名是 .json)
+                # 使用 rsplit 確保只替換最後一個副檔名，避免檔名中點號誤判
+                safe_name = self.sanitize_filename(title)
+                if "." in safe_name:
+                    filename = safe_name.rsplit('.', 1)[0] + ".json"
+                else:
+                    filename = safe_name + ".json"
+                
                 file_path = HTML_DIR / filename
+                
                 with open(file_path, "w", encoding="utf-8") as f:
-                    f.write(html)
+                    json.dump(page_data, f, ensure_ascii=False, indent=2)
 
                 # 更新 DB
                 cursor = self.conn.cursor()
-                cursor.execute(
-                    """
-                    INSERT INTO pages (title, last_revid, file_path, last_updated)
-                    VALUES (?, ?, ?, CURRENT_TIMESTAMP)
-                    ON CONFLICT(title) DO UPDATE SET
+                cursor.execute("""
+                    INSERT INTO pages (page_id, title, last_revid, file_path, last_updated)
+                    VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    ON CONFLICT(page_id) DO UPDATE SET
+                        title = excluded.title, 
                         last_revid = excluded.last_revid,
                         file_path = excluded.file_path,
                         last_updated = CURRENT_TIMESTAMP
-                """,
-                    (title, remote_revid, str(file_path)),
-                )
+                """, (page_data["pageid"], title, remote_revid, str(file_path)))
                 self.conn.commit()
 
-                logger.info(f"📥 Updated: {title} (Rev: {remote_revid})")
+                logger.info(f"💾 Saved JSON: {title}")
+
+            except sqlite3.IntegrityError as e:
+                # 捕捉極端情況：如果新標題跟「另一筆」舊資料的標題衝突 (Swap Case)
+                logger.error(f"❌ Database Integrity Error for {title}: {e}")
+                self.conn.rollback()
 
             except Exception as e:
                 logger.error(f"Failed to process {title}: {e}")
