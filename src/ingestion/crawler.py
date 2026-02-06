@@ -53,11 +53,8 @@ class WikiCrawler:
         """抓取頁面分類"""
         params = {
             "action": "query",
-            "prop": "info|recisions",
-            "cllimit": "max",
-            "gapnamespace":"14",
-            "generator":"allpages",
-            "gaplimit": "50",
+            "generator":"allcategories",
+            "gaplimit": "500",
             "format": "json",
             "formatversion": "2"
             ""
@@ -74,11 +71,13 @@ class WikiCrawler:
 
             data, _ = fetch_result
             pages: list = data.get("query", {}).get("pages", [])
-            if not pages or "missing" in pages[0]:
+            if not pages or "missing" in pages:
                 break
             for page in pages:
+                if page.get("missing", False):
+                    continue
                 result.append(page["title"])
-            # ??????
+
             if "continue" in data:
                 continue_token = data["continue"]
                 req_params = {**params, **continue_token}
@@ -87,7 +86,7 @@ class WikiCrawler:
 
         return result
     
-    async def fetch_all_pages_metadata(self, session) -> Dict[str, int]:
+    async def fetch_all_pages_metadata(self, session) -> Dict[int, int]:
         """
         第一步：快速獲取全站所有頁面的 (Title, Revision ID)
         這不會下載 HTML, 只抓清單, 速度很快。
@@ -100,11 +99,11 @@ class WikiCrawler:
             "action": "query",
             "format": "json",
             "generator": "allpages",
-            "gaplimit": "50",  # Generator 限制較嚴，一次 50
+            "gaplimit": "500", 
             "gapnamespace": "0",
             "gapfilterredir": "nonredirects",
-            "prop": "info|revisions",  # 同時抓取 info 和 revision
-            "rvprop": "ids",  # 只要 revid
+            "prop": "info|revisions",
+            "rvprop": "ids",
         }
 
         continue_token = {}
@@ -122,31 +121,30 @@ class WikiCrawler:
             if "query" in data and "pages" in data["query"]:
                 batch = data["query"]["pages"]
                 for pid, info in batch.items():
-                    title = info["title"]
-                    # 取得最新 revid
-                    revid = 0
+                    pageid = info["pageid"]
                     if "revisions" in info:
                         revid = info["revisions"][0]["revid"]
                     elif "lastrevid" in info:
                         revid = info["lastrevid"]
 
-                    pages_metadata[title] = revid
+                    pages_metadata[pageid] = revid
 
                 total_fetched += len(batch)
-                print(f"\r??Discovered {total_fetched} pages...", end="")
+                print(f"\rDiscovered {total_fetched} pages...", end="")
 
             # 處理分頁
             if "continue" in data:
                 continue_token = data["continue"]
             else:
                 break
+
         print(f"\n✨ Discovery complete. Total pages: {len(pages_metadata)}")
         return pages_metadata
 
-    def get_local_state(self) -> Dict[str, int]:
+    def get_local_state(self) -> Dict[int, int]:
         """從 SQLite 讀取本地已有的頁面狀態"""
         cursor = self.conn.cursor()
-        cursor.execute("SELECT title, last_revid FROM pages")
+        cursor.execute("SELECT page_id, last_revid FROM pages")
         return {row[0]: row[1] for row in cursor.fetchall()}
 
     def sanitize_filename(self, title: str) -> str:
@@ -157,21 +155,20 @@ class WikiCrawler:
         if not safe_name:
             safe_name = "untitled"
 
-        return f"{safe_name}.html"
+        return f"{safe_name}"
 
-    async def fetch_page_data(self, session: aiohttp.ClientSession, title: str, retries: int = 3) -> Optional[Dict]:
-        """
-        ?????? HTML (????????
-        :param retries: ??????????
-        """
+    async def fetch_page_data(self, session: aiohttp.ClientSession, page_id: int, retries: int = 3) -> Optional[Dict]:
+        """下載單頁面資料"""
         params = {
             "action": "query",
-            "titles": title,
-            "prop": "categories|info|revisions",
-            "rvprop": "content|ids|timestamp", # ?????? revid
+            "pageids": page_id,
+            "explaintext": "1",
+            "prop": "categories|info|revisions|extracts",
+            "rvprop": "content|ids|timestamp",
+            "redirects": "1",
             "rvslots": "*",
             "format": "json",
-            "formatversion": "2" # ??? version 2 ?????? list ????????
+            "formatversion": "2"
         }
 
         fetch_result = await self._fetch(session, params, retries=retries)
@@ -181,43 +178,46 @@ class WikiCrawler:
         data, http_meta = fetch_result
 
         try:
-            # ??? API ???
+            # 檢查 API 錯誤
             if "error" in data:
-                logger.error(f"??API Error for {title}: {data['error']}")
+                logger.error(f"API Error for pageid {page_id}: {data['error']}")
                 return None
             
-            # formatversion=2 ???pages ?????list
+            # formatversion=2 下，pages 是一個 list
             pages = data.get("query", {}).get("pages", [])
             if not pages or "missing" in pages[0]:
-                logger.warning(f"??? Page '{title}' not found.")
+                logger.warning(f"Pageid '{page_id}' not found.")
                 return None
             
             page = pages[0]
             revisions = page.get("revisions", [])
             
-            # ??? revisions (?????????????????
+            # 若無 revisions (可能是被刪除或權限問題)
             if not revisions:
-                logger.warning(f"??? No content found for '{title}'")
+                logger.warning(f"No content found for pageid '{page_id}'")
                 return None
             
             revision = revisions[0]
-            content = revision.get("slots", {}).get("main", {}).get("content", "")
+            content = page.get("extract", "")
+            categories = page.get("categories", [])
+            categories = [x.get("title") for x in categories]
 
-            # ?????? Canonical URL (?????????)
-            # Wiki ?????????????????? URL Encode
-            safe_url_title = quote(page.get("title", "").replace(" ", "_"))
+            # 手動生成 Canonical URL (更穩定的做法)
+            # Wiki 規則：空白轉底線，並進行 URL Encode
+            safe_url_title = quote(page.get("title").replace(" ", "_"))
             canonical_url = f"https://battlecats.miraheze.org/wiki/{safe_url_title}"
 
-            # ???????JSON
+            # 構造目標 JSON
             result = {
                 "source": "battlecats.miraheze.org",
                 "pageid": page.get("pageid"),
                 "title": page.get("title"),
-                "canonical_url": canonical_url,  # ??????
+                "canonical_url": canonical_url,
                 "revid": revision.get("revid"),
                 "timestamp": revision.get("timestamp"),
-                "content_model": "wikitext",
-                "wikitext": content,
+                "content_model": page.get("contentmodel"),
+                "categories":categories,
+                "content": content,
                 "is_redirect": page.get("redirect", False),
                 "redirect_target": None, 
                 "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -225,25 +225,24 @@ class WikiCrawler:
             }
             return result
         except Exception as e:
-            # ????????? (??JSON ??????)?????????
-            logger.error(f"??Unexpected error for '{title}': {e}")
+            # 未預期的錯誤 (如 JSON 解析失敗)，記錄後跳過
+            logger.error(f"Unexpected error for pageid {page_id}: {e}")
             return None
 
-    async def process_page(self, session, title: str, remote_revid: int):
+    async def process_page(self, session, pageid: int, remote_revid: int):
         """Worker: 下載 -> 存檔 -> 更新 DB"""
         async with self.semaphore:  # 限制並發
             try:
-                page_data = await self.fetch_page_data(session, title)
+                page_data = await self.fetch_page_data(session, pageid)
                 if not page_data:
                     return
+                
+                title = page_data["title"]
 
                 # 存檔邏輯 (確保副檔名是 .json)
                 # 使用 rsplit 確保只替換最後一個副檔名，避免檔名中點號誤判
                 safe_name = self.sanitize_filename(title)
-                if "." in safe_name:
-                    filename = safe_name.rsplit('.', 1)[0] + ".json"
-                else:
-                    filename = safe_name + ".json"
+                filename = safe_name + ".json"
                 
                 file_path = HTML_DIR / filename
                 
@@ -286,13 +285,13 @@ class WikiCrawler:
 
             # 3. 比較差異 (Diff)
             tasks: list[Coroutine[Any, Any, None]] = []
-            for title, remote_revid in remote_pages.items():
-                local_revid = local_pages.get(title)
+            for page_id, remote_revid in remote_pages.items():
+                local_revid = local_pages.get(page_id)
 
                 # 判定邏輯：如果本地沒有，或者遠端版本較新
                 if local_revid is None or remote_revid > local_revid:
                     # 加入下載排程
-                    tasks.append(self.process_page(session, title, remote_revid))
+                    tasks.append(self.process_page(session, page_id, remote_revid))
 
             if not tasks:
                 logger.info("🎉 All pages are up to date!")
@@ -395,9 +394,21 @@ if __name__ == "__main__":
     crawler = WikiCrawler()
     async def abc():
         connector = aiohttp.TCPConnector(limit=0, limit_per_host=10, ttl_dns_cache=300)
-        session = aiohttp.ClientSession(connector=connector)
-        result = await crawler.fetch_categories(session)
-        print(result)
+        params = {
+            "action": "query",
+            "format": "json",
+            "generator": "allpages",
+            "gaplimit": "500", 
+            "gapnamespace": "0",
+            "gapfilterredir": "nonredirects",
+            "prop": "info|revisions",
+            "rvprop": "ids",
+        }
+        async with aiohttp.ClientSession(connector=connector) as session:
+            result = await crawler._fetch(session, params)
 
+        with open("test.json", "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        #print(result)
 
     asyncio.run(crawler.run())
