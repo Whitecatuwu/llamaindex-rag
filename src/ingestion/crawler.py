@@ -4,26 +4,18 @@ import sqlite3
 import json
 from loguru import logger
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Any, Coroutine, Dict, Optional
 from urllib.parse import quote
 from pathvalidate import sanitize_filename as lib_sanitize
 from datetime import datetime, timezone
-from aiohttp import ClientConnectorError, ServerDisconnectedError, ClientPayloadError
-
-# 設定日誌
-log_dir = Path("logs")
-log_file = log_dir / "crawler_{time}.log"
-
-logger.remove()
-logger.add(
-    log_file,
-    rotation="256 MB",  # 每個檔案滿 256MB 就切分
-    retention="10 days",  # 只保留最近 10 天的日誌 (自動刪除舊的)
-    compression="zip",  # 切分後的舊檔案自動壓縮成 zip (節省空間)
-    encoding="utf-8",  # 防止中文亂碼
-    level="INFO",  # 檔案中只存 INFO 以上 (過濾掉 DEBUG/TRACE)
-    enqueue=True,
+from aiohttp import (
+    ClientConnectorError,
+    ClientResponseError,
+    ServerDisconnectedError,
+    ClientPayloadError,
+    ContentTypeError,
 )
+
 
 # 配置
 BASE_URL = "https://battlecats.miraheze.org/w/api.php"
@@ -57,38 +49,51 @@ class WikiCrawler:
         """)
         self.conn.commit()
 
+    async def fetch_categories(self, session) -> Optional[list]:
+        """抓取頁面分類"""
+        params = {
+            "action": "query",
+            "prop": "info|recisions",
+            "cllimit": "max",
+            "gapnamespace":"14",
+            "generator":"allpages",
+            "gaplimit": "50",
+            "format": "json",
+            "formatversion": "2"
+            ""
+        }
+        continue_token = {}
+        req_params = {**params, **continue_token}
+
+        result = []
+        while True:
+            fetch_result = await self._fetch(session, req_params)
+            if not fetch_result:
+                logger.error("Failed to fetch categories list.")
+                break
+
+            data, _ = fetch_result
+            pages: list = data.get("query", {}).get("pages", [])
+            if not pages or "missing" in pages[0]:
+                break
+            for page in pages:
+                result.append(page["title"])
+            # ??????
+            if "continue" in data:
+                continue_token = data["continue"]
+                req_params = {**params, **continue_token}
+            else:
+                break
+
+        return result
+    
     async def fetch_all_pages_metadata(self, session) -> Dict[str, int]:
         """
         第一步：快速獲取全站所有頁面的 (Title, Revision ID)
-        這不會下載 HTML，只抓清單，速度很快。
+        這不會下載 HTML, 只抓清單, 速度很快。
         """
         logger.info("📡 Fetching global page list and revision IDs...")
         pages_metadata = {}
-
-        """params = {
-            "action": "query",
-            "format": "json",
-            "list": "allpages",
-            "aplimit": "500",  # 一次拿 500 筆
-            "apnamespace": "0",  # 0 = Main Content (排除 Talk, User 等)
-            "apfilterredir": "nonredirects",  # 排除重定向頁面
-        }
-
-        while True:
-            async with session.get(BASE_URL, params=params) as resp:
-                if resp.status != 200:
-                    logger.error(f"Error fetching list: {resp.status}")
-                    break
-
-                data = await resp.json()
-
-                # 這裡 API 只給了 title 和 pageid，為了拿到 revid，我們通常需要
-                # 在這裡先收集 pageids，然後再發送一次 query 查 revid，
-                # 或者改用 generator=allpages & prop=info|revisions (如下優化)
-                pass
-                # 備註：標準 allpages 不直接給 revid，為求精確與效率，
-                # 我們改用下面的邏輯 (Generator approach)
-                break"""
 
         # --- 優化版：使用 Generator 直接獲取 RevID ---
         gen_params = {
@@ -107,31 +112,34 @@ class WikiCrawler:
 
         while True:
             req_params = {**gen_params, **continue_token}
-            async with session.get(BASE_URL, params=req_params) as resp:
-                data = await resp.json()
+            fetch_result = await self._fetch(session, req_params)
+            if not fetch_result:
+                logger.error("Failed to fetch pages metadata.")
+                break
 
-                if "query" in data and "pages" in data["query"]:
-                    batch = data["query"]["pages"]
-                    for pid, info in batch.items():
-                        title = info["title"]
-                        # 取得最新 revid
-                        revid = 0
-                        if "revisions" in info:
-                            revid = info["revisions"][0]["revid"]
-                        elif "lastrevid" in info:
-                            revid = info["lastrevid"]
+            data, _ = fetch_result
 
-                        pages_metadata[title] = revid
+            if "query" in data and "pages" in data["query"]:
+                batch = data["query"]["pages"]
+                for pid, info in batch.items():
+                    title = info["title"]
+                    # 取得最新 revid
+                    revid = 0
+                    if "revisions" in info:
+                        revid = info["revisions"][0]["revid"]
+                    elif "lastrevid" in info:
+                        revid = info["lastrevid"]
 
-                    total_fetched += len(batch)
-                    print(f"\r✅ Discovered {total_fetched} pages...", end="")
+                    pages_metadata[title] = revid
 
-                # 處理分頁
-                if "continue" in data:
-                    continue_token = data["continue"]
-                else:
-                    break
+                total_fetched += len(batch)
+                print(f"\r??Discovered {total_fetched} pages...", end="")
 
+            # 處理分頁
+            if "continue" in data:
+                continue_token = data["continue"]
+            else:
+                break
         print(f"\n✨ Discovery complete. Total pages: {len(pages_metadata)}")
         return pages_metadata
 
@@ -153,120 +161,73 @@ class WikiCrawler:
 
     async def fetch_page_data(self, session: aiohttp.ClientSession, title: str, retries: int = 3) -> Optional[Dict]:
         """
-        下載單頁 HTML (含重試機制)
-        :param retries: 最大重試次數
+        ?????? HTML (????????
+        :param retries: ??????????
         """
         params = {
             "action": "query",
             "titles": title,
-            "prop": "revisions",
-            "rvprop": "content|ids|timestamp", # 拿內容與 revid
+            "prop": "categories|info|revisions",
+            "rvprop": "content|ids|timestamp", # ?????? revid
             "rvslots": "*",
             "format": "json",
-            "formatversion": "2" # 使用 version 2 讓回傳的 list 結構更乾淨
+            "formatversion": "2" # ??? version 2 ?????? list ????????
         }
 
-        # 設定較寬鬆的超時 (連線 10秒，讀取 30秒)
-        timeout = aiohttp.ClientTimeout(total=45, connect=10)
+        fetch_result = await self._fetch(session, params, retries=retries)
+        if not fetch_result:
+            return None
 
-        for attempt in range(1, retries + 1):
-            try:
-                async with session.get(
-                    BASE_URL, params=params, timeout=timeout
-                ) as resp:
-                    # 如果遇到 5xx / 429 伺服器錯誤，也應該重試
-                    if resp.status >= 500 or resp.status == 429:
-                        logger.warning(
-                            f"⚠️ Server error {resp.status} for {title}. Attempt {attempt}/{retries}"
-                        )
-                        raise aiohttp.ClientResponseError(
-                            resp.request_info,
-                            resp.history,
-                            status=resp.status,
-                            message="Server Error",
-                        )
+        data, http_meta = fetch_result
 
-                    # 404 或其他錯誤則直接回報，不重試
-                    if resp.status != 200:
-                        logger.error(
-                            f"❌ HTTP {resp.status} for {title}: {await resp.text()}"
-                        )
-                        return None
-
-                    data = await resp.json()
-
-                    # 檢查 API 錯誤
-                    if "error" in data:
-                        logger.error(f"❌ API Error for {title}: {data['error']}")
-                        return None
-                    
-                    # formatversion=2 下，pages 是一個 list
-                    pages = data.get("query", {}).get("pages", [])
-                    if not pages or "missing" in pages[0]:
-                        logger.warning(f"⚠️ Page '{title}' not found.")
-                        return None
-                    
-                    page = pages[0]
-                    revisions = page.get("revisions", [])
-                    
-                    # 若無 revisions (可能是被刪除或權限問題)
-                    if not revisions:
-                        logger.warning(f"⚠️ No content found for '{title}'")
-                        return None
-                    
-                    revision = revisions[0]
-                    content = revision.get("slots", {}).get("main", {}).get("content", "")
-
-                    # 手動生成 Canonical URL (更穩定的做法)
-                    # Wiki 規則：空白轉底線，並進行 URL Encode
-                    safe_url_title = quote(page.get("title", "").replace(" ", "_"))
-                    canonical_url = f"https://battlecats.miraheze.org/wiki/{safe_url_title}"
-
-                    # 構造目標 JSON
-                    result = {
-                        "source": "battlecats.miraheze.org",
-                        "pageid": page.get("pageid"),
-                        "title": page.get("title"),
-                        "canonical_url": canonical_url,  # 本地生成
-                        "revid": revision.get("revid"),
-                        "timestamp": revision.get("timestamp"),
-                        "content_model": "wikitext",
-                        "wikitext": content,
-                        "is_redirect": page.get("redirect", False),
-                        "redirect_target": None, 
-                        "fetched_at": datetime.now(timezone.utc).isoformat(),
-                        "http": {
-                            "status": resp.status,
-                            "etag": resp.headers.get("ETag", ""),
-                            "last_modified": resp.headers.get("Last-Modified", "")
-                        }
-                    }
-                    return result
-
-            except (
-                ClientConnectorError,
-                ServerDisconnectedError,
-                asyncio.TimeoutError,
-                ClientPayloadError,
-            ) as e:
-                # 這是預期的網路錯誤
-                wait_time = 2**attempt  # 指數退避: 2s, 4s, 8s...
-
-                if attempt == retries:
-                    logger.error(
-                        f"💀 Failed to connect for '{title}' after {retries} attempts. Error: {e}"
-                    )
-                    return None
-
-                logger.warning(
-                    f"🔄 Connection unstable for '{title}' ({e}). Retrying in {wait_time}s..."
-                )
-                await asyncio.sleep(wait_time)
-
-            except Exception as e:
-                # 未預期的錯誤 (如 JSON 解析失敗)，記錄後跳過
-                logger.error(f"❌ Unexpected error for '{title}': {e}")
+        try:
+            # ??? API ???
+            if "error" in data:
+                logger.error(f"??API Error for {title}: {data['error']}")
                 return None
+            
+            # formatversion=2 ???pages ?????list
+            pages = data.get("query", {}).get("pages", [])
+            if not pages or "missing" in pages[0]:
+                logger.warning(f"??? Page '{title}' not found.")
+                return None
+            
+            page = pages[0]
+            revisions = page.get("revisions", [])
+            
+            # ??? revisions (?????????????????
+            if not revisions:
+                logger.warning(f"??? No content found for '{title}'")
+                return None
+            
+            revision = revisions[0]
+            content = revision.get("slots", {}).get("main", {}).get("content", "")
+
+            # ?????? Canonical URL (?????????)
+            # Wiki ?????????????????? URL Encode
+            safe_url_title = quote(page.get("title", "").replace(" ", "_"))
+            canonical_url = f"https://battlecats.miraheze.org/wiki/{safe_url_title}"
+
+            # ???????JSON
+            result = {
+                "source": "battlecats.miraheze.org",
+                "pageid": page.get("pageid"),
+                "title": page.get("title"),
+                "canonical_url": canonical_url,  # ??????
+                "revid": revision.get("revid"),
+                "timestamp": revision.get("timestamp"),
+                "content_model": "wikitext",
+                "wikitext": content,
+                "is_redirect": page.get("redirect", False),
+                "redirect_target": None, 
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "http": http_meta,
+            }
+            return result
+        except Exception as e:
+            # ????????? (??JSON ??????)?????????
+            logger.error(f"??Unexpected error for '{title}': {e}")
+            return None
 
     async def process_page(self, session, title: str, remote_revid: int):
         """Worker: 下載 -> 存檔 -> 更新 DB"""
@@ -324,7 +285,7 @@ class WikiCrawler:
             local_pages = self.get_local_state()
 
             # 3. 比較差異 (Diff)
-            tasks = []
+            tasks: list[Coroutine[Any, Any, None]] = []
             for title, remote_revid in remote_pages.items():
                 local_revid = local_pages.get(title)
 
@@ -343,12 +304,100 @@ class WikiCrawler:
             # 為了避免一次塞爆記憶體，可以分批處理 (Chunking)
             chunk_size = 50
             for i in range(0, len(tasks), chunk_size):
-                chunk = tasks[i : i + chunk_size]
+                chunk: list[Coroutine[Any, Any, None]] = tasks[i : i + chunk_size]
                 await asyncio.gather(*chunk)
                 logger.info(f"Processing chunk {i}/{len(tasks)}...")
                 await asyncio.sleep(1)  # 禮貌性暫停
 
+    async def _fetch(
+        self,
+        session: aiohttp.ClientSession,
+        params: Dict[str, Any],
+        retries: int = 3,
+    ) -> Optional[tuple[Dict[str, Any], Dict[str, Any]]]:
+        # 設定較寬鬆的超時 (連線 10秒，讀取 30秒)
+        timeout = aiohttp.ClientTimeout(total=45, connect=10)
+
+        for attempt in range(1, retries + 1):
+            try:
+                async with session.get(
+                    BASE_URL, params=params, timeout=timeout
+                ) as resp:
+                    # 如果遇到 5xx / 429 伺服器錯誤，也應該重試
+                    if resp.status >= 500 or resp.status == 429:
+                        logger.warning(
+                            f"⚠️ Server error {resp.status}. Attempt {attempt}/{retries}"
+                        )
+                        raise aiohttp.ClientResponseError(
+                            resp.request_info,
+                            resp.history,
+                            status=resp.status,
+                            message="Server Error",
+                        )
+
+                     # 404 或其他錯誤則直接回報，不重試
+                    if resp.status != 200:
+                        logger.error(f"??HTTP {resp.status}: {await resp.text()}")
+                        return None
+
+                    data = await resp.json()
+                    http_meta = {
+                        "status": resp.status,
+                        "etag": resp.headers.get("ETag", ""),
+                        "last_modified": resp.headers.get("Last-Modified", ""),
+                    }
+                    return data, http_meta
+
+            except (
+                ClientResponseError,
+                ClientConnectorError,
+                ServerDisconnectedError,
+                asyncio.TimeoutError,
+                ClientPayloadError,
+                ContentTypeError,
+                json.JSONDecodeError,
+                ValueError,
+            ) as e:
+                # 這是預期的網路錯誤
+                wait_time = 2**attempt  # 指數退避: 2s, 4s, 8s...
+
+                if attempt == retries:
+                    logger.error(
+                        f"Failed to connect after {retries} attempts. Error: {e}"
+                    )
+                    return None
+
+                logger.warning(
+                    f"🔄 Connection unstable ({e}). Retrying in {wait_time}s..."
+                )
+                await asyncio.sleep(wait_time)
+
+            except Exception as e:
+                # 未預期的錯誤 (如 JSON 解析失敗)，記錄後跳過
+                logger.error(f"Unexpected error while fetching: {e}")
+                return None
 
 if __name__ == "__main__":
+    # 設定日誌
+    log_dir = Path("logs")
+    log_file = log_dir / "crawler_{time}.log"
+
+    logger.remove()
+    logger.add(
+        log_file,
+        rotation="256 MB",  # 每個檔案滿 256MB 就切分
+        retention="10 days",  # 只保留最近 10 天的日誌 (自動刪除舊的)
+        compression="zip",  # 切分後的舊檔案自動壓縮成 zip (節省空間)
+        encoding="utf-8",  # 防止中文亂碼
+        level="INFO",  # 檔案中只存 INFO 以上 (過濾掉 DEBUG/TRACE)
+        enqueue=True,
+    )
     crawler = WikiCrawler()
+    async def abc():
+        connector = aiohttp.TCPConnector(limit=0, limit_per_host=10, ttl_dns_cache=300)
+        session = aiohttp.ClientSession(connector=connector)
+        result = await crawler.fetch_categories(session)
+        print(result)
+
+
     asyncio.run(crawler.run())
