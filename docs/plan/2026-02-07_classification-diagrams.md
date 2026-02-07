@@ -53,6 +53,7 @@ flowchart LR
     B --> D[label row]
     C --> D
     D --> E[page_labels_*.jsonl]
+    D --> E2[classified/<entity_type>/*.json (+subtypes)]
 
     D --> F{needs_review?}
     F -->|misc / low_conf / conflict| G[review row]

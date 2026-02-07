@@ -71,6 +71,7 @@
    - `page_labels_*.jsonl`
    - `review_queue_*.jsonl`
    - `classification_report_*.json`
+   - `classified/<entity_type>/*.json` (副本新增 `subtypes`)
 3. 無法判定或衝突頁面須落 `misc + reason`。
 4. 同輸入重跑輸出一致。
 5. Ingestion adapter 能觸發同一 Use Case。
