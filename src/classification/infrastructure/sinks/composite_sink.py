@@ -1,3 +1,4 @@
+﻿from src.classification.application.contracts import ClassificationLabelRecord
 from src.classification.application.ports import ClassificationSinkPort
 
 
@@ -6,11 +7,11 @@ class CompositeClassificationSink(ClassificationSinkPort):
         self.primary = primary
         self.secondary = secondary
 
-    def write_label(self, row: dict) -> None:
+    def write_label(self, row: ClassificationLabelRecord) -> None:
         self.primary.write_label(row)
         self.secondary.write_label(row)
 
-    def write_review(self, row: dict) -> None:
+    def write_review(self, row: ClassificationLabelRecord) -> None:
         self.primary.write_review(row)
         self.secondary.write_review(row)
 
@@ -19,4 +20,3 @@ class CompositeClassificationSink(ClassificationSinkPort):
             self.primary.close()
         finally:
             self.secondary.close()
-

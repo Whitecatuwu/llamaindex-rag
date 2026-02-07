@@ -2,6 +2,7 @@ import json
 import unittest
 from unittest.mock import patch
 
+from src.classification.application.contracts import ClassificationLabelRecord
 from src.classification.infrastructure.sinks.classified_json_sink import ClassifiedJsonSink
 from tests.utils.tempdir import managed_temp_dir
 
@@ -15,13 +16,22 @@ class ClassifiedJsonSinkTests(unittest.TestCase):
 
             sink = ClassifiedJsonSink(classified_root=str(tmp_path / "classified"))
             sink.write_label(
-                {
-                    "doc_id": "123",
-                    "pageid": 123,
-                    "entity_type": "cat",
-                    "source_path": str(source_path),
-                    "subtypes": ["rarity:rare", "source:event_capsule"],
-                }
+                ClassificationLabelRecord(
+                    doc_id="123",
+                    pageid=123,
+                    title="Asuka Cat",
+                    revision_id=None,
+                    canonical_url=None,
+                    entity_type="cat",
+                    source_path=str(source_path),
+                    subtypes=("rarity:rare", "source:event_capsule"),
+                    confidence=1.0,
+                    reasons=(),
+                    matched_rules=(),
+                    strategy_version="1.0.0",
+                    is_redirect=False,
+                    parse_warning=None,
+                )
             )
             sink.close()
 
@@ -47,22 +57,40 @@ class ClassifiedJsonSinkTests(unittest.TestCase):
 
             sink = ClassifiedJsonSink(classified_root=str(tmp_path / "classified"))
             sink.write_label(
-                {
-                    "doc_id": "1",
-                    "pageid": 1,
-                    "entity_type": "cat",
-                    "source_path": str(source_a),
-                    "subtypes": ["rarity:normal"],
-                }
+                ClassificationLabelRecord(
+                    doc_id="1",
+                    pageid=1,
+                    title="A",
+                    revision_id=None,
+                    canonical_url=None,
+                    entity_type="cat",
+                    source_path=str(source_a),
+                    subtypes=("rarity:normal",),
+                    confidence=1.0,
+                    reasons=(),
+                    matched_rules=(),
+                    strategy_version="1.0.0",
+                    is_redirect=False,
+                    parse_warning=None,
+                )
             )
             sink.write_label(
-                {
-                    "doc_id": "2",
-                    "pageid": 2,
-                    "entity_type": "cat",
-                    "source_path": str(source_b),
-                    "subtypes": ["rarity:rare"],
-                }
+                ClassificationLabelRecord(
+                    doc_id="2",
+                    pageid=2,
+                    title="B",
+                    revision_id=None,
+                    canonical_url=None,
+                    entity_type="cat",
+                    source_path=str(source_b),
+                    subtypes=("rarity:rare",),
+                    confidence=1.0,
+                    reasons=(),
+                    matched_rules=(),
+                    strategy_version="1.0.0",
+                    is_redirect=False,
+                    parse_warning=None,
+                )
             )
             sink.close()
 
@@ -77,13 +105,22 @@ class ClassifiedJsonSinkTests(unittest.TestCase):
             source_path.write_text(json.dumps({"pageid": 9, "title": "Same"}, ensure_ascii=False), encoding="utf-8")
 
             sink = ClassifiedJsonSink(classified_root=str(tmp_path / "classified"))
-            row = {
-                "doc_id": "9",
-                "pageid": 9,
-                "entity_type": "cat",
-                "source_path": str(source_path),
-                "subtypes": ["rarity:normal"],
-            }
+            row = ClassificationLabelRecord(
+                doc_id="9",
+                pageid=9,
+                title="Same",
+                revision_id=None,
+                canonical_url=None,
+                entity_type="cat",
+                source_path=str(source_path),
+                subtypes=("rarity:normal",),
+                confidence=1.0,
+                reasons=(),
+                matched_rules=(),
+                strategy_version="1.0.0",
+                is_redirect=False,
+                parse_warning=None,
+            )
             sink.write_label(row)
             sink.write_label(row)
             sink.close()
@@ -106,13 +143,22 @@ class ClassifiedJsonSinkTests(unittest.TestCase):
             sink = ClassifiedJsonSink(classified_root=str(tmp_path / "classified"))
             with patch("src.classification.infrastructure.sinks.classified_json_sink.logger.warning") as warning_mock:
                 sink.write_label(
-                    {
-                        "doc_id": "1",
-                        "pageid": 1,
-                        "entity_type": "stage",
-                        "source_path": str(source_path),
-                        "subtypes": ["stage_family:event"],
-                    }
+                    ClassificationLabelRecord(
+                        doc_id="1",
+                        pageid=1,
+                        title="Stage A",
+                        revision_id=None,
+                        canonical_url=None,
+                        entity_type="stage",
+                        source_path=str(source_path),
+                        subtypes=("stage_family:event",),
+                        confidence=1.0,
+                        reasons=(),
+                        matched_rules=(),
+                        strategy_version="1.0.0",
+                        is_redirect=False,
+                        parse_warning=None,
+                    )
                 )
             sink.close()
 

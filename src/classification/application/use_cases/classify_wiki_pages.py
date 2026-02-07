@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+﻿from dataclasses import dataclass
 
 from src.classification.application.workflows.classification_pipeline import (
     ClassificationPipeline,
@@ -13,6 +13,10 @@ class ClassifyWikiPagesCommand:
     source_mode: str
     low_confidence_threshold: float = 0.5
     include_redirects: bool = True
+    incremental: bool = True
+    full_rebuild: bool = False
+    # Kept for backward compatibility; infrastructure adapter is responsible for consuming this.
+    state_db_path: str = "artifacts/classified/classification_state.db"
 
 
 @dataclass(frozen=True)
@@ -32,16 +36,21 @@ class ClassifyWikiPagesUseCase:
 
     def execute(self, command: ClassifyWikiPagesCommand) -> ClassifyWikiPagesResult:
         logger.info(
-            "Classification use case started: source_mode={}, low_confidence_threshold={}, include_redirects={}",
+            "Classification use case started: source_mode={}, low_confidence_threshold={}, include_redirects={}, incremental={}, full_rebuild={}, state_db_path={}",
             command.source_mode,
             command.low_confidence_threshold,
             command.include_redirects,
+            command.incremental,
+            command.full_rebuild,
+            command.state_db_path,
         )
         summary: PipelineSummary = self.pipeline.run(
             PipelineConfig(
                 source_mode=command.source_mode,
                 low_confidence_threshold=command.low_confidence_threshold,
                 include_redirects=command.include_redirects,
+                incremental=command.incremental,
+                full_rebuild=command.full_rebuild,
             )
         )
         logger.info(
@@ -62,4 +71,3 @@ class ClassifyWikiPagesUseCase:
             parse_warning_count=summary.parse_warning_count,
             by_entity_type=summary.by_entity_type,
         )
-
