@@ -424,5 +424,7 @@ indexes/
 
 data/
 
+tests/tmp/
+
 /.codex
 /.specify
