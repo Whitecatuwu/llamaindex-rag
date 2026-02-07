@@ -422,7 +422,7 @@ indexes/
 
 # data
 
-data/raw/wiki
+data/
 
 /.codex
 /.specify
