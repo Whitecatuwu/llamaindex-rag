@@ -1,7 +1,5 @@
 import json
-import shutil
 import unittest
-import uuid
 from pathlib import Path
 
 from src.classification.application.use_cases.classify_wiki_pages import (
@@ -14,6 +12,7 @@ from src.classification.domain.classifier import RuleBasedClassifier
 from src.classification.infrastructure.sinks.jsonl_sink import JsonlClassificationSink
 from src.classification.infrastructure.sinks.report_sink import JsonReportSink
 from src.classification.infrastructure.sources.HtmlPageSource import HtmlPageSource
+from tests.utils.tempdir import managed_temp_dir
 
 
 def _write_page(path: Path, payload: dict) -> None:
@@ -22,11 +21,7 @@ def _write_page(path: Path, payload: dict) -> None:
 
 class ClassificationPipelineTests(unittest.TestCase):
     def test_pipeline_runs_all_steps(self):
-        base_tmp = Path("data/tmp-tests")
-        base_tmp.mkdir(parents=True, exist_ok=True)
-        tmp_path = base_tmp / f"pipeline_{uuid.uuid4().hex}"
-        tmp_path.mkdir(parents=True, exist_ok=True)
-        try:
+        with managed_temp_dir("pipeline") as tmp_path:
             input_dir = tmp_path / "html"
             input_dir.mkdir()
             _write_page(
@@ -78,8 +73,6 @@ class ClassificationPipelineTests(unittest.TestCase):
             self.assertTrue(report_path.exists())
             lines = labels_path.read_text(encoding="utf-8").strip().splitlines()
             self.assertEqual(len(lines), 2)
-        finally:
-            shutil.rmtree(tmp_path, ignore_errors=True)
 
     def test_pipeline_closes_sink_when_load_raises(self):
         class FailingSource:

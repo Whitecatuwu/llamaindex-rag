@@ -1,7 +1,4 @@
-import shutil
 import unittest
-import uuid
-from pathlib import Path
 
 from src.classification.application.ports import (
     ClassificationSinkPort,
@@ -12,6 +9,7 @@ from src.classification.infrastructure.sinks.jsonl_sink import JsonlClassificati
 from src.classification.infrastructure.sinks.report_sink import JsonReportSink
 from src.classification.infrastructure.sources.HtmlPageSource import HtmlPageSource
 from src.classification.infrastructure.sources.RegistryPageSource import RegistryPageSource
+from tests.utils.tempdir import managed_temp_dir
 
 
 class PortsImplementationTests(unittest.TestCase):
@@ -23,11 +21,7 @@ class PortsImplementationTests(unittest.TestCase):
         self.assertIsInstance(registry_source, PageSourcePort)
 
     def test_sinks_implement_sink_ports(self):
-        base_tmp = Path("data/tmp-tests")
-        base_tmp.mkdir(parents=True, exist_ok=True)
-        tmp_path = base_tmp / f"ports_{uuid.uuid4().hex}"
-        tmp_path.mkdir(parents=True, exist_ok=True)
-        try:
+        with managed_temp_dir("ports") as tmp_path:
             labels_path = tmp_path / "labels.jsonl"
             review_path = tmp_path / "review.jsonl"
             report_path = tmp_path / "report.json"
@@ -42,5 +36,3 @@ class PortsImplementationTests(unittest.TestCase):
                 self.assertIsInstance(report_sink, ReportSinkPort)
             finally:
                 classification_sink.close()
-        finally:
-            shutil.rmtree(tmp_path, ignore_errors=True)

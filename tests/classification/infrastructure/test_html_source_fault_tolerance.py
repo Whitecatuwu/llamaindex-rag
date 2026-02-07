@@ -1,18 +1,12 @@
-import shutil
 import unittest
-import uuid
-from pathlib import Path
 
 from src.classification.infrastructure.sources.HtmlPageSource import HtmlPageSource
+from tests.utils.tempdir import managed_temp_dir
 
 
 class HtmlPageSourceTests(unittest.TestCase):
     def test_html_source_handles_invalid_json(self):
-        base_tmp = Path("data/tmp-tests")
-        base_tmp.mkdir(parents=True, exist_ok=True)
-        tmp_path = base_tmp / f"source_{uuid.uuid4().hex}"
-        tmp_path.mkdir(parents=True, exist_ok=True)
-        try:
+        with managed_temp_dir("source") as tmp_path:
             input_dir = tmp_path / "html"
             input_dir.mkdir()
             bad = input_dir / "bad.json"
@@ -35,5 +29,3 @@ class HtmlPageSourceTests(unittest.TestCase):
             self.assertEqual(page.title, "Broken")
             self.assertIsNotNone(page.parse_warning)
             self.assertIn("Category:Enemy Units", page.categories)
-        finally:
-            shutil.rmtree(tmp_path, ignore_errors=True)

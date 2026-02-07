@@ -1,19 +1,13 @@
 import json
-import shutil
 import unittest
-import uuid
-from pathlib import Path
 
 from src.ingestion.classification_adapter import run
+from tests.utils.tempdir import managed_temp_dir
 
 
 class ClassificationAdapterTests(unittest.TestCase):
     def test_adapter_runs_when_enabled(self):
-        base_tmp = Path("data/tmp-tests")
-        base_tmp.mkdir(parents=True, exist_ok=True)
-        tmp_path = base_tmp / f"adapter_{uuid.uuid4().hex}"
-        tmp_path.mkdir(parents=True, exist_ok=True)
-        try:
+        with managed_temp_dir("adapter") as tmp_path:
             input_dir = tmp_path / "html"
             input_dir.mkdir()
             (input_dir / "stage.json").write_text(
@@ -41,5 +35,3 @@ class ClassificationAdapterTests(unittest.TestCase):
 
             self.assertIsNotNone(result)
             self.assertEqual(result.classified_count, 1)
-        finally:
-            shutil.rmtree(tmp_path, ignore_errors=True)
