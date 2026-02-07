@@ -19,7 +19,7 @@ from aiohttp import (
 
 # 配置
 BASE_URL = "https://battlecats.miraheze.org/w/api.php"
-DATA_DIR = Path("data/raw/wiki")
+DATA_DIR = Path("artifacts/raw/wiki")
 HTML_DIR = DATA_DIR / "html"
 DB_PATH = DATA_DIR / "wiki_registry.db"
 
@@ -242,7 +242,7 @@ class WikiCrawler:
                 # 存檔邏輯 (確保副檔名是 .json)
                 # 使用 rsplit 確保只替換最後一個副檔名，避免檔名中點號誤判
                 safe_name = self.sanitize_filename(title)
-                filename = safe_name + ".json"
+                filename = safe_name + "_" + str(pageid) + ".json"
                 
                 file_path = HTML_DIR / filename
                 
