@@ -4,6 +4,7 @@ from pathlib import Path
 from src.classification.application.ports import PageSourcePort
 from src.classification.domain.entities import PageRef, WikiPage
 from src.classification.infrastructure.sources.HtmlPageSource import HtmlPageSource
+from src.config.logger_config import logger
 
 
 class RegistryPageSource(PageSourcePort):
@@ -29,6 +30,7 @@ class RegistryPageSource(PageSourcePort):
                         },
                     )
                 )
+            logger.info("Registry source discovered {} pages from {}", len(refs), self.db_path)
             return refs
         finally:
             conn.close()
@@ -40,6 +42,11 @@ class RegistryPageSource(PageSourcePort):
 
         raw_categories = str(ref.metadata.get("categories", "") or "")
         categories = tuple(c.strip() for c in raw_categories.split(",") if c.strip())
+        logger.warning(
+            "Registry page uses metadata fallback due to missing file path: source_id={}, db_path={}",
+            ref.source_id,
+            self.db_path,
+        )
         return WikiPage(
             pageid=int(ref.metadata["pageid"]) if ref.metadata.get("pageid") is not None else None,
             title=str(ref.metadata.get("title", "")),

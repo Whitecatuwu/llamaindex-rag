@@ -8,6 +8,7 @@ from src.classification.application.ports import (
     ReportSinkPort,
 )
 from src.classification.domain.classifier import RuleBasedClassifier
+from src.config.logger_config import logger
 
 
 @dataclass(frozen=True)
@@ -47,6 +48,13 @@ class ClassificationPipeline:
     def run(self, config: PipelineConfig) -> PipelineSummary:
         started = perf_counter()
         refs = self.source.discover()
+        logger.info(
+            "Classification pipeline started: source_mode={}, discovered_pages={}, include_redirects={}, low_confidence_threshold={}",
+            config.source_mode,
+            len(refs),
+            config.include_redirects,
+            config.low_confidence_threshold,
+        )
 
         classified_count = 0
         misc_count = 0
@@ -60,10 +68,13 @@ class ClassificationPipeline:
                 page = self.source.load(ref)
                 if page.parse_warning:
                     parse_warning_count += 1
+                    logger.warning("Parse warning on page load: doc_id={}, warning={}", page.doc_id, page.parse_warning)
                 if page.is_redirect and not config.include_redirects:
+                    logger.debug("Skip redirect page: doc_id={}, title={}", page.doc_id, page.title)
                     continue
 
                 result = self.classifier.classify(page)
+                # Row is the persisted contract for labels/review artifacts.
                 row = {
                     "doc_id": page.doc_id,
                     "pageid": page.pageid,
@@ -89,6 +100,13 @@ class ClassificationPipeline:
                 needs_review = result.entity_type == "misc" or is_low_conf or is_conflict
                 if needs_review:
                     self.sink.write_review(row)
+                    logger.debug(
+                        "Page enqueued for review: doc_id={}, entity_type={}, confidence={}, reasons={}",
+                        page.doc_id,
+                        result.entity_type,
+                        result.confidence,
+                        list(result.reasons),
+                    )
                     if is_low_conf:
                         low_conf_count += 1
                     if is_conflict:
@@ -124,5 +142,15 @@ class ClassificationPipeline:
                 "duration_ms": summary.duration_ms,
                 "generated_at": summary.generated_at,
             }
+        )
+        logger.info(
+            "Classification pipeline completed: source_mode={}, duration_ms={}, classified_count={}, misc_count={}, low_conf_count={}, conflict_count={}, parse_warning_count={}",
+            summary.source_mode,
+            summary.duration_ms,
+            summary.classified_count,
+            summary.misc_count,
+            summary.low_conf_count,
+            summary.conflict_count,
+            summary.parse_warning_count,
         )
         return summary

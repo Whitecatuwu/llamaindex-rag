@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from src.classification.application.ports import ReportSinkPort
+from src.config.logger_config import logger
 
 
 class JsonReportSink(ReportSinkPort):
@@ -14,3 +15,4 @@ class JsonReportSink(ReportSinkPort):
             json.dumps(report, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+        logger.info("Classification report written: report_path={}", str(self.report_path))

@@ -17,6 +17,7 @@ from src.classification.domain.types import EntityType
 
 
 class RuleBasedClassifier:
+    # Deterministic tie-break priority when two entity types share the same score.
     _ENTITY_PRIORITY: dict[EntityType, int] = {
         "update": 0,
         "cat": 1,
@@ -52,6 +53,7 @@ class RuleBasedClassifier:
         reasons: list[str] = []
 
         if best == "misc" or scores[best] <= 0.0:
+            # No positive signal from rules -> force misc with explicit reason.
             reasons.append("no_rule_match")
             return Classification(
                 entity_type="misc",
@@ -65,6 +67,7 @@ class RuleBasedClassifier:
         confidence = scores[best] / max(scores[best] + scores[second], 1e-6)
 
         if margin < self.low_margin_threshold:
+            # Low margin means ambiguous top classes; downgrade to misc for safety.
             reasons.append(f"low_margin_conflict:{best}_vs_{second}")
             return Classification(
                 entity_type="misc",

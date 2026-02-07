@@ -5,6 +5,7 @@ from src.classification.application.workflows.classification_pipeline import (
     PipelineConfig,
     PipelineSummary,
 )
+from src.config.logger_config import logger
 
 
 @dataclass(frozen=True)
@@ -30,12 +31,27 @@ class ClassifyWikiPagesUseCase:
         self.pipeline = pipeline
 
     def execute(self, command: ClassifyWikiPagesCommand) -> ClassifyWikiPagesResult:
+        logger.info(
+            "Classification use case started: source_mode={}, low_confidence_threshold={}, include_redirects={}",
+            command.source_mode,
+            command.low_confidence_threshold,
+            command.include_redirects,
+        )
         summary: PipelineSummary = self.pipeline.run(
             PipelineConfig(
                 source_mode=command.source_mode,
                 low_confidence_threshold=command.low_confidence_threshold,
                 include_redirects=command.include_redirects,
             )
+        )
+        logger.info(
+            "Classification use case completed: total_pages={}, classified_count={}, misc_count={}, low_conf_count={}, conflict_count={}, parse_warning_count={}",
+            summary.total_pages,
+            summary.classified_count,
+            summary.misc_count,
+            summary.low_conf_count,
+            summary.conflict_count,
+            summary.parse_warning_count,
         )
         return ClassifyWikiPagesResult(
             total_pages=summary.total_pages,

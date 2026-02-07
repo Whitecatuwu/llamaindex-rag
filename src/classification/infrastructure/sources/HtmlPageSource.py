@@ -4,6 +4,7 @@ from pathlib import Path
 
 from src.classification.application.ports import PageSourcePort
 from src.classification.domain.entities import PageRef, WikiPage
+from src.config.logger_config import logger
 
 
 class HtmlPageSource(PageSourcePort):
@@ -14,6 +15,7 @@ class HtmlPageSource(PageSourcePort):
         refs: list[PageRef] = []
         for path in sorted(self.input_dir.glob("*.json")):
             refs.append(PageRef(source_id=path.stem, location=str(path)))
+        logger.info("HTML source discovered {} pages from {}", len(refs), str(self.input_dir))
         return refs
 
     def load(self, ref: PageRef) -> WikiPage:
@@ -24,8 +26,10 @@ class HtmlPageSource(PageSourcePort):
             parsed = json.loads(raw)
             return self._from_parsed(path, parsed, parse_warning=None)
         except json.JSONDecodeError as exc:
+            # Fault-tolerant path keeps pipeline running for malformed JSON files.
             fallback = self._fallback_extract(raw)
             warning = f"json_decode_error:{exc.msg}"
+            logger.warning("Failed to parse JSON file {}, fallback extractor used: {}", str(path), warning)
             return self._from_parsed(path, fallback, parse_warning=warning)
 
     @staticmethod
