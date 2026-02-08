@@ -1,6 +1,7 @@
 import json
 import unittest
 
+from src.classification.application.contracts import ClassificationLabelRecord
 from src.classification.infrastructure.sinks.classified_json_sink import ClassifiedJsonSink
 from src.classification.infrastructure.sinks.composite_sink import CompositeClassificationSink
 from src.classification.infrastructure.sinks.jsonl_sink import JsonlClassificationSink
@@ -21,20 +22,22 @@ class CompositeSinkTests(unittest.TestCase):
                 primary=JsonlClassificationSink(labels_path=str(labels_path), review_path=str(review_path)),
                 secondary=ClassifiedJsonSink(classified_root=str(classified_root)),
             )
-            row = {
-                "doc_id": "2",
-                "pageid": 2,
-                "title": "Enemy A",
-                "entity_type": "enemy",
-                "source_path": str(source_path),
-                "subtypes": ["trait:red"],
-                "confidence": 1.0,
-                "reasons": [],
-                "matched_rules": [],
-                "strategy_version": "1.0.0",
-                "is_redirect": False,
-                "parse_warning": None,
-            }
+            row = ClassificationLabelRecord(
+                doc_id="2",
+                pageid=2,
+                title="Enemy A",
+                revision_id=None,
+                canonical_url=None,
+                entity_type="enemy",
+                source_path=str(source_path),
+                subtypes=("trait:red",),
+                confidence=1.0,
+                reasons=(),
+                matched_rules=(),
+                strategy_version="1.0.0",
+                is_redirect=False,
+                parse_warning=None,
+            )
             composite.write_label(row)
             composite.write_review(row)
             composite.close()
