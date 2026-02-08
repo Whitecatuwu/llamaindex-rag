@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 from src.classification.application.use_cases.classify_wiki_pages import (
     ClassifyWikiPagesCommand,
@@ -17,7 +17,7 @@ from src.classification.infrastructure.state.classification_state_store import C
 from src.config.logger_config import logger
 
 
-def run(
+def run_classify(
     enable_classification: bool = False,
     source_mode: str = "html",
     input_dir: str = "data/raw/wiki/html",
@@ -83,22 +83,4 @@ def run(
             full_rebuild=full_rebuild,
             state_db_path=state_db_path,
         )
-    )
-
-
-if __name__ == "__main__":
-    run(
-        enable_classification=True,
-        source_mode="html",
-        input_dir="artifacts/raw/wiki/html",
-        db_path="artifacts/raw/wiki/wiki_registry.db",
-        output_labels_path="artifacts/classified/page_labels_ingestion.jsonl",
-        output_report_path="artifacts/classified/classification_report_ingestion.json",
-        output_review_path="artifacts/classified/review_queue_ingestion.jsonl",
-        classified_output_root="artifacts/classified/wiki",
-        incremental=True,
-        full_rebuild=False,
-        state_db_path="artifacts/classified/classification_state.db",
-        low_confidence_threshold=0.5,
-        include_redirects=True,
     )
