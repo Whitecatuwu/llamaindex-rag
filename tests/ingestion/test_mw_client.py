@@ -1,8 +1,8 @@
-import importlib
-import sqlite3
 import unittest
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
+
+from src.ingestion.infrastructure.mw_client import MediaWikiClient
 
 
 class FakeResponse:
@@ -41,31 +41,9 @@ class FakeSession:
         return self._responses.pop(0)
 
 
-_crawler_module = None
-
-
-def get_crawler_module():
-    global _crawler_module
-    if _crawler_module is None:
-        with patch("loguru.logger.add", return_value=None):
-            _crawler_module = importlib.import_module("src.ingestion.crawler")
-        from loguru import logger as loguru_logger
-
-        loguru_logger.disable("src.ingestion.crawler")
-    return _crawler_module
-
-
-def make_crawler():
-    crawler_module = get_crawler_module()
-    with patch("src.ingestion.crawler.sqlite3.connect") as connect_mock:
-        conn = sqlite3.connect(":memory:")
-        connect_mock.return_value = conn
-        return crawler_module.WikiCrawler()
-
-
-class FetchTests(unittest.IsolatedAsyncioTestCase):
+class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
     async def test_fetch_success_returns_data_and_http_meta(self):
-        crawler = make_crawler()
+        client = MediaWikiClient(base_url="http://unit.invalid")
         session = FakeSession(
             [
                 FakeResponse(
@@ -76,7 +54,7 @@ class FetchTests(unittest.IsolatedAsyncioTestCase):
             ]
         )
 
-        result = await crawler._fetch(session, params={"action": "query"})
+        result = await client._fetch(session, params={"action": "query"})
         self.assertIsNotNone(result)
         data, http_meta = result
         self.assertEqual(data, {"ok": True})
@@ -85,7 +63,7 @@ class FetchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(http_meta["last_modified"], "lm")
 
     async def test_fetch_retries_on_500_then_success(self):
-        crawler = make_crawler()
+        client = MediaWikiClient(base_url="http://unit.invalid")
         session = FakeSession(
             [
                 FakeResponse(status=500),
@@ -93,21 +71,20 @@ class FetchTests(unittest.IsolatedAsyncioTestCase):
             ]
         )
 
-        with patch("src.ingestion.crawler.asyncio.sleep", new=AsyncMock()):
-            result = await crawler._fetch(session, params={"action": "query"}, retries=2)
+        with patch("src.ingestion.infrastructure.mw_client.asyncio.sleep", new=AsyncMock()):
+            result = await client._fetch(session, params={"action": "query"}, retries=2)
 
         self.assertIsNotNone(result)
         self.assertEqual(session.calls, 2)
 
     async def test_fetch_non_200_returns_none(self):
-        crawler = make_crawler()
+        client = MediaWikiClient(base_url="http://unit.invalid")
         session = FakeSession([FakeResponse(status=404, text_data="not found")])
-
-        result = await crawler._fetch(session, params={"action": "query"})
+        result = await client._fetch(session, params={"action": "query"})
         self.assertIsNone(result)
 
-    async def test_fetch_page_data_includes_http_meta(self):
-        crawler = make_crawler()
+    async def test_fetch_page_doc_includes_http_meta(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
         data = {
             "query": {
                 "pages": [
@@ -118,9 +95,10 @@ class FetchTests(unittest.IsolatedAsyncioTestCase):
                             {
                                 "revid": 456,
                                 "timestamp": "2020-01-01T00:00:00Z",
-                                "slots": {"main": {"content": "abc"}},
                             }
                         ],
+                        "extract": "abc",
+                        "categories": [{"title": "Category:A"}],
                     }
                 ]
             }
@@ -135,9 +113,55 @@ class FetchTests(unittest.IsolatedAsyncioTestCase):
             ]
         )
 
-        result = await crawler.fetch_page_data(session, "Test Page")
+        result = await client.fetch_page_doc(session, 123)
         self.assertIsNotNone(result)
-        self.assertIn("http", result)
-        self.assertEqual(result["http"]["status"], 200)
-        self.assertEqual(result["http"]["etag"], "etag")
-        self.assertEqual(result["http"]["last_modified"], "lm")
+        self.assertEqual(result.pageid, 123)
+        self.assertEqual(result.revid, 456)
+        self.assertEqual(result.http["status"], 200)
+        self.assertEqual(result.http["etag"], "etag")
+        self.assertEqual(result.http["last_modified"], "lm")
+
+    async def test_fetch_all_pages_metadata_uses_pages_list(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "pages": [
+                                {"pageid": 1, "revisions": [{"revid": 10}]},
+                                {"pageid": 2, "lastrevid": 20},
+                            ]
+                        }
+                    },
+                )
+            ]
+        )
+        result = await client.fetch_all_pages_metadata(session)
+        self.assertEqual(result, {1: 10, 2: 20})
+
+    async def test_fetch_categories_handles_continuation_and_dedup(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {"allcategories": [{"category": "A"}, {"category": "B"}]},
+                        "continue": {"accontinue": "B|..."},
+                    },
+                ),
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "allcategories": [{"category": "B"}, {"category": "C"}]
+                        }
+                    },
+                ),
+            ]
+        )
+        result = await client.fetch_categories(session)
+        self.assertEqual(result, ["A", "B", "C"])
+
