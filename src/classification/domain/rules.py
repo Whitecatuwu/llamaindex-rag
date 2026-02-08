@@ -4,7 +4,7 @@ from typing import Pattern
 
 from src.classification.domain.types import EntityType
 
-CLASSIFICATION_STRATEGY_VERSION = "1.0.0"
+CLASSIFICATION_STRATEGY_VERSION = "1.1.0"
 LOW_MARGIN_THRESHOLD = 0.15
 
 

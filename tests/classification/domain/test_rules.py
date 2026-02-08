@@ -14,7 +14,6 @@ def _page(title: str, categories: tuple[str, ...], content: str = "") -> WikiPag
         categories=categories,
         content=content,
         is_redirect=False,
-        source_path="memory://page",
     )
 
 
