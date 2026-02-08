@@ -1,6 +1,7 @@
-import sqlite3
+﻿import sqlite3
 from pathlib import Path
 
+from src.classification.application.contracts import LoadedPage, LoadedPageMeta
 from src.classification.application.ports import PageSourcePort
 from src.classification.domain.entities import PageRef, WikiPage
 from src.classification.infrastructure.sources.HtmlPageSource import HtmlPageSource
@@ -35,7 +36,7 @@ class RegistryPageSource(PageSourcePort):
         finally:
             conn.close()
 
-    def load(self, ref: PageRef) -> WikiPage:
+    def load(self, ref: PageRef) -> LoadedPage:
         file_path = ref.location
         if file_path and Path(file_path).exists():
             return HtmlPageSource(input_dir=".").load(PageRef(source_id=ref.source_id, location=file_path))
@@ -47,7 +48,7 @@ class RegistryPageSource(PageSourcePort):
             ref.source_id,
             self.db_path,
         )
-        return WikiPage(
+        page = WikiPage(
             pageid=int(ref.metadata["pageid"]) if ref.metadata.get("pageid") is not None else None,
             title=str(ref.metadata.get("title", "")),
             revid=int(ref.metadata["revid"]) if ref.metadata.get("revid") is not None else None,
@@ -56,6 +57,11 @@ class RegistryPageSource(PageSourcePort):
             categories=categories,
             content="",
             is_redirect=False,
-            source_path=f"registry:{self.db_path}:{ref.source_id}",
-            parse_warning="missing_file_path",
+        )
+        return LoadedPage(
+            page=page,
+            meta=LoadedPageMeta(
+                source_path=f"registry:{self.db_path}:{ref.source_id}",
+                parse_warning="missing_file_path",
+            ),
         )

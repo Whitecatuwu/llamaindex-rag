@@ -1,7 +1,8 @@
-import json
+﻿import json
 import re
 from pathlib import Path
 
+from src.classification.application.contracts import LoadedPage, LoadedPageMeta
 from src.classification.application.ports import PageSourcePort
 from src.classification.domain.entities import PageRef, WikiPage
 from src.config.logger_config import logger
@@ -18,7 +19,7 @@ class HtmlPageSource(PageSourcePort):
         logger.info("HTML source discovered {} pages from {}", len(refs), str(self.input_dir))
         return refs
 
-    def load(self, ref: PageRef) -> WikiPage:
+    def load(self, ref: PageRef) -> LoadedPage:
         path = Path(ref.location)
         raw = path.read_text(encoding="utf-8", errors="replace")
 
@@ -33,9 +34,9 @@ class HtmlPageSource(PageSourcePort):
             return self._from_parsed(path, fallback, parse_warning=warning)
 
     @staticmethod
-    def _from_parsed(path: Path, parsed: dict, parse_warning: str | None) -> WikiPage:
+    def _from_parsed(path: Path, parsed: dict, parse_warning: str | None) -> LoadedPage:
         categories = tuple(sorted({str(c).strip() for c in parsed.get("categories", []) if str(c).strip()}))
-        return WikiPage(
+        page = WikiPage(
             pageid=HtmlPageSource._to_int(parsed.get("pageid")),
             title=str(parsed.get("title", "")),
             revid=HtmlPageSource._to_int(parsed.get("revid")),
@@ -44,9 +45,8 @@ class HtmlPageSource(PageSourcePort):
             categories=categories,
             content=str(parsed.get("content", "")),
             is_redirect=bool(parsed.get("is_redirect", False)),
-            source_path=str(path),
-            parse_warning=parse_warning,
         )
+        return LoadedPage(page=page, meta=LoadedPageMeta(source_path=str(path), parse_warning=parse_warning))
 
     @staticmethod
     def _to_int(value) -> int | None:

@@ -1,7 +1,8 @@
-import json
+﻿import json
 import re
 from pathlib import Path
 
+from src.classification.application.contracts import ClassificationLabelRecord
 from src.classification.application.ports import ClassificationSinkPort
 from src.config.logger_config import logger
 
@@ -18,22 +19,22 @@ class ClassifiedJsonSink(ClassificationSinkPort):
         self.by_entity_type: dict[str, int] = {}
         logger.info("Classified JSON sink initialized: classified_root={}", str(self.classified_root))
 
-    def write_label(self, row: dict) -> None:
-        source_path = Path(str(row.get("source_path", "")))
+    def write_label(self, row: ClassificationLabelRecord) -> None:
+        source_path = Path(row.source_path)
         if not source_path.exists() or source_path.suffix.lower() != ".json":
             self.skipped_invalid_source_count += 1
             logger.warning(
                 "Skip classified copy due to invalid source path: doc_id={}, source_path={}",
-                row.get("doc_id"),
-                row.get("source_path"),
+                row.doc_id,
+                row.source_path,
             )
             return
 
         with source_path.open("r", encoding="utf-8", errors="replace") as fp:
             payload = json.load(fp)
-        payload["subtypes"] = list(row.get("subtypes", []))
+        payload["subtypes"] = list(row.subtypes)
 
-        entity_type = str(row.get("entity_type", "misc") or "misc")
+        entity_type = str(row.entity_type or "misc")
         entity_dir = self.classified_root / entity_type
         entity_dir.mkdir(parents=True, exist_ok=True)
         self._warn_legacy_double_underscore_names(entity_dir=entity_dir, source_name=source_path.name, entity_type=entity_type)
@@ -41,8 +42,8 @@ class ClassifiedJsonSink(ClassificationSinkPort):
         target_path = self._resolve_output_path(
             entity_dir=entity_dir,
             source_name=source_path.name,
-            pageid=row.get("pageid"),
-            doc_id=row.get("doc_id"),
+            pageid=row.pageid,
+            doc_id=row.doc_id,
         )
         if target_path.name != source_path.name:
             self.collision_renamed_count += 1
@@ -54,8 +55,8 @@ class ClassifiedJsonSink(ClassificationSinkPort):
         self.copied_count += 1
         self.by_entity_type[entity_type] = self.by_entity_type.get(entity_type, 0) + 1
 
-    def write_review(self, row: dict) -> None:
-        logger.debug("Classified JSON sink received review row (no-op): doc_id={}", row.get("doc_id"))
+    def write_review(self, row: ClassificationLabelRecord) -> None:
+        logger.debug("Classified JSON sink received review row (no-op): doc_id={}", row.doc_id)
 
     def close(self) -> None:
         logger.info(
