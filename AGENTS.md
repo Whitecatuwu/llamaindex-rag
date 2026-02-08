@@ -429,6 +429,7 @@ Default behavior MUST be **read-only**.
 ## 12) Logging & Observability
 
 Do not log secrets or raw user PII.
+use `loguru` for log
 
 ### 12.1 Ingestion logs (stable fields)
 

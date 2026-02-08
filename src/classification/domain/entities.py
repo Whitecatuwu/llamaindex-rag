@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+﻿from dataclasses import dataclass, field
 from typing import Any
 
 from src.classification.domain.types import EntityType, SubtypeTag
@@ -21,8 +21,6 @@ class WikiPage:
     categories: tuple[str, ...]
     content: str
     is_redirect: bool
-    source_path: str
-    parse_warning: str | None = None
 
     @property
     def doc_id(self) -> str:
@@ -39,4 +37,3 @@ class Classification:
     reasons: tuple[str, ...]
     matched_rules: tuple[str, ...]
     strategy_version: str
-

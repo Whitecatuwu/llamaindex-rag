@@ -41,3 +41,4 @@
     When I review trigger methods
     Then ingestion adapter should be documented as valid trigger
     And output artifacts should include labels, review queue, and report
+    And output artifacts should include classified json copies grouped by entity type

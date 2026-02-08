@@ -11,7 +11,7 @@ logger.add(
     retention="10 days",  # 只保留最近 10 天的日誌 (自動刪除舊的)
     compression="zip",  # 切分後的舊檔案自動壓縮成 zip (節省空間)
     encoding="utf-8",  # 防止中文亂碼
-    level="INFO",  # 檔案中只存 INFO 以上 (過濾掉 DEBUG/TRACE)
+    level="DEBUG",  # 檔案中只存 INFO 以上 (過濾掉 DEBUG/TRACE)
 )
 
 if __name__ == "__main__":
