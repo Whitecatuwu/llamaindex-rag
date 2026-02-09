@@ -14,7 +14,7 @@ from tests.utils.tempdir import managed_temp_dir
 
 class PortsImplementationTests(unittest.TestCase):
     def test_sources_implement_page_source_port(self):
-        html_source = HtmlPageSource(input_dir="data/raw/wiki/html")
+        html_source = HtmlPageSource(input_dir="artifacts/raw/wiki/page")
         registry_source = RegistryPageSource(db_path="data/raw/wiki/wiki_registry.db")
 
         self.assertIsInstance(html_source, PageSourcePort)

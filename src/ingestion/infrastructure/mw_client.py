@@ -15,11 +15,19 @@ from loguru import logger
 
 from src.ingestion.domain.models import WikiPageDoc
 from src.ingestion.domain.rules import build_canonical_url
+from src.ingestion.infrastructure.raw_sink import RawApiJsonlSink
 
 
 class MediaWikiClient:
-    def __init__(self, base_url: str = "https://battlecats.miraheze.org/w/api.php") -> None:
+    def __init__(
+        self,
+        base_url: str = "https://battlecats.miraheze.org/w/api.php",
+        raw_sink: RawApiJsonlSink | None = None,
+        run_id: str | None = None,
+    ) -> None:
         self.base_url = base_url
+        self.raw_sink = raw_sink
+        self.run_id = run_id
 
     async def fetch_categories(self, session: aiohttp.ClientSession) -> list[str]:
         params: dict[str, Any] = {
@@ -35,7 +43,11 @@ class MediaWikiClient:
 
         while True:
             req_params = {**params, **continue_token}
-            fetch_result = await self._fetch(session, req_params)
+            fetch_result = await self._fetch(
+                session,
+                req_params,
+                operation="fetch_categories",
+            )
             if not fetch_result:
                 logger.error("Failed to fetch categories list.")
                 return []
@@ -80,7 +92,11 @@ class MediaWikiClient:
 
         while True:
             req_params = {**gen_params, **continue_token}
-            fetch_result = await self._fetch(session, req_params)
+            fetch_result = await self._fetch(
+                session,
+                req_params,
+                operation="fetch_all_pages_metadata",
+            )
             if not fetch_result:
                 logger.error("Failed to fetch pages metadata.")
                 break
@@ -125,7 +141,13 @@ class MediaWikiClient:
             "format": "json",
             "formatversion": "2",
         }
-        fetch_result = await self._fetch(session, params, retries=retries)
+        fetch_result = await self._fetch(
+            session,
+            params,
+            retries=retries,
+            operation="fetch_page_doc",
+            pageid=page_id,
+        )
         if not fetch_result:
             return None
 
@@ -190,9 +212,13 @@ class MediaWikiClient:
         session: aiohttp.ClientSession,
         params: dict[str, Any],
         retries: int = 3,
+        *,
+        operation: str,
+        pageid: int | None = None,
     ) -> tuple[dict[str, Any], dict[str, Any]] | None:
         timeout = aiohttp.ClientTimeout(total=45, connect=10)
         for attempt in range(1, retries + 1):
+            started_at = datetime.now(timezone.utc).isoformat()
             try:
                 async with session.get(self.base_url, params=params, timeout=timeout) as resp:
                     if resp.status >= 500 or resp.status == 429:
@@ -210,15 +236,87 @@ class MediaWikiClient:
                         )
 
                     if resp.status != 200:
-                        logger.error("HTTP {}: {}", resp.status, await resp.text())
+                        body = await resp.text()
+                        await self._write_raw_event(
+                            {
+                                "run_id": self.run_id,
+                                "operation": operation,
+                                "pageid": pageid,
+                                "attempt": attempt,
+                                "request": {"base_url": self.base_url, "params": params},
+                                "http": self._build_http_meta(resp),
+                                "response_json": None,
+                                "response_text": body,
+                                "warnings": None,
+                                "continue_token": None,
+                                "error": {"type": "HTTPError", "message": f"HTTP {resp.status}"},
+                                "timing": {
+                                    "started_at": started_at,
+                                    "finished_at": datetime.now(timezone.utc).isoformat(),
+                                },
+                                "outcome": "http_error",
+                            }
+                        )
+                        logger.error("HTTP {}: {}", resp.status, body)
                         return None
 
-                    data = await resp.json()
+                    try:
+                        data = await resp.json()
+                    except (ContentTypeError, json.JSONDecodeError, ValueError) as exc:
+                        body = await resp.text()
+                        await self._write_raw_event(
+                            {
+                                "run_id": self.run_id,
+                                "operation": operation,
+                                "pageid": pageid,
+                                "attempt": attempt,
+                                "request": {"base_url": self.base_url, "params": params},
+                                "http": self._build_http_meta(resp),
+                                "response_json": None,
+                                "response_text": body,
+                                "warnings": None,
+                                "continue_token": None,
+                                "error": {"type": type(exc).__name__, "message": str(exc)},
+                                "timing": {
+                                    "started_at": started_at,
+                                    "finished_at": datetime.now(timezone.utc).isoformat(),
+                                },
+                                "outcome": "retryable_error",
+                            }
+                        )
+                        wait_time = 2**attempt
+                        if attempt == retries:
+                            logger.error("Failed after {} attempts. Error: {}", retries, exc)
+                            return None
+                        logger.warning("Connection unstable ({}). Retrying in {}s...", exc, wait_time)
+                        await asyncio.sleep(wait_time)
+                        continue
+
                     http_meta = {
                         "status": resp.status,
                         "etag": resp.headers.get("ETag", ""),
                         "last_modified": resp.headers.get("Last-Modified", ""),
                     }
+                    await self._write_raw_event(
+                        {
+                            "run_id": self.run_id,
+                            "operation": operation,
+                            "pageid": pageid,
+                            "attempt": attempt,
+                            "request": {"base_url": self.base_url, "params": params},
+                            "http": self._build_http_meta(resp),
+                            "response_json": data,
+                            "response_text": None,
+                            "warnings": data.get("warnings"),
+                            "continue_token": data.get("continue"),
+                            "error": None,
+                            "timing": {
+                                "started_at": started_at,
+                                "finished_at": datetime.now(timezone.utc).isoformat(),
+                            },
+                            "outcome": "success",
+                        }
+                    )
                     return data, http_meta
 
             except (
@@ -227,10 +325,27 @@ class MediaWikiClient:
                 ServerDisconnectedError,
                 asyncio.TimeoutError,
                 ClientPayloadError,
-                ContentTypeError,
-                json.JSONDecodeError,
-                ValueError,
             ) as exc:
+                await self._write_raw_event(
+                    {
+                        "run_id": self.run_id,
+                        "operation": operation,
+                        "pageid": pageid,
+                        "attempt": attempt,
+                        "request": {"base_url": self.base_url, "params": params},
+                        "http": {"status": getattr(exc, "status", None)},
+                        "response_json": None,
+                        "response_text": None,
+                        "warnings": None,
+                        "continue_token": None,
+                        "error": {"type": type(exc).__name__, "message": str(exc)},
+                        "timing": {
+                            "started_at": started_at,
+                            "finished_at": datetime.now(timezone.utc).isoformat(),
+                        },
+                        "outcome": "retryable_error",
+                    }
+                )
                 wait_time = 2**attempt
                 if attempt == retries:
                     logger.error("Failed after {} attempts. Error: {}", retries, exc)
@@ -238,6 +353,44 @@ class MediaWikiClient:
                 logger.warning("Connection unstable ({}). Retrying in {}s...", exc, wait_time)
                 await asyncio.sleep(wait_time)
             except Exception as exc:
+                await self._write_raw_event(
+                    {
+                        "run_id": self.run_id,
+                        "operation": operation,
+                        "pageid": pageid,
+                        "attempt": attempt,
+                        "request": {"base_url": self.base_url, "params": params},
+                        "http": None,
+                        "response_json": None,
+                        "response_text": None,
+                        "warnings": None,
+                        "continue_token": None,
+                        "error": {"type": type(exc).__name__, "message": str(exc)},
+                        "timing": {
+                            "started_at": started_at,
+                            "finished_at": datetime.now(timezone.utc).isoformat(),
+                        },
+                        "outcome": "fatal_error",
+                    }
+                )
                 logger.error("Unexpected error while fetching: {}", exc)
                 return None
 
+        return None
+
+    @staticmethod
+    def _build_http_meta(resp: aiohttp.ClientResponse) -> dict[str, Any]:
+        return {
+            "status": resp.status,
+            "etag": resp.headers.get("ETag", ""),
+            "last_modified": resp.headers.get("Last-Modified", ""),
+            "headers": dict(resp.headers),
+        }
+
+    async def _write_raw_event(self, event: dict[str, Any]) -> None:
+        if self.raw_sink is None:
+            return
+        try:
+            await self.raw_sink.write_event(event)
+        except Exception as exc:
+            logger.warning("Failed to persist raw API event: {}", exc)

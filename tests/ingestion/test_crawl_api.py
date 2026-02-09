@@ -42,6 +42,7 @@ class CrawlApiAsyncTests(unittest.IsolatedAsyncioTestCase):
             skipped_total=1,
         )
         registry = MagicMock()
+        raw_sink = MagicMock()
         workflow = MagicMock()
         workflow.run = AsyncMock(return_value=expected)
 
@@ -49,11 +50,13 @@ class CrawlApiAsyncTests(unittest.IsolatedAsyncioTestCase):
             patch("src.ingestion.crawl.MediaWikiClient", return_value=MagicMock()),
             patch("src.ingestion.crawl.SQLiteRegistryRepository", return_value=registry),
             patch("src.ingestion.crawl.JsonFileSink", return_value=MagicMock()),
+            patch("src.ingestion.crawl.RawApiJsonlSink", return_value=raw_sink),
             patch("src.ingestion.crawl.CrawlPagesWorkflow", return_value=workflow),
         ):
             result = await run_crawl_async()
 
         self.assertEqual(result, expected)
+        raw_sink.close.assert_called_once()
         registry.close.assert_called_once()
 
     async def test_fetch_categories_async_calls_client(self):
@@ -65,3 +68,21 @@ class CrawlApiAsyncTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result, ["A", "B"])
         client.fetch_categories.assert_awaited()
 
+    async def test_run_crawl_async_accepts_page_dir(self):
+        expected = CrawlSummary(
+            discovered_total=0,
+            queued_total=0,
+            processed_total=0,
+            failed_total=0,
+            skipped_total=0,
+        )
+        with (
+            patch("src.ingestion.crawl.MediaWikiClient", return_value=MagicMock()),
+            patch("src.ingestion.crawl.SQLiteRegistryRepository", return_value=MagicMock()),
+            patch("src.ingestion.crawl.JsonFileSink", return_value=MagicMock()),
+            patch("src.ingestion.crawl.RawApiJsonlSink", return_value=MagicMock()),
+            patch("src.ingestion.crawl.CrawlPagesWorkflow", return_value=MagicMock(run=AsyncMock(return_value=expected))),
+        ):
+            result = await run_crawl_async(page_dir="same/path")
+
+        self.assertEqual(result, expected)

@@ -41,6 +41,14 @@ class FakeSession:
         return self._responses.pop(0)
 
 
+class FakeRawSink:
+    def __init__(self):
+        self.events = []
+
+    async def write_event(self, event):
+        self.events.append(event)
+
+
 class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
     async def test_fetch_success_returns_data_and_http_meta(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
@@ -54,7 +62,11 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
             ]
         )
 
-        result = await client._fetch(session, params={"action": "query"})
+        result = await client._fetch(
+            session,
+            params={"action": "query"},
+            operation="fetch_categories",
+        )
         self.assertIsNotNone(result)
         data, http_meta = result
         self.assertEqual(data, {"ok": True})
@@ -72,7 +84,12 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
         )
 
         with patch("src.ingestion.infrastructure.mw_client.asyncio.sleep", new=AsyncMock()):
-            result = await client._fetch(session, params={"action": "query"}, retries=2)
+            result = await client._fetch(
+                session,
+                params={"action": "query"},
+                retries=2,
+                operation="fetch_categories",
+            )
 
         self.assertIsNotNone(result)
         self.assertEqual(session.calls, 2)
@@ -80,7 +97,11 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
     async def test_fetch_non_200_returns_none(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
         session = FakeSession([FakeResponse(status=404, text_data="not found")])
-        result = await client._fetch(session, params={"action": "query"})
+        result = await client._fetch(
+            session,
+            params={"action": "query"},
+            operation="fetch_categories",
+        )
         self.assertIsNone(result)
 
     async def test_fetch_page_doc_includes_http_meta(self):
@@ -165,3 +186,58 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
         result = await client.fetch_categories(session)
         self.assertEqual(result, ["A", "B", "C"])
 
+    async def test_fetch_logs_raw_event_with_warnings_and_continue(self):
+        sink = FakeRawSink()
+        client = MediaWikiClient(base_url="http://unit.invalid", raw_sink=sink, run_id="run_1")
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {"pages": []},
+                        "warnings": {"query": {"*": "warn"}},
+                        "continue": {"rvcontinue": "123|0"},
+                    },
+                    headers={"ETag": "etag", "Last-Modified": "lm"},
+                )
+            ]
+        )
+
+        result = await client._fetch(
+            session,
+            params={"action": "query"},
+            operation="fetch_page_doc",
+            pageid=1,
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(len(sink.events), 1)
+        event = sink.events[0]
+        self.assertEqual(event["run_id"], "run_1")
+        self.assertEqual(event["operation"], "fetch_page_doc")
+        self.assertEqual(event["pageid"], 1)
+        self.assertEqual(event["outcome"], "success")
+        self.assertEqual(event["warnings"], {"query": {"*": "warn"}})
+        self.assertEqual(event["continue_token"], {"rvcontinue": "123|0"})
+        self.assertEqual(event["request"]["params"]["action"], "query")
+        self.assertEqual(event["http"]["status"], 200)
+        self.assertEqual(event["http"]["etag"], "etag")
+
+    async def test_fetch_logs_raw_retry_events(self):
+        sink = FakeRawSink()
+        client = MediaWikiClient(base_url="http://unit.invalid", raw_sink=sink, run_id="run_2")
+        session = FakeSession([FakeResponse(status=500), FakeResponse(status=500)])
+
+        with patch("src.ingestion.infrastructure.mw_client.asyncio.sleep", new=AsyncMock()):
+            result = await client._fetch(
+                session,
+                params={"action": "query"},
+                retries=2,
+                operation="fetch_all_pages_metadata",
+            )
+
+        self.assertIsNone(result)
+        self.assertEqual(len(sink.events), 2)
+        self.assertEqual(sink.events[0]["outcome"], "retryable_error")
+        self.assertEqual(sink.events[1]["outcome"], "retryable_error")
+        self.assertEqual(sink.events[0]["attempt"], 1)
+        self.assertEqual(sink.events[1]["attempt"], 2)

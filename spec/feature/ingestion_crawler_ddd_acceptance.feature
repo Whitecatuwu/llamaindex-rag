@@ -42,3 +42,20 @@ Feature: Ingestion crawler DDD refactor acceptance
     When crawl workflow runs
     Then processed_total should be 0
     And no page fetch should be executed
+
+  Scenario: A7 crawler writes page and raw artifacts
+    Given crawl workflow processes one page successfully
+    When artifacts are persisted
+    Then WikiPageDoc JSON should be written to "artifacts/raw/wiki/page"
+    And raw API logs should be written to "artifacts/raw/wiki/raw"
+
+  Scenario: A8 raw API logs preserve debug details
+    Given an API response contains warnings and continue tokens
+    When MediaWiki client writes raw logs
+    Then raw log event should include "request", "response_json", "warnings", "continue_token", "http", "attempt", and "outcome"
+    And raw log event should include run-level identifier "run_id"
+
+  Scenario: A9 page_dir is the only page output selector
+    Given caller passes explicit "page_dir"
+    When run_crawl_async resolves output directories
+    Then it should use "page_dir" as page output directory

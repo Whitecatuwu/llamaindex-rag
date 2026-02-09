@@ -52,3 +52,14 @@
 ## BDD Spec
 - `spec/feature/ingestion_crawler_ddd_acceptance.feature`
 - 覆蓋分層結構、`fetch_categories` continuation、diff 行為、JSON 契約、retry 行為、無更新早退。
+
+## 2026-02-09 Artifact layout update
+- Ingestion output is split into two tracks:
+  - `artifacts/raw/wiki/page`: structured `WikiPageDoc` JSON files for downstream pipeline.
+  - `artifacts/raw/wiki/raw`: append-only API raw logs for replay/debug.
+- Raw log file format:
+  - `api_calls_{run_id}.jsonl` (one file per crawl run).
+  - Each event includes `run_id`, `operation`, `pageid`, `attempt`, request params, HTTP meta, full `response_json`, optional `response_text`, `warnings`, `continue_token`, error payload, timing, and `outcome`.
+- `run_crawl/run_crawl_async` API changes:
+  - New arguments: `page_dir`, `raw_dir`.
+  - `page_dir` is the single page artifact selector.
