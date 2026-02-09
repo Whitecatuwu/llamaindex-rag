@@ -20,7 +20,7 @@ from src.config.logger_config import logger
 def run_classify(
     enable_classification: bool = False,
     source_mode: str = "html",
-    input_dir: str = "data/raw/wiki/html",
+    input_dir: str = "artifacts/raw/wiki/page",
     db_path: str = "data/raw/wiki/wiki_registry.db",
     output_labels_path: str = "artifacts/docs/page_labels_ingestion.jsonl",
     output_report_path: str = "artifacts/docs/classification_report_ingestion.json",

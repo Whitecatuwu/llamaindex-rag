@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from src.ingestion.classification_adapter import run
+from src.classification.classify import run_classify
 from tests.utils.tempdir import managed_temp_dir
 
 
@@ -25,7 +25,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            result = run(
+            result = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -67,7 +67,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            first = run(
+            first = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -79,7 +79,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 incremental=True,
                 full_rebuild=False,
             )
-            second = run(
+            second = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -115,7 +115,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            result = run(
+            result = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),

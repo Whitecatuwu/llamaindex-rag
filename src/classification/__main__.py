@@ -5,7 +5,7 @@ if __name__ == "__main__":
     result = run_classify(
         enable_classification=True,
         source_mode="html",
-        input_dir="artifacts/raw/wiki/html",
+        input_dir="artifacts/raw/wiki/page",
         db_path="artifacts/raw/wiki/wiki_registry.db",
         output_labels_path="artifacts/classified/page_labels_ingestion.jsonl",
         output_report_path="artifacts/classified/classification_report_ingestion.json",

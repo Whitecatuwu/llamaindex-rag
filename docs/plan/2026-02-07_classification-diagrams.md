@@ -6,7 +6,7 @@
 ```mermaid
 flowchart TD
     A[入口] --> B{觸發方式}
-    B -->|Ingestion Adapter| D[src/ingestion/classification_adapter.py]
+    B -->|Classification Entrypoint| D[src/classification/classify.py (run_classify)]
 
     D --> E
 
