@@ -2,7 +2,7 @@ import re
 from dataclasses import dataclass
 from typing import Pattern
 
-from src.classification.domain.types import EntityType
+from src.classification.domain.types import EntityType, RuleMatchType
 
 CLASSIFICATION_STRATEGY_VERSION = "1.1.0"
 LOW_MARGIN_THRESHOLD = 0.15
@@ -13,7 +13,7 @@ class RuleSpec:
     rule_id: str
     target: EntityType
     weight: float
-    source: str
+    type: RuleMatchType
     pattern: Pattern[str]
 
 

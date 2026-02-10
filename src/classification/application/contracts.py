@@ -32,6 +32,7 @@ class ClassificationLabelRecord:
     source_path: str
     is_redirect: bool
     parse_warning: str | None
+    is_ambiguous: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -49,6 +50,7 @@ class ClassificationLabelRecord:
             "source_path": self.source_path,
             "is_redirect": self.is_redirect,
             "parse_warning": self.parse_warning,
+            "is_ambiguous": self.is_ambiguous,
         }
 
 
@@ -60,7 +62,7 @@ class ClassificationReportRecord:
     parse_warning_count: int
     misc_count: int
     low_conf_count: int
-    conflict_count: int
+    ambiguity_count: int
     by_entity_type: dict[str, int]
     duration_ms: int
     generated_at: str
@@ -73,7 +75,7 @@ class ClassificationReportRecord:
             "parse_warning_count": self.parse_warning_count,
             "misc_count": self.misc_count,
             "low_conf_count": self.low_conf_count,
-            "conflict_count": self.conflict_count,
+            "ambiguity_count": self.ambiguity_count,
             "by_entity_type": self.by_entity_type,
             "duration_ms": self.duration_ms,
             "generated_at": self.generated_at,

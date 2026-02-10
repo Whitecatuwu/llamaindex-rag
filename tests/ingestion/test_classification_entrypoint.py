@@ -45,6 +45,7 @@ class ClassificationAdapterTests(unittest.TestCase):
             self.assertTrue(classified_path.exists())
             copied_payload = json.loads(classified_path.read_text(encoding="utf-8"))
             self.assertIn("subtypes", copied_payload)
+            self.assertIn("is_ambiguous", copied_payload)
             original_payload = json.loads(source_path.read_text(encoding="utf-8"))
             self.assertNotIn("subtypes", original_payload)
 

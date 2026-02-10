@@ -13,7 +13,7 @@ from src.classification.domain.rules import (
     STAGE_SUBTYPE_PATTERNS,
     UPDATE_SUBTYPE_PATTERNS,
 )
-from src.classification.domain.types import EntityType
+from src.classification.domain.types import EntityType, RuleMatchType
 
 
 class RuleBasedClassifier:
@@ -40,7 +40,7 @@ class RuleBasedClassifier:
         matched: dict[EntityType, list[str]] = defaultdict(list)
 
         for rule in PRIMARY_RULES:
-            if self._rule_matches(rule.pattern, rule.source, normalized_categories, title, content):
+            if self._rule_matches(rule.pattern, rule.type, normalized_categories, title, content):
                 scores[rule.target] += rule.weight
                 matched[rule.target].append(rule.rule_id)
 
@@ -51,6 +51,7 @@ class RuleBasedClassifier:
 
         best, second, margin = self._top_two(scores)
         reasons: list[str] = []
+        is_ambiguous = False
 
         if best == "misc" or scores[best] <= 0.0:
             # No positive signal from rules -> force misc with explicit reason.
@@ -62,48 +63,48 @@ class RuleBasedClassifier:
                 reasons=tuple(reasons),
                 matched_rules=(),
                 strategy_version=CLASSIFICATION_STRATEGY_VERSION,
+                is_ambiguous=False,
             )
 
         confidence = scores[best] / max(scores[best] + scores[second], 1e-6)
 
         if margin < self.low_margin_threshold:
-            # Low margin means ambiguous top classes; downgrade to misc for safety.
+            # Low margin means ambiguous top classes; retain best class but mark as ambiguous.
+            is_ambiguous = True
             reasons.append(f"low_margin_conflict:{best}_vs_{second}")
-            return Classification(
-                entity_type="misc",
-                subtypes=(),
-                confidence=confidence,
-                reasons=tuple(reasons),
-                matched_rules=tuple(sorted(set(matched.get(best, []) + matched.get(second, [])))),
-                strategy_version=CLASSIFICATION_STRATEGY_VERSION,
-            )
 
         subtypes = tuple(self._extract_subtypes(best, normalized_categories, title, content))
+        matched_rules = matched.get(best, [])
+        if is_ambiguous:
+            matched_rules = matched_rules + matched.get(second, [])
         return Classification(
             entity_type=best,
             subtypes=subtypes,
             confidence=confidence,
             reasons=tuple(reasons),
-            matched_rules=tuple(sorted(set(matched.get(best, [])))),
+            matched_rules=tuple(sorted(set(matched_rules))),
             strategy_version=CLASSIFICATION_STRATEGY_VERSION,
+            is_ambiguous=is_ambiguous,
         )
 
     @staticmethod
     def _rule_matches(
         pattern: Pattern[str],
-        source: str,
+        match_type: RuleMatchType,
         categories: tuple[str, ...],
         title: str,
         content: str,
     ) -> bool:
-        if source == "category":
+        if match_type == "category":
             return any(pattern.search(c) for c in categories)
-        if source == "title":
+        if match_type == "title":
             return bool(pattern.search(title))
-        if source == "content":
+        if match_type == "content":
             return bool(pattern.search(content))
-        combined_text = f"{title}\n{content}\n" + "\n".join(categories)
-        return bool(pattern.search(combined_text))
+        if match_type == "combined":
+            combined_text = f"{title}\n{content}\n" + "\n".join(categories)
+            return bool(pattern.search(combined_text))
+        raise ValueError(f"Unsupported match type: {match_type}")
 
     @staticmethod
     def _top_two(scores: dict[EntityType, float]) -> tuple[EntityType, EntityType, float]:
@@ -148,13 +149,11 @@ class RuleBasedClassifier:
     def _extract_from_patterns(text: str, patterns: tuple[tuple[Pattern[str], str], ...]) -> set[str]:
         tags: set[str] = set()
         for pattern, template in patterns:
-            match = pattern.search(text)
-            if not match:
-                continue
-            tag = template
-            for idx, value in enumerate(match.groups(), start=1):
-                tag = tag.replace(f"{{group{idx}}}", RuleBasedClassifier._slugify(value))
-            tags.add(tag)
+            for match in pattern.finditer(text):
+                tag = template
+                for idx, value in enumerate(match.groups(), start=1):
+                    tag = tag.replace(f"{{group{idx}}}", RuleBasedClassifier._slugify(value))
+                tags.add(tag)
         return tags
 
     @staticmethod

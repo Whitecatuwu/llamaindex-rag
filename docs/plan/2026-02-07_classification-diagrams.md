@@ -46,7 +46,7 @@ flowchart TD
 
     G --> W[5. persist]
     W --> X[JsonlClassificationSink.write_label]
-    W --> Y{misc or low_conf or conflict}
+    W --> Y{misc or low_conf or ambiguity}
     Y -->|是| Z[write_review]
     W --> X2[ClassifiedJsonSink.write_label]
     X2 --> SU[6. state upsert]
@@ -73,11 +73,11 @@ flowchart LR
     D --> E2[classified/<entity_type>/*.json (+subtypes)]
 
     D --> F{needs_review?}
-    F -->|misc / low_conf / conflict| G[review row]
+    F -->|misc / low_conf / ambiguity| G[review row]
     G --> H[review_queue_*.jsonl]
 
     B --> I[Pipeline counters\nparse_warning_count, discovered]
-    C --> J[Pipeline counters\nby_entity_type, misc_count,\nlow_conf_count, conflict_count,\nskipped_unchanged_count]
+    C --> J[Pipeline counters\nby_entity_type, misc_count,\nlow_conf_count, ambiguity_count,\nskipped_unchanged_count]
     I --> K[report object]
     J --> K
     K --> L[classification_report_*.json]

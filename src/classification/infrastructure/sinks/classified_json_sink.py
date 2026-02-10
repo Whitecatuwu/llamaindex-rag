@@ -33,6 +33,7 @@ class ClassifiedJsonSink(ClassificationSinkPort):
         with source_path.open("r", encoding="utf-8", errors="replace") as fp:
             payload = json.load(fp)
         payload["subtypes"] = list(row.subtypes)
+        payload["is_ambiguous"] = row.is_ambiguous
 
         entity_type = str(row.entity_type or "misc")
         entity_dir = self.classified_root / entity_type

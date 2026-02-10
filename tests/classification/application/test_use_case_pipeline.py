@@ -444,3 +444,52 @@ class ClassificationPipelineTests(unittest.TestCase):
             )
             self.assertEqual(first.classified_count, 1)
             self.assertEqual(second.classified_count, 1)
+
+    def test_pipeline_ambiguous_best_label_is_kept_and_reviewed(self):
+        with managed_temp_dir("pipeline_ambiguous_review") as tmp_path:
+            input_dir = tmp_path / "html"
+            input_dir.mkdir()
+
+            _write_page(
+                input_dir / "tor.json",
+                {
+                    "pageid": 61641,
+                    "title": "1 + 2 = Tor",
+                    "revid": 369861,
+                    "categories": ["Category:Sub-chapter 106 Stages", "Category:Zero Legends Stages"],
+                    "content": "Like other stages added in Version 13.0.",
+                    "is_redirect": False,
+                },
+            )
+
+            labels_path = tmp_path / "labels.jsonl"
+            review_path = tmp_path / "review.jsonl"
+            report_path = tmp_path / "report.json"
+
+            use_case = ClassifyWikiPagesUseCase(
+                pipeline=ClassificationPipeline(
+                    source=HtmlPageSource(str(input_dir)),
+                    classifier=RuleBasedClassifier(),
+                    sink=JsonlClassificationSink(str(labels_path), str(review_path)),
+                    report_sink=JsonReportSink(str(report_path)),
+                )
+            )
+            result = use_case.execute(
+                ClassifyWikiPagesCommand(
+                    source_mode="html",
+                    low_confidence_threshold=0.0,
+                    include_redirects=True,
+                    incremental=False,
+                )
+            )
+
+            self.assertEqual(result.classified_count, 1)
+            self.assertEqual(result.misc_count, 0)
+            self.assertEqual(result.ambiguity_count, 1)
+
+            label_row = json.loads(labels_path.read_text(encoding="utf-8").strip())
+            review_row = json.loads(review_path.read_text(encoding="utf-8").strip())
+            self.assertEqual(label_row["entity_type"], "stage")
+            self.assertTrue(label_row["is_ambiguous"])
+            self.assertTrue(any("low_margin_conflict:stage_vs_update" == reason for reason in label_row["reasons"]))
+            self.assertEqual(review_row["doc_id"], label_row["doc_id"])
