@@ -31,6 +31,7 @@ def run_classify(
     state_db_path: str = "artifacts/classified/classification_state.db",
     low_confidence_threshold: float = 0.5,
     include_redirects: bool = True,
+    show_progress: bool = True,
 ) -> ClassifyWikiPagesResult | None:
     if not enable_classification:
         logger.info("Classification adapter is disabled. Set enable_classification=True to run.")
@@ -82,5 +83,6 @@ def run_classify(
             incremental=incremental,
             full_rebuild=full_rebuild,
             state_db_path=state_db_path,
+            show_progress=show_progress,
         )
     )

@@ -34,6 +34,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 output_review_path=str(tmp_path / "review.jsonl"),
                 classified_output_root=str(tmp_path / "classified"),
                 incremental=False,
+                show_progress=False,
             )
 
             self.assertIsNotNone(result)
@@ -79,6 +80,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 state_db_path=str(tmp_path / "classification_state.db"),
                 incremental=True,
                 full_rebuild=False,
+                show_progress=False,
             )
             second = run_classify(
                 enable_classification=True,
@@ -91,6 +93,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 state_db_path=str(tmp_path / "classification_state.db"),
                 incremental=True,
                 full_rebuild=False,
+                show_progress=False,
             )
 
             self.assertIsNotNone(first)
@@ -127,6 +130,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 incremental=True,
                 full_rebuild=False,
                 state_db_path=str(tmp_path / "classification_state.db"),
+                show_progress=False,
             )
             self.assertIsNotNone(result)
             self.assertEqual(result.classified_count, 1)

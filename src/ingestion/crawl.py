@@ -1,5 +1,6 @@
 from __future__ import annotations
 import asyncio
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -27,6 +28,7 @@ async def run_crawl_async(
     raw_dir: str | Path = DEFAULT_RAW_DIR,
     db_path: str | Path = DEFAULT_DB_PATH,
     workflow_config: CrawlWorkflowConfig | None = None,
+    show_progress: bool = True,
 ) -> CrawlSummary:
     page_path = Path(page_dir)
     page_path.mkdir(parents=True, exist_ok=True)
@@ -44,7 +46,11 @@ async def run_crawl_async(
         mw_client=mw_client,
         registry=registry,
         sink=sink,
-        config=workflow_config,
+        config=(
+            replace(workflow_config, show_progress=show_progress)
+            if workflow_config is not None
+            else CrawlWorkflowConfig(show_progress=show_progress)
+        ),
     )
     try:
         return await workflow.run()
@@ -60,6 +66,7 @@ def run_crawl(
     raw_dir: str | Path = DEFAULT_RAW_DIR,
     db_path: str | Path = DEFAULT_DB_PATH,
     workflow_config: CrawlWorkflowConfig | None = None,
+    show_progress: bool = True,
 ) -> CrawlSummary:
     return asyncio.run(
         run_crawl_async(
@@ -68,6 +75,7 @@ def run_crawl(
             raw_dir=raw_dir,
             db_path=db_path,
             workflow_config=workflow_config,
+            show_progress=show_progress,
         )
     )
 

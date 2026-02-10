@@ -23,6 +23,22 @@ class CrawlApiTests(unittest.TestCase):
             result = run_crawl()
         self.assertEqual(result, expected)
 
+    def test_run_crawl_sync_wrapper_forwards_show_progress(self):
+        expected = CrawlSummary(
+            discovered_total=10,
+            queued_total=5,
+            processed_total=5,
+            failed_total=0,
+            skipped_total=5,
+        )
+        mocked = AsyncMock(return_value=expected)
+        with patch("src.ingestion.crawl.run_crawl_async", new=mocked):
+            result = run_crawl(show_progress=False)
+        self.assertEqual(result, expected)
+        mocked.assert_awaited_once()
+        self.assertFalse(mocked.await_args.kwargs["show_progress"])
+        self.assertIsNone(mocked.await_args.kwargs["workflow_config"])
+
     def test_fetch_categories_sync_wrapper(self):
         with patch(
             "src.ingestion.crawl.fetch_categories_async",

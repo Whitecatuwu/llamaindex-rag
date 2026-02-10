@@ -147,6 +147,7 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_fetch_all_pages_metadata_returns_canonical_pages_and_redirect_map(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
+        progress_events: list[tuple[str, int]] = []
         session = FakeSession(
             [
                 FakeResponse(
@@ -174,9 +175,82 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
                 ),
             ]
         )
-        result = await client.fetch_all_pages_metadata(session)
+        result = await client.fetch_all_pages_metadata(
+            session,
+            progress_callback=lambda phase, increment: progress_events.append((phase, increment)),
+        )
         self.assertEqual(result.canonical_pages, {1: 10, 2: 20})
         self.assertEqual(result.redirects_from, {1: ("Alias A", "Alias B")})
+        self.assertEqual(progress_events, [("discovery_pages", 2), ("discovery_redirects", 3)])
+
+    async def test_fetch_all_pages_metadata_emits_progress_on_continuation(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
+        progress_events: list[tuple[str, int]] = []
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "pages": [
+                                {"pageid": 1, "title": "Target A", "revisions": [{"revid": 10}]},
+                                {"pageid": 2, "title": "Target B", "revisions": [{"revid": 20}]},
+                            ]
+                        },
+                        "continue": {"gapcontinue": "Target B"},
+                    },
+                ),
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "pages": [
+                                {"pageid": 3, "title": "Target C", "revisions": [{"revid": 30}]},
+                            ]
+                        }
+                    },
+                ),
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "allredirects": [
+                                {"from": "Alias A1", "to": "Target A"},
+                                {"from": "Alias B1", "to": "Target B"},
+                            ]
+                        },
+                        "continue": {"arcontinue": "Alias B1"},
+                    },
+                ),
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "allredirects": [
+                                {"from": "Alias C1", "to": "Target C"},
+                            ]
+                        }
+                    },
+                ),
+            ]
+        )
+
+        result = await client.fetch_all_pages_metadata(
+            session,
+            progress_callback=lambda phase, increment: progress_events.append((phase, increment)),
+        )
+
+        self.assertEqual(result.canonical_pages, {1: 10, 2: 20, 3: 30})
+        self.assertEqual(result.redirects_from, {1: ("Alias A1",), 2: ("Alias B1",), 3: ("Alias C1",)})
+        self.assertEqual(
+            progress_events,
+            [
+                ("discovery_pages", 2),
+                ("discovery_pages", 1),
+                ("discovery_redirects", 2),
+                ("discovery_redirects", 1),
+            ],
+        )
 
     async def test_fetch_categories_handles_continuation_and_dedup(self):
         client = MediaWikiClient(base_url="http://unit.invalid")

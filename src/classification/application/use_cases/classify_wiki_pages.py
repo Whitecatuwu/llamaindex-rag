@@ -15,6 +15,7 @@ class ClassifyWikiPagesCommand:
     include_redirects: bool = True
     incremental: bool = True
     full_rebuild: bool = False
+    show_progress: bool = True
     # Kept for backward compatibility; infrastructure adapter is responsible for consuming this.
     state_db_path: str = "artifacts/classified/classification_state.db"
 
@@ -51,6 +52,7 @@ class ClassifyWikiPagesUseCase:
                 include_redirects=command.include_redirects,
                 incremental=command.incremental,
                 full_rebuild=command.full_rebuild,
+                show_progress=command.show_progress,
             )
         )
         logger.info(

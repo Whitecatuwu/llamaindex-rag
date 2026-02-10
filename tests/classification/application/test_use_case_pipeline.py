@@ -104,6 +104,7 @@ class ClassificationPipelineTests(unittest.TestCase):
                     low_confidence_threshold=0.6,
                     include_redirects=True,
                     incremental=False,
+                    show_progress=False,
                 )
             )
 

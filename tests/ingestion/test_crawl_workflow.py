@@ -36,8 +36,19 @@ class FakeMwClient:
         self.redirects_from = redirects_from or {}
         self.fetch_page_calls: list[int] = []
         self.fetch_page_redirects: dict[int, tuple[str, ...]] = {}
+        self.discovery_callback_seen = False
+        self.discovery_progress_events: list[tuple[str, int]] = []
 
-    async def fetch_all_pages_metadata(self, _session):
+    async def fetch_all_pages_metadata(self, _session, progress_callback=None):
+        self.discovery_callback_seen = progress_callback is not None
+        if progress_callback is not None:
+            page_count = len(self.remote_pages)
+            redirect_count = sum(len(v) for v in self.redirects_from.values())
+            progress_callback("discovery_pages", page_count)
+            progress_callback("discovery_redirects", redirect_count)
+            self.discovery_progress_events.extend(
+                [("discovery_pages", page_count), ("discovery_redirects", redirect_count)]
+            )
         return PageDiscoveryResult(
             canonical_pages=self.remote_pages,
             redirects_from=self.redirects_from,
@@ -90,7 +101,7 @@ class CrawlWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 mw_client=mw,
                 registry=registry,
                 sink=sink,
-                config=CrawlWorkflowConfig(chunk_size=2, polite_sleep_seconds=0),
+                config=CrawlWorkflowConfig(chunk_size=2, polite_sleep_seconds=0, show_progress=False),
             )
 
             summary = await workflow.run()
@@ -205,3 +216,27 @@ class CrawlWorkflowTests(unittest.IsolatedAsyncioTestCase):
             summary = await workflow.run()
             self.assertEqual(summary.processed_total, 1)
             self.assertEqual(mw.fetch_page_redirects[2], ("Alias B", "Alias A"))
+
+    async def test_discovery_progress_callback_wiring_when_enabled(self):
+        with managed_temp_dir("crawl_workflow_discovery_progress") as tmp:
+            mw = FakeMwClient(
+                remote_pages={2: 20},
+                docs={2: make_doc(2, 20)},
+                redirects_from={2: ("Alias A",)},
+            )
+            registry = FakeRegistry(local_state={})
+            sink = FakeSink(tmp)
+            workflow = CrawlPagesWorkflow(
+                mw_client=mw,
+                registry=registry,
+                sink=sink,
+                config=CrawlWorkflowConfig(chunk_size=1, polite_sleep_seconds=0, show_progress=True),
+            )
+
+            summary = await workflow.run()
+            self.assertEqual(summary.processed_total, 1)
+            self.assertTrue(mw.discovery_callback_seen)
+            self.assertEqual(
+                mw.discovery_progress_events,
+                [("discovery_pages", 1), ("discovery_redirects", 1)],
+            )

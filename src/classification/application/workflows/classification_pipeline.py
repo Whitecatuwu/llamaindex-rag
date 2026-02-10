@@ -1,7 +1,8 @@
-﻿from dataclasses import dataclass
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from time import perf_counter
 
+from tqdm import tqdm
 from src.classification.application.contracts import (
     ClassificationLabelRecord,
     ClassificationReportRecord,
@@ -26,6 +27,7 @@ class PipelineConfig:
     include_redirects: bool
     incremental: bool = True
     full_rebuild: bool = False
+    show_progress: bool = True
 
 
 @dataclass(frozen=True)
@@ -110,7 +112,14 @@ class ClassificationPipeline:
         by_entity_type = {k: 0 for k in ("cat", "enemy", "stage", "update", "mechanic", "list", "misc", "invalid")}
 
         try:
-            for ref in refs:
+            for ref in tqdm(
+                refs,
+                total=len(refs),
+                desc="Classification pages",
+                unit="page",
+                leave=True,
+                disable=not config.show_progress,
+            ):
                 loaded = self.source.load(ref)
                 page = loaded.page
                 if loaded.meta.parse_warning:

@@ -1,7 +1,7 @@
 import asyncio
 import json
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Callable
 
 import aiohttp
 from aiohttp import (
@@ -16,6 +16,8 @@ from src.config.logger_config import logger
 from src.ingestion.domain.models import PageDiscoveryResult, WikiPageDoc
 from src.ingestion.domain.rules import build_canonical_url
 from src.ingestion.infrastructure.raw_sink import RawApiJsonlSink
+
+DiscoveryProgressCallback = Callable[[str, int], None]
 
 
 class MediaWikiClient:
@@ -73,7 +75,11 @@ class MediaWikiClient:
 
         return result
 
-    async def fetch_all_pages_metadata(self, session: aiohttp.ClientSession) -> PageDiscoveryResult:
+    async def fetch_all_pages_metadata(
+        self,
+        session: aiohttp.ClientSession,
+        progress_callback: DiscoveryProgressCallback | None = None,
+    ) -> PageDiscoveryResult:
         logger.info("Fetching global page list and revision IDs...")
         pages_metadata: dict[int, int] = {}
         title_to_pageid: dict[str, int] = {}
@@ -104,6 +110,8 @@ class MediaWikiClient:
 
             data, _ = fetch_result
             pages = data.get("query", {}).get("pages", [])
+            if progress_callback is not None:
+                progress_callback("discovery_pages", len(pages))
             for page in pages:
                 pageid = page.get("pageid")
                 if pageid is None:
@@ -129,7 +137,11 @@ class MediaWikiClient:
                 break
             continue_token = data["continue"]
 
-        redirects_from = await self._fetch_redirect_map(session, title_to_pageid)
+        redirects_from = await self._fetch_redirect_map(
+            session,
+            title_to_pageid,
+            progress_callback=progress_callback,
+        )
         logger.info(
             "Discovery complete. Total pages: {}. Redirect aliases mapped: {}",
             len(pages_metadata),
@@ -427,6 +439,7 @@ class MediaWikiClient:
         self,
         session: aiohttp.ClientSession,
         title_to_pageid: dict[str, int],
+        progress_callback: DiscoveryProgressCallback | None = None,
     ) -> dict[int, tuple[str, ...]]:
         if not title_to_pageid:
             return {}
@@ -454,6 +467,8 @@ class MediaWikiClient:
 
             data, _ = fetch_result
             redirects = data.get("query", {}).get("allredirects", [])
+            if progress_callback is not None:
+                progress_callback("discovery_redirects", len(redirects))
             for item in redirects:
                 from_title = str(item.get("from") or "").strip()
                 to_title = str(item.get("to") or "").strip()
