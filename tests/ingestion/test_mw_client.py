@@ -104,7 +104,7 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
         )
         self.assertIsNone(result)
 
-    async def test_fetch_page_doc_includes_http_meta(self):
+    async def test_fetch_page_doc_includes_http_meta_and_prefers_revision_content(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
         data = {
             "query": {
@@ -116,9 +116,10 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
                             {
                                 "revid": 456,
                                 "timestamp": "2020-01-01T00:00:00Z",
+                                "slots": {"main": {"content": "wikitext-content"}},
                             }
                         ],
-                        "extract": "abc",
+                        "extract": "plain-text-extract",
                         "categories": [{"title": "Category:A"}],
                     }
                 ]
@@ -134,15 +135,17 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
             ]
         )
 
-        result = await client.fetch_page_doc(session, 123)
+        result = await client.fetch_page_doc(session, 123, redirects_from=("Alias B", "Alias A"))
         self.assertIsNotNone(result)
         self.assertEqual(result.pageid, 123)
         self.assertEqual(result.revid, 456)
+        self.assertEqual(result.content, "plain-text-extract")
+        self.assertEqual(result.redirects_from, ("Alias A", "Alias B"))
         self.assertEqual(result.http["status"], 200)
         self.assertEqual(result.http["etag"], "etag")
         self.assertEqual(result.http["last_modified"], "lm")
 
-    async def test_fetch_all_pages_metadata_uses_pages_list(self):
+    async def test_fetch_all_pages_metadata_returns_canonical_pages_and_redirect_map(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
         session = FakeSession(
             [
@@ -151,16 +154,29 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
                     json_data={
                         "query": {
                             "pages": [
-                                {"pageid": 1, "revisions": [{"revid": 10}]},
-                                {"pageid": 2, "lastrevid": 20},
+                                {"pageid": 1, "title": "Target Page", "revisions": [{"revid": 10}]},
+                                {"pageid": 2, "title": "No Redirect", "lastrevid": 20},
                             ]
                         }
                     },
-                )
+                ),
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "allredirects": [
+                                {"from": "Alias B", "to": "Target Page"},
+                                {"from": "Alias A", "to": "Target Page"},
+                                {"from": "Unknown Alias", "to": "Missing Canonical"},
+                            ]
+                        }
+                    },
+                ),
             ]
         )
         result = await client.fetch_all_pages_metadata(session)
-        self.assertEqual(result, {1: 10, 2: 20})
+        self.assertEqual(result.canonical_pages, {1: 10, 2: 20})
+        self.assertEqual(result.redirects_from, {1: ("Alias A", "Alias B")})
 
     async def test_fetch_categories_handles_continuation_and_dedup(self):
         client = MediaWikiClient(base_url="http://unit.invalid")

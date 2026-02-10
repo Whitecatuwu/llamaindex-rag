@@ -2,7 +2,7 @@ import asyncio
 from dataclasses import dataclass
 
 import aiohttp
-from loguru import logger
+from src.config.logger_config import logger
 
 from src.ingestion.domain.models import CrawlSummary, PageRef
 from src.ingestion.infrastructure.fs_sink import JsonFileSink
@@ -41,11 +41,16 @@ class CrawlPagesWorkflow:
             ttl_dns_cache=self.config.connector_ttl_dns_cache,
         )
         async with aiohttp.ClientSession(connector=connector) as session:
-            remote_pages = await self.mw_client.fetch_all_pages_metadata(session)
+            discovery = await self.mw_client.fetch_all_pages_metadata(session)
+            remote_pages = discovery.canonical_pages
             local_pages = self.registry.get_local_state()
 
             refs = [
-                PageRef(pageid=pageid, remote_revid=remote_revid)
+                PageRef(
+                    pageid=pageid,
+                    remote_revid=remote_revid,
+                    redirects_from=discovery.redirects_from.get(pageid, ()),
+                )
                 for pageid, remote_revid in remote_pages.items()
                 if local_pages.get(pageid) is None or remote_revid > local_pages[pageid]
             ]
@@ -84,11 +89,24 @@ class CrawlPagesWorkflow:
 
     async def _process_page(self, session: aiohttp.ClientSession, ref: PageRef) -> bool:
         async with self._semaphore:
-            page_doc = await self.mw_client.fetch_page_doc(session, ref.pageid)
-            if page_doc is None:
-                return False
+            try:
+                page_doc = await self.mw_client.fetch_page_doc(
+                    session,
+                    ref.pageid,
+                    redirects_from=ref.redirects_from,
+                )
+                if page_doc is None:
+                    return False
 
-            file_path = self.sink.write_page_doc(page_doc)
-            self.registry.upsert_page(page_doc, file_path, ref.remote_revid)
-            logger.info("Saved JSON: {}", page_doc.title)
-            return True
+                file_path = self.sink.write_page_doc(page_doc)
+                self.registry.upsert_page(page_doc, file_path)
+                logger.info("Saved JSON: {}", page_doc.title)
+                return True
+            except Exception as exc:
+                logger.exception(
+                    "Failed processing pageid {} with error type {}: {}",
+                    ref.pageid,
+                    type(exc).__name__,
+                    exc,
+                )
+                return False

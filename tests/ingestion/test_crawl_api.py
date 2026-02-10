@@ -83,6 +83,6 @@ class CrawlApiAsyncTests(unittest.IsolatedAsyncioTestCase):
             patch("src.ingestion.crawl.RawApiJsonlSink", return_value=MagicMock()),
             patch("src.ingestion.crawl.CrawlPagesWorkflow", return_value=MagicMock(run=AsyncMock(return_value=expected))),
         ):
-            result = await run_crawl_async(page_dir="same/path")
+            result = await run_crawl_async(page_dir="tests/tmp/same/path")
 
         self.assertEqual(result, expected)
