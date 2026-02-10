@@ -33,7 +33,7 @@
     Given plan and feature files
     When I compare acceptance statements
     Then both should require html and db source support
-    And both should require misc fallback with reason for low confidence or conflict
+    And both should require misc fallback with reason for low confidence or ambiguity
     And both should require deterministic outputs for same input and strategy version
 
   Scenario: D1 Trigger and artifact expectations are explicit

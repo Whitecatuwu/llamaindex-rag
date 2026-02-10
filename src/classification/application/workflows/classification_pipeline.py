@@ -1,7 +1,8 @@
-﻿from dataclasses import dataclass
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from time import perf_counter
 
+from tqdm import tqdm
 from src.classification.application.contracts import (
     ClassificationLabelRecord,
     ClassificationReportRecord,
@@ -26,6 +27,7 @@ class PipelineConfig:
     include_redirects: bool
     incremental: bool = True
     full_rebuild: bool = False
+    show_progress: bool = True
 
 
 @dataclass(frozen=True)
@@ -34,7 +36,7 @@ class PipelineSummary:
     classified_count: int
     misc_count: int
     low_conf_count: int
-    conflict_count: int
+    ambiguity_count: int
     parse_warning_count: int
     by_entity_type: dict[str, int]
     source_mode: str
@@ -105,12 +107,19 @@ class ClassificationPipeline:
         classified_count = 0
         misc_count = 0
         low_conf_count = 0
-        conflict_count = 0
+        ambiguity_count = 0
         parse_warning_count = 0
         by_entity_type = {k: 0 for k in ("cat", "enemy", "stage", "update", "mechanic", "list", "misc", "invalid")}
 
         try:
-            for ref in refs:
+            for ref in tqdm(
+                refs,
+                total=len(refs),
+                desc="Classification pages",
+                unit="page",
+                leave=True,
+                disable=not config.show_progress,
+            ):
                 loaded = self.source.load(ref)
                 page = loaded.page
                 if loaded.meta.parse_warning:
@@ -139,6 +148,7 @@ class ClassificationPipeline:
                         source_path=loaded.meta.source_path,
                         is_redirect=page.is_redirect,
                         parse_warning=loaded.meta.parse_warning,
+                        is_ambiguous=False,
                     )
                     self.sink.write_label(invalid_row)
                     self.sink.write_review(invalid_row)
@@ -211,14 +221,15 @@ class ClassificationPipeline:
                     source_path=loaded.meta.source_path,
                     is_redirect=page.is_redirect,
                     parse_warning=loaded.meta.parse_warning,
+                    is_ambiguous=result.is_ambiguous,
                 )
                 self.sink.write_label(row)
                 classified_count += 1
                 by_entity_type[result.entity_type] += 1
 
                 is_low_conf = result.confidence < config.low_confidence_threshold
-                is_conflict = any("low_margin_conflict" in reason for reason in result.reasons)
-                needs_review = result.entity_type == "misc" or is_low_conf or is_conflict
+                is_ambiguous = result.is_ambiguous
+                needs_review = result.entity_type == "misc" or is_low_conf or result.is_ambiguous
                 if needs_review:
                     self.sink.write_review(row)
                     logger.debug(
@@ -230,8 +241,8 @@ class ClassificationPipeline:
                     )
                     if is_low_conf:
                         low_conf_count += 1
-                    if is_conflict:
-                        conflict_count += 1
+                    if is_ambiguous:
+                        ambiguity_count += 1
                 if result.entity_type == "misc":
                     misc_count += 1
                 if self.state_store is not None:
@@ -255,7 +266,7 @@ class ClassificationPipeline:
             classified_count=classified_count,
             misc_count=misc_count,
             low_conf_count=low_conf_count,
-            conflict_count=conflict_count,
+            ambiguity_count=ambiguity_count,
             parse_warning_count=parse_warning_count,
             by_entity_type=by_entity_type,
             source_mode=config.source_mode,
@@ -270,21 +281,21 @@ class ClassificationPipeline:
                 parse_warning_count=summary.parse_warning_count,
                 misc_count=summary.misc_count,
                 low_conf_count=summary.low_conf_count,
-                conflict_count=summary.conflict_count,
+                ambiguity_count=summary.ambiguity_count,
                 by_entity_type=summary.by_entity_type,
                 duration_ms=summary.duration_ms,
                 generated_at=summary.generated_at,
             )
         )
         logger.info(
-            "Classification pipeline completed: source_mode={}, duration_ms={}, classified_count={}, skipped_unchanged_count={}, misc_count={}, low_conf_count={}, conflict_count={}, parse_warning_count={}, state_hit_count={}, state_miss_count={}, state_recovery_count={}",
+            "Classification pipeline completed: source_mode={}, duration_ms={}, classified_count={}, skipped_unchanged_count={}, misc_count={}, low_conf_count={}, ambiguity_count={}, parse_warning_count={}, state_hit_count={}, state_miss_count={}, state_recovery_count={}",
             summary.source_mode,
             summary.duration_ms,
             summary.classified_count,
             skipped_unchanged_count,
             summary.misc_count,
             summary.low_conf_count,
-            summary.conflict_count,
+            summary.ambiguity_count,
             summary.parse_warning_count,
             state_hit_count,
             state_miss_count,

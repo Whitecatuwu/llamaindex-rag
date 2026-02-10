@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from src.ingestion.classification_adapter import run
+from src.classification.classify import run_classify
 from tests.utils.tempdir import managed_temp_dir
 
 
@@ -25,7 +25,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            result = run(
+            result = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -34,6 +34,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 output_review_path=str(tmp_path / "review.jsonl"),
                 classified_output_root=str(tmp_path / "classified"),
                 incremental=False,
+                show_progress=False,
             )
 
             self.assertIsNotNone(result)
@@ -45,6 +46,7 @@ class ClassificationAdapterTests(unittest.TestCase):
             self.assertTrue(classified_path.exists())
             copied_payload = json.loads(classified_path.read_text(encoding="utf-8"))
             self.assertIn("subtypes", copied_payload)
+            self.assertIn("is_ambiguous", copied_payload)
             original_payload = json.loads(source_path.read_text(encoding="utf-8"))
             self.assertNotIn("subtypes", original_payload)
 
@@ -67,7 +69,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            first = run(
+            first = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -78,8 +80,9 @@ class ClassificationAdapterTests(unittest.TestCase):
                 state_db_path=str(tmp_path / "classification_state.db"),
                 incremental=True,
                 full_rebuild=False,
+                show_progress=False,
             )
-            second = run(
+            second = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -90,6 +93,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 state_db_path=str(tmp_path / "classification_state.db"),
                 incremental=True,
                 full_rebuild=False,
+                show_progress=False,
             )
 
             self.assertIsNotNone(first)
@@ -115,7 +119,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            result = run(
+            result = run_classify(
                 enable_classification=True,
                 source_mode="html",
                 input_dir=str(input_dir),
@@ -126,6 +130,7 @@ class ClassificationAdapterTests(unittest.TestCase):
                 incremental=True,
                 full_rebuild=False,
                 state_db_path=str(tmp_path / "classification_state.db"),
+                show_progress=False,
             )
             self.assertIsNotNone(result)
             self.assertEqual(result.classified_count, 1)

@@ -37,3 +37,4 @@ class Classification:
     reasons: tuple[str, ...]
     matched_rules: tuple[str, ...]
     strategy_version: str
+    is_ambiguous: bool = False

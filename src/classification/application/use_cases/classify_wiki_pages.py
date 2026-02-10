@@ -15,6 +15,7 @@ class ClassifyWikiPagesCommand:
     include_redirects: bool = True
     incremental: bool = True
     full_rebuild: bool = False
+    show_progress: bool = True
     # Kept for backward compatibility; infrastructure adapter is responsible for consuming this.
     state_db_path: str = "artifacts/classified/classification_state.db"
 
@@ -25,7 +26,7 @@ class ClassifyWikiPagesResult:
     classified_count: int
     misc_count: int
     low_conf_count: int
-    conflict_count: int
+    ambiguity_count: int
     parse_warning_count: int
     by_entity_type: dict[str, int]
 
@@ -51,15 +52,16 @@ class ClassifyWikiPagesUseCase:
                 include_redirects=command.include_redirects,
                 incremental=command.incremental,
                 full_rebuild=command.full_rebuild,
+                show_progress=command.show_progress,
             )
         )
         logger.info(
-            "Classification use case completed: total_pages={}, classified_count={}, misc_count={}, low_conf_count={}, conflict_count={}, parse_warning_count={}",
+            "Classification use case completed: total_pages={}, classified_count={}, misc_count={}, low_conf_count={}, ambiguity_count={}, parse_warning_count={}",
             summary.total_pages,
             summary.classified_count,
             summary.misc_count,
             summary.low_conf_count,
-            summary.conflict_count,
+            summary.ambiguity_count,
             summary.parse_warning_count,
         )
         return ClassifyWikiPagesResult(
@@ -67,7 +69,7 @@ class ClassifyWikiPagesUseCase:
             classified_count=summary.classified_count,
             misc_count=summary.misc_count,
             low_conf_count=summary.low_conf_count,
-            conflict_count=summary.conflict_count,
+            ambiguity_count=summary.ambiguity_count,
             parse_warning_count=summary.parse_warning_count,
             by_entity_type=summary.by_entity_type,
         )

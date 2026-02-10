@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 
@@ -6,6 +6,13 @@ from typing import Any
 class PageRef:
     pageid: int
     remote_revid: int
+    redirects_from: tuple[str, ...] = field(default_factory=tuple)
+
+
+@dataclass(frozen=True)
+class PageDiscoveryResult:
+    canonical_pages: dict[int, int]
+    redirects_from: dict[int, tuple[str, ...]]
 
 
 @dataclass(frozen=True)
@@ -23,6 +30,7 @@ class WikiPageDoc:
     redirect_target: str | None
     fetched_at: str
     http: dict[str, Any]
+    redirects_from: tuple[str, ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -37,6 +45,7 @@ class WikiPageDoc:
             "content": self.content,
             "is_redirect": self.is_redirect,
             "redirect_target": self.redirect_target,
+            "redirects_from": list(self.redirects_from),
             "fetched_at": self.fetched_at,
             "http": self.http,
         }

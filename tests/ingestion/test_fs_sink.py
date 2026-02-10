@@ -1,16 +1,15 @@
 import json
-import tempfile
 import unittest
-from pathlib import Path
 
 from src.ingestion.domain.models import WikiPageDoc
 from src.ingestion.infrastructure.fs_sink import JsonFileSink
+from tests.utils.tempdir import managed_temp_dir
 
 
 class JsonFileSinkTests(unittest.TestCase):
     def test_write_page_doc_uses_stable_filename_and_schema(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            sink = JsonFileSink(Path(tmp))
+        with managed_temp_dir("fs_sink") as tmp:
+            sink = JsonFileSink(tmp)
             page = WikiPageDoc(
                 source="battlecats.miraheze.org",
                 pageid=8,
@@ -34,4 +33,4 @@ class JsonFileSinkTests(unittest.TestCase):
             self.assertEqual(payload["pageid"], 8)
             self.assertEqual(payload["title"], "A/B Test")
             self.assertIn("http", payload)
-
+            self.assertEqual(payload["redirects_from"], [])

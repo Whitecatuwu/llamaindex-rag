@@ -1,20 +1,43 @@
+# llamaindex-rag
 
-
-1. 安裝依賴：
+## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2. 建立索引：
+## Ingestion
 
 ```bash
-python -m src.ingestion.build_index
+python -m src.ingestion
 ```
 
-3. 查詢（範例）：
+Programmatic usage:
+
+```python
+from src.ingestion.crawl import run_crawl
+
+summary = run_crawl(show_progress=True)
+summary_no_bar = run_crawl(show_progress=False)
+```
+
+## Classification
+
+```bash
+python -m src.classification
+```
+
+Programmatic usage:
+
+```python
+from src.classification.classify import run_classify
+
+result = run_classify(enable_classification=True, show_progress=True)
+result_no_bar = run_classify(enable_classification=True, show_progress=False)
+```
+
+## Query
 
 ```bash
 python -m src.app
 ```
-

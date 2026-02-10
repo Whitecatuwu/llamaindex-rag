@@ -41,9 +41,11 @@ class ClassifiedJsonSinkTests(unittest.TestCase):
 
             copied_payload = json.loads(target_path.read_text(encoding="utf-8"))
             self.assertEqual(copied_payload["subtypes"], ["rarity:rare", "source:event_capsule"])
+            self.assertFalse(copied_payload["is_ambiguous"])
 
             original_payload = json.loads(source_path.read_text(encoding="utf-8"))
             self.assertNotIn("subtypes", original_payload)
+            self.assertNotIn("is_ambiguous", original_payload)
 
     def test_write_label_renames_on_name_collision(self):
         with managed_temp_dir("classified_collision") as tmp_path:

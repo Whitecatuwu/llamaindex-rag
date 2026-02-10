@@ -11,3 +11,4 @@ markdownify
 trafilatura
 loguru
 pathvalidate
+tqdm

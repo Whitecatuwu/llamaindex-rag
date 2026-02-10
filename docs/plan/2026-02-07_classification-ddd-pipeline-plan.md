@@ -24,7 +24,7 @@
 - `classified_count`
 - `misc_count`
 - `low_conf_count`
-- `conflict_count`
+- `ambiguity_count`
 - `parse_warning_count`
 - `by_entity_type`
 
@@ -69,7 +69,7 @@
 - `parse_warning_count`
 - `by_entity_type`
 - `low_conf_count`
-- `conflict_count`
+- `ambiguity_count`
 - `duration_ms`
 
 ## Test Plan
