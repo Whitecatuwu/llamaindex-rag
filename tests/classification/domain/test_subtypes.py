@@ -50,7 +50,7 @@ class SubtypeMappingTests(unittest.TestCase):
         self.assertIn("version_line:13.1", result.subtypes)
         self.assertEqual(tuple(sorted(result.subtypes)), result.subtypes)
 
-    def test_enemy_trait_pattern_does_not_swallow_campaign_categories(self):
+    def test_enemy_trait_pattern_can_coexist_with_campaign_categories(self):
         page = _page(
             "Enemy A",
             ("Category:Enemy Units", "Category:Empire of Cats Enemies"),
@@ -58,9 +58,9 @@ class SubtypeMappingTests(unittest.TestCase):
         result = RuleBasedClassifier().classify(page)
         self.assertEqual(result.entity_type, "enemy")
         self.assertIn("campaign_scope:eoc", result.subtypes)
-        self.assertNotIn("trait:empire_of_cats", result.subtypes)
+        self.assertIn("trait:empire_of_cats", result.subtypes)
 
-    def test_stage_family_pattern_skips_specific_progression_categories(self):
+    def test_stage_family_pattern_can_coexist_with_specific_progression_categories(self):
         page = _page(
             "Stage A",
             ("Category:Zero Legends Stages", "Category:Sub-chapter 106 Stages"),
@@ -69,4 +69,4 @@ class SubtypeMappingTests(unittest.TestCase):
         self.assertEqual(result.entity_type, "stage")
         self.assertIn("progression:zl", result.subtypes)
         self.assertIn("progression:subchapter_106", result.subtypes)
-        self.assertNotIn("stage_family:zero_legends", result.subtypes)
+        self.assertIn("stage_family:zero_legends", result.subtypes)
