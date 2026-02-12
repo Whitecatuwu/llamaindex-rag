@@ -16,7 +16,9 @@ def make_doc(pageid: int, revid: int) -> WikiPageDoc:
         timestamp="2020-01-01T00:00:00Z",
         content_model="wikitext",
         categories=(),
+        description="",
         content=f"content-{pageid}",
+        extract=f"extract-{pageid}",
         is_redirect=False,
         redirect_target=None,
         fetched_at="2020-01-01T00:00:01Z",
@@ -58,6 +60,11 @@ class FakeMwClient:
         self.fetch_page_calls.append(pageid)
         self.fetch_page_redirects[pageid] = redirects_from
         return self.docs.get(pageid)
+
+
+class FailingDiscoveryMwClient(FakeMwClient):
+    async def fetch_all_pages_metadata(self, _session, progress_callback=None):
+        raise RuntimeError("discovery failed")
 
 
 class FakeRegistry:
@@ -240,3 +247,18 @@ class CrawlWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 mw.discovery_progress_events,
                 [("discovery_pages", 1), ("discovery_redirects", 1)],
             )
+
+    async def test_discovery_error_is_propagated(self):
+        with managed_temp_dir("crawl_workflow_discovery_error") as tmp:
+            mw = FailingDiscoveryMwClient(remote_pages={}, docs={})
+            registry = FakeRegistry(local_state={})
+            sink = FakeSink(tmp)
+            workflow = CrawlPagesWorkflow(
+                mw_client=mw,
+                registry=registry,
+                sink=sink,
+                config=CrawlWorkflowConfig(chunk_size=1, polite_sleep_seconds=0, show_progress=False),
+            )
+
+            with self.assertRaisesRegex(RuntimeError, "discovery failed"):
+                await workflow.run()

@@ -104,7 +104,7 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
         )
         self.assertIsNone(result)
 
-    async def test_fetch_page_doc_includes_http_meta_and_prefers_revision_content(self):
+    async def test_fetch_page_doc_sets_content_extract_description_and_http_meta(self):
         client = MediaWikiClient(base_url="http://unit.invalid")
         data = {
             "query": {
@@ -120,6 +120,7 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
                             }
                         ],
                         "extract": "plain-text-extract",
+                        "pageprops": {"description": "page-desc"},
                         "categories": [{"title": "Category:A"}],
                     }
                 ]
@@ -139,7 +140,9 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
         self.assertIsNotNone(result)
         self.assertEqual(result.pageid, 123)
         self.assertEqual(result.revid, 456)
-        self.assertEqual(result.content, "plain-text-extract")
+        self.assertEqual(result.content, "wikitext-content")
+        self.assertEqual(result.extract, "plain-text-extract")
+        self.assertEqual(result.description, "page-desc")
         self.assertEqual(result.redirects_from, ("Alias A", "Alias B"))
         self.assertEqual(result.http["status"], 200)
         self.assertEqual(result.http["etag"], "etag")
@@ -251,6 +254,51 @@ class MediaWikiClientTests(unittest.IsolatedAsyncioTestCase):
                 ("discovery_redirects", 1),
             ],
         )
+
+    async def test_fetch_all_pages_metadata_raises_on_pagination_failure(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "pages": [
+                                {"pageid": 1, "title": "Target A", "revisions": [{"revid": 10}]},
+                            ]
+                        },
+                        "continue": {"gapcontinue": "Target A"},
+                    },
+                ),
+                FakeResponse(status=500),
+            ]
+        )
+
+        with patch("src.ingestion.infrastructure.mw_client.asyncio.sleep", new=AsyncMock()):
+            with self.assertRaisesRegex(RuntimeError, "Failed to fetch pages metadata during discovery"):
+                await client.fetch_all_pages_metadata(session)
+
+    async def test_fetch_all_pages_metadata_raises_on_redirect_failure(self):
+        client = MediaWikiClient(base_url="http://unit.invalid")
+        session = FakeSession(
+            [
+                FakeResponse(
+                    status=200,
+                    json_data={
+                        "query": {
+                            "pages": [
+                                {"pageid": 1, "title": "Target A", "revisions": [{"revid": 10}]},
+                            ]
+                        },
+                    },
+                ),
+                FakeResponse(status=500),
+            ]
+        )
+
+        with patch("src.ingestion.infrastructure.mw_client.asyncio.sleep", new=AsyncMock()):
+            with self.assertRaisesRegex(RuntimeError, "Failed to fetch redirects list during discovery"):
+                await client.fetch_all_pages_metadata(session)
 
     async def test_fetch_categories_handles_continuation_and_dedup(self):
         client = MediaWikiClient(base_url="http://unit.invalid")

@@ -25,7 +25,9 @@ class WikiPageDoc:
     timestamp: str
     content_model: str | None
     categories: tuple[str, ...]
+    description: str
     content: str
+    extract: str
     is_redirect: bool
     redirect_target: str | None
     fetched_at: str
@@ -42,7 +44,9 @@ class WikiPageDoc:
             "timestamp": self.timestamp,
             "content_model": self.content_model,
             "categories": list(self.categories),
+            "description": self.description,
             "content": self.content,
+            "extract": self.extract,
             "is_redirect": self.is_redirect,
             "redirect_target": self.redirect_target,
             "redirects_from": list(self.redirects_from),

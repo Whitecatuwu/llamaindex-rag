@@ -20,6 +20,10 @@ from src.ingestion.infrastructure.raw_sink import RawApiJsonlSink
 DiscoveryProgressCallback = Callable[[str, int], None]
 
 
+class DiscoveryFetchError(RuntimeError):
+    """Raised when page discovery cannot complete successfully."""
+
+
 class MediaWikiClient:
     def __init__(
         self,
@@ -105,8 +109,9 @@ class MediaWikiClient:
                 operation="fetch_all_pages_metadata",
             )
             if not fetch_result:
-                logger.error("Failed to fetch pages metadata.")
-                break
+                message = "Failed to fetch pages metadata during discovery."
+                logger.error(message)
+                raise DiscoveryFetchError(message)
 
             data, _ = fetch_result
             pages = data.get("query", {}).get("pages", [])
@@ -163,8 +168,9 @@ class MediaWikiClient:
             "action": "query",
             "pageids": page_id,
             "explaintext": "1",
-            "prop": "categories|info|revisions|extracts",
+            "prop": "categories|info|revisions|extracts|pageprops",
             "rvprop": "content|ids|timestamp",
+            "pageprops": "description",
             "redirects": "1",
             "rvslots": "*",
             "format": "json",
@@ -216,15 +222,6 @@ class MediaWikiClient:
                 for x in page.get("categories", [])
                 if str(x.get("title", "")).strip()
             )
-            
-            """content = self._extract_revision_content(revision)
-            if not content:
-                content = str(page.get("extract", ""))
-                if content:
-                    logger.warning(
-                        "Falling back to extract content for pageid {} due to missing revision slot content.",
-                        page_id,
-                    )"""
 
             return WikiPageDoc(
                 source="battlecats.miraheze.org",
@@ -235,8 +232,9 @@ class MediaWikiClient:
                 timestamp=timestamp,
                 content_model=page.get("contentmodel"),
                 categories=categories,
-                #content=content,
-                content=str(page.get("extract", "")),
+                description=str(page.get("pageprops", {}).get("description", "")),
+                content=self._extract_revision_content(revision),
+                extract=str(page.get("extract", "")),
                 is_redirect=bool(page.get("redirect", False)),
                 redirect_target=None,
                 fetched_at=datetime.now(timezone.utc).isoformat(),
@@ -462,8 +460,9 @@ class MediaWikiClient:
                 operation="fetch_all_redirects",
             )
             if not fetch_result:
-                logger.error("Failed to fetch redirects list.")
-                break
+                message = "Failed to fetch redirects list during discovery."
+                logger.error(message)
+                raise DiscoveryFetchError(message)
 
             data, _ = fetch_result
             redirects = data.get("query", {}).get("allredirects", [])

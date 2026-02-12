@@ -19,7 +19,9 @@ class JsonFileSinkTests(unittest.TestCase):
                 timestamp="2020-01-01T00:00:00Z",
                 content_model="wikitext",
                 categories=("Category:X",),
+                description="unit-description",
                 content="abc",
+                extract="abc-extract",
                 is_redirect=False,
                 redirect_target=None,
                 fetched_at="2020-01-01T00:00:01Z",
@@ -32,5 +34,7 @@ class JsonFileSinkTests(unittest.TestCase):
             payload = json.loads(file_path.read_text(encoding="utf-8"))
             self.assertEqual(payload["pageid"], 8)
             self.assertEqual(payload["title"], "A/B Test")
+            self.assertEqual(payload["description"], "unit-description")
+            self.assertEqual(payload["extract"], "abc-extract")
             self.assertIn("http", payload)
             self.assertEqual(payload["redirects_from"], [])

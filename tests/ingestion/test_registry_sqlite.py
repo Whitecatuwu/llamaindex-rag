@@ -1,3 +1,4 @@
+import json
 import unittest
 
 from src.ingestion.domain.models import WikiPageDoc
@@ -15,7 +16,9 @@ def make_page(pageid: int, title: str, revid: int) -> WikiPageDoc:
         timestamp="2020-01-01T00:00:00Z",
         content_model="wikitext",
         categories=("Category:A", "Category:B"),
+        description="",
         content="content",
+        extract="extract",
         is_redirect=False,
         redirect_target=None,
         fetched_at="2020-01-01T00:00:01Z",
@@ -35,6 +38,7 @@ class RegistrySQLiteTests(unittest.TestCase):
                 record = repo.upsert_page(page, tmp / "page_123.json")
                 self.assertEqual(record.page_id, 123)
                 self.assertEqual(record.last_revid, 456)
+                self.assertEqual(record.categories, json.dumps(["Category:A", "Category:B"], ensure_ascii=False))
                 self.assertEqual(repo.get_local_state(), {123: 456})
             finally:
                 repo.close()

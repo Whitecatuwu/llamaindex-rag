@@ -1,4 +1,5 @@
-﻿import sqlite3
+import json
+import sqlite3
 from pathlib import Path
 
 from src.classification.application.contracts import LoadedPage, LoadedPageMeta
@@ -42,7 +43,7 @@ class RegistryPageSource(PageSourcePort):
             return HtmlPageSource(input_dir=".").load(PageRef(source_id=ref.source_id, location=file_path))
 
         raw_categories = str(ref.metadata.get("categories", "") or "")
-        categories = tuple(c.strip() for c in raw_categories.split(",") if c.strip())
+        categories = self._parse_categories(raw_categories)
         logger.warning(
             "Registry page uses metadata fallback due to missing file path: source_id={}, db_path={}",
             ref.source_id,
@@ -65,3 +66,18 @@ class RegistryPageSource(PageSourcePort):
                 parse_warning="missing_file_path",
             ),
         )
+
+    @staticmethod
+    def _parse_categories(raw_categories: str) -> tuple[str, ...]:
+        text = str(raw_categories or "").strip()
+        if not text:
+            return ()
+
+        try:
+            parsed = json.loads(text)
+            if isinstance(parsed, list):
+                return tuple(str(item).strip() for item in parsed if str(item).strip())
+        except json.JSONDecodeError:
+            logger.warning("Invalid JSON categories in registry metadata; returning empty categories.")
+            return ()
+        return ()

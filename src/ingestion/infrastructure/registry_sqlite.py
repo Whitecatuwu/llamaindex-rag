@@ -1,4 +1,5 @@
 import sqlite3
+import json
 from pathlib import Path
 
 from src.ingestion.domain.models import RegistryRecord, WikiPageDoc
@@ -33,7 +34,7 @@ class SQLiteRegistryRepository:
         return {int(row[0]): int(row[1]) for row in cursor.fetchall()}
 
     def upsert_page(self, page_doc: WikiPageDoc, file_path: Path) -> RegistryRecord:
-        categories = ",".join(page_doc.categories)
+        categories = json.dumps(list(page_doc.categories), ensure_ascii=False)
         cursor = self.conn.cursor()
         try:
             cursor.execute("BEGIN IMMEDIATE")
